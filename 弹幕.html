@@ -1,0 +1,188 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" class="container">
+    <p class="p0">啦啦啦啦啦啦啦</p>
+    <p class="p1">啦啦啦啦啦啦啦</p>
+</div>
+<div class="footer">
+    <input id="ipt" class="ipt" type="text" placeholder="说点什么?"/>
+    <button id="launch" class="launch" type="button" onclick="Leave()">发射</button>
+    <button id="clear" class="clear" type="button">清屏</button>
+</div>
+
+</body>
+</html>
+<script>
+    var num = 2;
+    //声明了num=2
+    var _p = document.getElementsByTagName("p");
+    //获取标签p.
+    var main = document.getElementById("main");
+    //获取Id为mian的标签
+    function Leave(){
+        var colors = ["red","orange","yellow","pink","green"];
+        //储存5个颜色
+        var ipt = document.getElementById("ipt");
+        //获取id为ipt的标签
+        var launch = document.getElementById("launch");
+        //获取id为launch的标签
+        var creat_p = document.createElement("p");
+        //创建一个p标签
+        main.appendChild(creat_p).innerText = ipt.value;
+        //往main子集放一个p标签并且p标签的文本为ipt的值
+        ipt.value = "";
+        //初始化ipt
+        creat_p.className = "p" + num;
+        //创建的p标签设置class为p2,p3,p4以此类推
+        num++;
+        //执行一次加上1.
+        var _ran = Math.floor(Math.random()*1000);
+        //声明个0-999的随机数.
+        var F_ran = Math.floor(Math.random()*5)+15;
+        //声明个15-19随机数
+        var T_ran = _ran%11;
+        //声明11个随机数，0-10；
+        var C_ran = _ran%5;
+        //声明5个随机数，0-4;
+        creat_p.style.top = 30*T_ran + "px";
+        //新创建的p标签给上一个top值，0-300px;
+        creat_p.style.color = colors[C_ran];
+        //新创建的p标签给上一个颜色,colors数组里面随机一个。
+        creat_p.style.fontSize = F_ran + "px";
+        //新创建的p标签给上一个字体大小15-19px;
+    }
+    var speeds = {};
+    //声明一个空数组.
+    function Speed(){
+        //创建随机速度的函数
+        for (var i=0;i<_p.length;i++) {
+            var name = _p[i].className;
+            //获取各个p标签的class值.
+            speed = speeds[name];
+            //将name传入speeds对象，并赋值给speed.
+            if(speed == null){
+                //如果speed等于null执行以下代码
+                var S_ran = Math.floor(Math.random()*5)+1;
+                //声明个随机数,1-5.
+                speeds[name] = S_ran;
+                //并将随机数赋值给speeds对象(json)的属性
+            }
+            var l = _p[i].style.left;
+            //获取p标签的left值.
+            if(l == 0){
+                l = "0px";
+                //如果l等于0，就给0加上px.
+            }
+            var s = parseInt(l) +speed;
+            //解析l转化为数字，再加上一个随机数，以保证弹幕发送字体移动速度不同.
+            _p[i].style.left = s + "px";
+            //给各个p标签加上随机数
+            if(main.offsetWidth < _p[i].offsetLeft){
+                //如果p标签移动的位置大于mian的宽度
+                main.removeChild(_p[i]);
+                //删除这个p标签
+                clearInterval();
+                //清除定时器
+            }
+
+        }
+    }
+
+    window.onload = function(){
+        setInterval(Speed,50);
+        //每50毫秒执行一下Speed函数
+    }
+
+</script>-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>javascript弹幕</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+    <style>
+        #play{
+            width:600px;
+            height:500px;
+            background-color:#000;
+        }
+
+        #tangmu{
+            width:600px;
+            height:500px;
+            background-color:#fff;
+            z-index:9999;
+            background-color: rgba(000, 1, 000, 0.1);
+        }
+
+        #textStyle{
+            position:absolute;
+            font-size:24px;
+            color:#fff;
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="play">
+    <div id="tangmu">
+
+    </div>
+</div>
+
+
+
+
+<input type="text" id="text" value="这是弹幕..."/><input type="button" value="发送" onClick="tangmu();"/>
+
+<script>
+    var si;
+    function tangmu(){
+        clearInterval(si);
+        var text = document.getElementById("text");
+        var tangmu = document.getElementById("tangmu");
+
+        var textStyle="<font id=\"textStyle\">"+text.value+"</font>";
+
+        mathHeight = Math.round(Math.random()*tangmu.offsetHeight)+"px";
+
+        var textLeft=tangmu.offsetWidth+"px";
+
+        tangmu.innerHTML=textStyle;
+
+        var textStyleObj = document.getElementById("textStyle");
+
+        textStyleObj.style.left=textLeft;
+        textStyleObj.style.top=mathHeight;
+
+        var x=parseInt(textStyleObj.style.left);
+
+        si = setInterval("xunhuan("+x+")",100);
+
+    }
+    function xunhuan(left){
+        var textStyleObj = document.getElementById("textStyle");
+        textStyleObj.style.left=left;
+
+        var x=parseInt(textStyleObj.style.left);
+
+        if(x<textStyleObj.style.width){
+            document.getElementById("tangmu").innerHTML="";
+            clearInterval(si);
+        }else{
+            x-=18;
+        }
+
+        textStyleObj.style.left=x+"px";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+#lc_video_all_container{
+	width:100%;
+	height:100%;
+	box-sizing: border-box;
+
+}
+#video-box{
+	width:100%;
+	height:100%;
+	position: absolute;
+	z-index:151;
+	background: rgba(0,0,0,.5);
+}
+#mp4{
+	width: 14.8rem;
+    height: 8.33rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+   	margin:auto;
+  /*
+    width: 13rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3.905rem;
+    margin-left: -6.5rem;
+     */
+}
+#mp4 .video-play{
+	height: calc(100% - 0.45rem);
+}
+#uploaded-video{
+	width:100%;
+	height:100%;
+	background: #000;
+}
+.video-js .vjs-volume-control{
+	position: absolute;
+    top: 0;
+   	left:50px;
+}
+.video-js .vjs-control.vjs-volume-panel-horizontal{
+	width: 12em;
+}
+.video-js .vjs-control{
+	text-align: left;
+}
+#mp4 source{
+	width:100%;
+}
+
+/*原生视频控制条*/
+
+#video-box .slider{
+	height:0.03rem;
+	background: #747474;
+	top:0.045rem;
+}
+#video-box .slider .handle{
+	height:0.08rem;
+	width:0.08rem;
+	background: #fff;
+	border-radius: 50%;
+	top: -50%;
+	margin-top: -0.01rem;
+}
+#video-box .play-container .handle,#video-box .bar-0{
+	background:#da4817 ;
+}
+#video-box .slider .bar{
+	height:100%;
+}
+#video-box .playing-btn{
+	background-image:url(./img/btn_play_normal.png);
+}
+
+#video-box .muted{
+	background-image:url(./img/btn_mute_normal.png);
+}
+#video-box .close{
+	background-image: url(./img/btn_closed_normal.png);
+	position:absolute;
+	width: 0.24rem;
+    height: 0.24rem;
+    cursor: pointer;
+	right: 0.05rem;
+	top: 0.05rem;
+    background-position: center;
+}
+
+
+#mp4 .video-controller{
+	position: relative;
+	background: black;
+	
+}
+#mp4 .play-container{
+	position:absolute;
+	top: -0.04rem;
+}
+#mp4 .video-controller .play-container{
+	height:0.2rem;
+}
+#mp4 .slider:after{
+	content:"";
+	display: block;
+	height:0.1rem;
+}
+#mp4 .slider:before{
+	content:"";
+	display: block;
+	position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    top: -0.1rem;
+}

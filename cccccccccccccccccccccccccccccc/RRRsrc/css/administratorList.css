@@ -1,0 +1,135 @@
+.tk-list-left-div{
+    overflow: auto;
+    height:100%;
+}
+.tk-list-left-div .scroll-bar  {
+    scrollbar-base-color:rgba(85, 85, 85, 1) ;/*设置滚动条主要构成部分的颜色*/
+    scrollbar-face-color: rgba(103, 100, 103, 0.96);/*设置滚动框和滚动条箭头的颜色*/
+    scrollbar-shadow-color:  rgba(85, 85, 85, 1);/*设置滚动框的和滚动条箭头右下边缘的颜色*/
+    scrollbar-highlight-color: #C3D6DA;/*设置滚动框的和滚动条箭头左上边缘的颜色*/
+    scrollbar-3dlight-color: #3D5054;/*设置滚动框的和滚动条箭头左上边缘的颜色*/
+    scrollbar-darkshadow-color: #85989C;
+    scrollbar-track-color: rgba(85, 85, 85, 1); /*设置滚动条轨迹组成部分的颜色*/
+    scrollbar-arrow-color: rgba(121, 119, 121, 0.92);/*设置滚动条箭头的颜色*/
+}
+.tk-list-left-div::-webkit-scrollbar{
+    width: 0.06rem;
+    height: 0.06rem;
+    background: #182236;
+}
+.tk-list-left-div::-webkit-scrollbar-thumb{
+    background: rgba(85, 85, 85, 1);
+}
+.tk-list-left
+{
+    padding: 0 0.14rem;
+    height: 0.52rem;
+    border-bottom: 0.01rem solid #3c486a;
+    color: #9ba6bf;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+.tk-list-left.active{
+    background: #202c44;
+}
+.tk-list-left .tk-list-left-icon{
+    width: 0.24rem;
+    height: 0.24rem;
+    display: inline-block;
+    float: left;
+}
+.tk-icon-whiteboard{
+    width: 0.24rem;
+    height: 0.24rem;
+    background: url(../img/call_layout/left/icon_empty_normal.png) no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+}
+.tk-whiteboard-textContent{
+    padding-left: 0.1rem;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    line-height: 0.52rem;
+    font-size: 0.14rem;
+}
+.class-folders{
+    width:100%;
+    height: 0.4rem;
+    background: #283657;
+    position: relative;
+}
+.class-folders.active{
+    background: #6296ff;
+}
+.class-folders-text{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    color: white;
+    font-size: 0.16rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+.class-folders-change-img{
+    width: 0.58rem;
+    height:100%;
+    display: inline-block;
+    background-image: url(../img/Icon/icon_up.png) ;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    right: 0;
+}
+.class-folders-change-img.active{
+    background-image: url(../img/Icon/icon_down.png) ;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+.system-folders{
+    width:100%;
+    height: 0.4rem;
+    background: #283657;
+    position: relative;
+}
+.system-folders.active{
+    background: #6296ff;
+}
+.system-folders-text{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    color: white;
+    font-size: 0.16rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+.system-folders-change-img{
+    width: 0.58rem;
+    height:100%;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../img/Icon/icon_up.png) ;
+    background-position: 50% 50%;
+    position: absolute;
+    right: 0;
+}
+.system-folders-change-img.active{
+    background-image: url(../img/Icon/icon_down.png) ;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

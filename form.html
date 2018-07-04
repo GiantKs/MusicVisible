@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="sb">
+    asdasda
+    <p class="a">1</p>
+    <p class="a" id="target" onclick="aa">2</p>
+    <p class="a">3</p>
+    <p class="a"> =3</p>
+    <p id="q" class="a">4</p></div>
+</body>
+</html>
+<script>
+
+    function aa() {
+        console.log(12);
+    }
+
+
+    let findIndex = Array.from(sb.childNodes).findIndex((value,index)=>{
+        return value === q;
+    });
+     var ary=[]
+
+    /*Array.from(sb.childNodes).forEach(function (item,index) {
+        console.log(item);
+        if( item.nodeType == 3 || item.nodeType == 1 ){
+            if(item.nodeType == 3 && typeof(item.nodeValue) !== 'string'){
+                console.log(12121);
+                return
+            }
+            ary.push(item)
+        }
+    })*/
+
+
+
+    console.log(findIndex);
+
+
+
+
+</script>

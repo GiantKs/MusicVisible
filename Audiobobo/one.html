@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+               transition: 0.1s height;
+        }
+        #nb{
+            height: 500px;
+            display: flex;
+            width: 600px;
+            margin:0 auto;
+        }
+        #wyw{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+        #wywr{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+        #wywe{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+        #wyww{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+        #wywq{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+        #wywt{
+            width: 100px;
+            background-image: linear-gradient(to bottom, lightgrey,black);
+            align-self: flex-end;
+            border-radius: 50px 50px 0 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="nb">
+    <div id="wyw"></div>
+    <div id="wywq"></div>
+    <div id="wyww"></div>
+    <div id="wywe"></div>
+    <div id="wywr"></div>
+    <div id="wywt"></div>
+</div>
+<input type="file" accept="audio/mp3" id="rng">
+
+</body>
+</html>
+<script>
+
+/*
+    /!*=====================================*!/
+    /!* 创建一个 AudioContext *!/
+    var context;
+
+    /!* 尝试初始化一个新的 AudioContext, 如果失败抛出 error *!/
+    try {
+        /!* 创建 AudioContext. *!/
+        context = new AudioContext();
+    } catch(e) {
+        throw new Error('The Web Audio API is unavailable');
+    }
+/!*=======================================*!/
+    /!*一个新的 XHR 对象 *!/
+    var xhr = new XMLHttpRequest();
+    /!* 通过 GET 请连接到 .mp3 *!/
+    xhr.open('GET', '/path/to/audio.mp3', true);
+    /!* 设置响应类型为字节流 arraybuffer *!/
+    xhr.responseType = 'arraybuffer';
+    xhr.onload = function() {
+        /!* arraybuffer 可以在 xhr.response 访问到 *!/
+    };
+    xhr.send();
+    /!*======================================*!/
+
+    /!* demo的音频缓冲缓冲源 *!/
+    var sound;
+
+    xhr.onload = function() {
+        sound = context.createBufferSource();
+
+        context.decodeAudioData(xhr.response, function(buffer) {
+            /!* 将 buffer 传入解码 AudioBuffer. *!/
+            sound.buffer = buffer;
+            /!*连接 AudioBufferSourceNode 到 AudioContext *!/
+            sound.connect(context.destination);
+        });
+    };
+*/
+
+/*/!* 声明我们的 MediaElementAudioSourceNode 变量 *!/
+var sound,
+    /!* 新建一个 `<audio>` 元素. Chrome 支持通过 `new Audio()` 创建,
+     * Firefox 需要通过 `createElement` 方法创建. *!/
+    audio = new Audio();
+
+/!* 添加 `canplay` 事件侦听当文件可以被播放时. *!/
+audio.addEventListener('canplay', function() {
+    /!* 现在这个文件可以 `canplay` 了, 从 `<audio>` 元素创建一个
+     * MediaElementAudioSourceNode(媒体元素音频源结点) . *!/
+    sound = context.createMediaElementSource(audio);
+    /!* 将 MediaElementAudioSourceNode 与 AudioContext 关联 *!/
+    sound.connect(context.destination);
+    /!*通过我们可以 `play` `<audio>` 元素了 *!/
+    audio.play();
+});
+audio.src = '/path/to/audio.mp3';*/
+
+
+/* Hoist some variables. */
+var ary=[];
+function getObjectURL(file) {
+    var url = null;
+    if (window.createObjcectURL != undefined) {
+        url = window.createOjcectURL(file);
+    } else if (window.URL != undefined) {
+        url = window.URL.createObjectURL(file);
+    } else if (window.webkitURL != undefined) {
+        url = window.webkitURL.createObjectURL(file);
+    }
+    return url;
+}
+
+rng.onchange=function (e) {
+    if(!rng.files[0]){return ;}
+    loadAudioElement(getObjectURL(rng.files[0])).then(function(elem) {
+        ary.forEach((item)=>{
+            item.pause()
+        })
+        /* Instantiate the Sound class into our hoisted variable. */
+        audio = Object.create(Sound);
+        /* Set the element of `audio` to our MediaElement. */
+        audio.element = elem;
+        /* Immediately play the file. */
+        audio.play();
+    }, function(elem) {
+        /* Let's throw an the error from the MediaElement if it fails. */
+        throw elem.error;
+    });
+
+}
+
+
+/* Define a `Sound` Class */
+var Sound = {
+    element: undefined,
+    play: function() {
+        var sound = context.createMediaElementSource(this.element);
+        this.element.onended = function() {
+            sound.disconnect();
+            sound = null;
+            /* 当文件结束时置空事件处理 */
+            processor.onaudioprocess = function() {};
+        }
+        /* 连接到 analyser. */
+        sound.connect(analyser);
+        sound.connect(context.destination);
+
+        processor.onaudioprocess = function() {
+            /* 产生频率数据 */
+            analyser.getByteTimeDomainData(data);
+        };
+        /* 调用 MediaElement 的 `play`方法. */
+        ary.push(this.element)
+        this.element.play();
+    }
+};
+
+/* Create an async function which returns a promise of a playable audio element. */
+function loadAudioElement(url) {
+    return new Promise(function(resolve, reject) {
+        var audio = new Audio();
+        audio.addEventListener('canplay', function() {
+            /* Resolve the promise, passing through the element. */
+            resolve(audio);
+        });
+        /* Reject the promise on an error. */
+        audio.addEventListener('error', reject);
+        audio.src = url;
+    });
+}
+
+/* Let's load our file. */
+/*
+loadAudioElement('./aa.mp3').then(function(elem) {
+    /!* Instantiate the Sound class into our hoisted variable. *!/
+    audio = Object.create(Sound);
+    /!* Set the element of `audio` to our MediaElement. *!/
+    audio.element = elem;
+    /!* Immediately play the file. *!/
+    audio.play();
+}, function(elem) {
+    /!* Let's throw an the error from the MediaElement if it fails. *!/
+    throw elem.error;
+});
+*/
+
+
+
+
+/* 声明变量 */
+var audio,
+    context = new (window.AudioContext ||
+        window.webAudioContext ||
+        window.webkitAudioContext)(),
+    /* 创建一个1024长度的缓冲区 `bufferSize` */
+    processor = context.createScriptProcessor(1024),
+    /*创建一个分析节点 analyser node */
+    analyser = context.createAnalyser();
+
+/* 将 processor 和 audio 连接 */
+processor.connect(context.destination);
+/* 将 processor 和 analyser 连接 */
+analyser.connect(processor);
+
+/* 定义一个 Uint8Array 字节流去接收分析后的数据 */
+var data = new Uint8Array(analyser.frequencyBinCount);
+
+
+window.setInterval(()=>{
+    wyw.style.height=data[0]+100+'px';
+    wywq.style.height=data[200]+100+'px';
+    wyww.style.height=data[400]+100+'px';
+    wywe.style.height=data[600]+100+'px';
+    wywr.style.height=data[800]+100+'px';
+    wywt.style.height=data[1000]+100+'px';
+    console.log(data,888);
+},80)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<srcipt>
+    <!--http://ourjs.com/detail/54d48406232227083e000029?utm_source=tuicool-->
+</srcipt>

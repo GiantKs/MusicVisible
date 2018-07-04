@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+/*登陆界面布局样式*/
+.wait-room-wrap{
+    color: #b8c1d0;font-size: 40px;
+}
+.add-letter-spacing-5px{
+    letter-spacing: 5px;
+}
+
+.join {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#join-title {
+    display: inline-flex;
+    font-size: 0.45rem;
+    font-weight: bold;
+    color: #555;
+    padding-left: 0.5rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0rem;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    margin: auto 0 auto 0;
+}
+/*:-moz-placeholder {
+    color: #c9c9c9 !important;
+    font-size: 0.65rem;
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: 0.65rem;
+}*/

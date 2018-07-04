@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="a">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</div>
+</body>
+</html>
+<script>var obj= {a:60,b:30,c:50,d:666,e:1,f:2,extra:5}
+   var li= [...a.getElementsByTagName('li')];
+   li.forEach((item,index)=>{
+       item.aa=index;
+       item.onclick=function () {
+           console.log(Object.keys(obj)[this.aa]);
+       }
+   });
+   /* a.style.backgroundImage='url(QQ图片20180327142301.jpg)'*/
+
+   console.log(obj[Object.keys(obj)[3]]);
+
+
+</script>

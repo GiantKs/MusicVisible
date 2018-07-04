@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  id='a' enctype="multipart/form-data" method="post" name="fileinfo">
+    <input type="text"  name="aaaa" value="aaa" readonly>
+</form>
+</body>
+</html>
+<script>
+    var newFormData = new FormData(a);
+
+    console.log(newFormData);
+
+    if(newFormData){
+        console.log('woshinidie');
+        var oAjax = new XMLHttpRequest();//创建ajax对象
+        oAjax.open("POST","a.txt?t='+new Date().getTime()",true);//加上t='+new Date().getTime()"的目的是为了消除缓存，每次的t的值不一样。
+        oAjax.send(newFormData);
+        oAjax.onreadystatechange=function()
+        {
+            //oAjax.readyState  //浏览器和服务器，进行到哪一步了。
+            //0->（未初始化）：还没有调用 open() 方法。
+            //1->（载入）：已调用 send() 方法，正在发送请求。
+            //2->载入完成）：send() 方法完成，已收到全部响应内容。
+            //3->（解析）：正在解析响应内容。
+            //4->（完成）：响应内容解析完成，可以在客户端调用。
+            if(oAjax.readyState==4)
+            {
+                if(oAjax.status==200)//判断是否成功,如果是200，就代表成功
+                {
+                    alert("成功"+oAjax.responseText);//读取a.txt文件成功就弹出成功。后面加上oAjax.responseText会输出a.txt文本的内容
+                }
+                else
+                {
+
+                }
+            }
+        };
+    }
+    var ido = new Promise(function (res,rej) {
+              Math.random()>0.5? setTimeout(()=>{res()},1000):setTimeout(()=>{rej()},1360)
+    })
+
+    ido.then(function () {
+        console.log('打！！');
+        setTimeout(()=>{alert("立刻行动起来")},1360)
+    },function () {
+        console.log('不打！！');
+    })
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var a=Symbol('a')
+    var b=Symbol('a')
+    console.log(a === b);
+
+    function timeout(ms) {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, ms, 'done');
+        });
+    }
+
+    timeout(100).then((value) => {
+        console.log(value);
+    });
+
+
+    function loadimg() {
+        var img=new Image();
+         img.onload=function () {
+            console.log('我日');
+        };
+        img.onerror=function () {
+            console.log('我日1');
+        };
+         img.src='http://img.zcool.cn/community/01ceff57bdaa2a0000012e7ea5534a.jpg@2o.jpg' ;
+    }
+    loadimg();
+
+
+
+    function loadImageAsync(url) {
+        return new Promise(function(resolve, reject) {
+            const image = new Image();
+
+            image.onload = function() {
+                resolve(image);
+            };
+
+            image.onerror = function() {
+                reject(new Error('Could not load image at ' + url));
+            };
+
+            image.src = url;
+        });
+    }
+    loadImageAsync('http://img.zcool.cn/community/01ceff57bdaa2a0000012e7ea5534a.jpg@2o.jpg' ).then(function (a) {
+        console.log(a);
+    },function (e) {
+        console.log(e);
+    })
+</script>

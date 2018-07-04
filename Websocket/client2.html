@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        margin: 100px auto;
+        width: 600px;
+        height: 1000px;
+        overflow: auto;
+    }
+
+</style>
+<body>
+<div id="div">
+
+</div>
+</body>
+</html>
+<script>
+    var ws = new WebSocket("ws://localhost:8080");
+    ws.onmessage = function(evt) {
+        console.log(evt);
+        var element = document.createElement("li");
+        element.innerText= evt.data;
+        div.appendChild(element);
+    };
+</script>

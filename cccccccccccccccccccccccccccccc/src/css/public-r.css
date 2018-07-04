@@ -1,0 +1,16 @@
+/*
+公用方法类
+common functional class
+*/
+.flex-l,
+.flex-c,
+.flex-r {
+    display: flex;
+    justify-content: flex-start;
+}
+.flex-c {
+    justify-content: center;
+}
+.flex-r {
+    justify-content: flex-end;
+}

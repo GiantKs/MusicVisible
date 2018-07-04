@@ -1,0 +1,475 @@
+@charset "UTF-8";
+.vvideo , .hvideo {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.Talk_player{
+	background: transparent!important;
+}
+.Talk_loader{
+	display: none!important;
+}
+
+/*视频框:*/
+.video-container{
+    background-color:  #283658;
+    height: 100%;
+	z-index: 121;
+}
+.video-container .video-participants-vessel{
+	width: 3.7rem;
+	margin: 0 0.1rem;
+}
+.clear-float.video-participants-vessel.areaExchange {
+	position: fixed;
+	top: .38rem;
+	left: .4rem;
+	height: calc(100% - .6rem);
+	width: calc(100% - 4.4rem);
+}
+.areaExchange .video-chairman-wrap,
+.areaExchange .video-permission-container.add-position-relative.clear-float,
+.video-container .areaExchange .video-wrap{
+	height: 100%;
+}
+.video-container .video-chairman-wrap .video-wrap{
+	background: #1a2642 url(../img/call_layout/user/chairman.png) no-repeat center center;
+	background-size: 1.39rem 1.4rem;
+}
+.video-container .video-hearer-wrap .video-wrap{
+	background: #1a2642 url(../img/call_layout/user/hearer.png) no-repeat center center;
+	background-size: 1.24rem 1.42rem;
+}
+.gift-btn.display-none {
+	display: none;
+}
+.video-chairman-wrap .video-hover-function-container .button-set button.scrawl-btn,
+.video-chairman-wrap .video-hover-function-container .button-set button.platform-btn,
+.video-chairman-wrap .video-hover-function-container .button-set button.gift-btn,
+.video-chairman-wrap .v-name-wrap .v-device-open-close,
+.video-chairman-wrap .gift-show-container{
+	display: none;
+}
+.video-container .video-permission-container{
+	margin-top:0.1rem ;
+}
+.video-container .video-wrap{
+    width:95.1219512195122%;
+    width: -webkit-calc(100% - (2.4390243902439% * 2) );
+    width: -moz-calc(100% - (2.4390243902439% * 2) );
+    width: calc(100% - (2.4390243902439% * 2) );
+    margin: 2.4390243902439%  2.4390243902439% 0 2.4390243902439%;
+}
+.video-container div.video-wrap {
+    margin: 0;
+    width: 100%;
+}
+.video-container .video-wrap {
+    position: relative;
+    float: left;
+    display: block;
+    z-index: 10;
+    overflow: hidden;
+    background: #1a2642 url("../img/call_layout/user/teacher_normal.png") no-repeat center center;
+	background-size: 100% 100% ;
+}
+.video-container .video-wrap {
+    /*padding-top: 75%;*/
+   	height: 2.775rem;
+}
+
+.video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    left:0;
+    top:0;
+}
+.video video , .video .participant{
+	background: transparent;
+	position: relative;
+}
+
+.video-permission-container.reset-video-ratio .video{
+	background-color: rgba(0,0,0,1);
+}
+
+.participant-container{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.v-name-wrap{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.24rem;
+    line-height: 0.24rem;
+    z-index: 100;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+}
+
+.video-wrap .user-network-delay{
+	/*width: 0.6rem;*/
+	height: 0.2rem;
+	line-height: 0.2rem;
+	position: absolute;
+	top: 0.05rem;
+	left: 0;
+	display: inline-block;
+	padding-right: 0.1rem;
+	background-color: #23251F;
+	border-top-right-radius:0.1rem;
+	border-bottom-right-radius:0.1rem;
+	color: #41BF33;
+}
+.video-wrap .user-network-delay span{
+	display: inline-block;
+	vertical-align: top;
+}
+.video-wrap .user-network-delay .user-network-dot{
+	width: 0.06rem;
+	height: 0.06rem;
+	border-radius: 50%;
+	margin:0.07rem 0.05rem;
+	background-color: #41BF33;
+}
+.video-wrap .user-network-delay .user-network-delay-num{
+	height: 100%;
+}
+
+.v-name-wrap .v-name{
+	text-align: left;
+    color: #fff;
+    padding-left:4.1025641025641%;
+    height: 100%;
+    flex: 1;
+    width: calc(100% - 4.1025641025641% - 0.6rem );
+}
+.v-name-wrap .v-device-open-close{
+    width: auto;
+    height: 100%;
+}
+.v-name-wrap .v-device-open-close button{
+    display: block;
+    float: right;
+    width: 0.24rem;
+    height: 0.24rem;
+    background: url("../img/call_layout/right/icon_camera_disabled.png") no-repeat center center;
+    background-size:0.24rem 0.24rem ;
+}
+.user-icon-wrap .user-icon-container .v-user-update-icon,.user-icon-wrap .user-icon-container .pencil-icon{
+	cursor: pointer;
+	height: 0.3rem;
+	margin-top: 0.11rem;
+}
+/*图标cssToolExtendListVessel.css组件里已加载过*/
+/*.video-participant-wrap .v-name-wrap .v-device-open-close .v-device-microphone.on{
+	background-image:url("../img/call_layout/left/video/icon_audio_on.png") ;
+}
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-device-microphone.off{
+	background-image:url("../img/call_layout/left/video/icon_audio_off.png") ;
+}
+
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-device-video.on{
+    background-image:url(../img/call_layout/left/video/icon_video_on.png);
+}
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-device-video.off{
+    background-image:url(../img/call_layout/left/video/icon_video_off.png);
+}
+
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-user-update.on{
+	background-image:url("../img/call_layout/left/video/icon_user_on.png") ;
+}
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-user-update.off{
+	background-image:url("../img/call_layout/left/video/icon_user_off.png") ;
+}
+
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.on{
+	background-image:url("../img/call_layout/left/video/icon_tools_on.png") ;
+}
+.video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.off{
+	background-image:url("../img/call_layout/left/video/icon_tools_off.png") ;
+}*/
+.video-wrap:hover .background-mode-float{
+	z-index: 160;
+	height: auto;
+	background:transparent;
+}
+.background-mode-float{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	height: 100%;
+	z-index: 140;
+	background: rgba(0,0,0,0.6);
+	display: none;
+	text-align: center;
+}
+.background-mode-float .background-mode-prompt{
+	background-color: #3278fe;
+	color: #fff;
+	margin-top: 0.1rem;
+	display: inline-block;
+	padding: 0.05rem 0.1rem;
+	border-radius: 0.05rem;
+}
+.video-hover-function-container,.video-student-set-container{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 150;
+	background: rgba(0,0,0,0.6);
+	display: none;
+	text-align: center;
+}
+.video-hover-function-container button,.video-student-set-container button{
+	width: 1rem;
+	height: 0.3rem;
+	box-sizing: content-box;
+	border: 0.01rem solid #fff;
+	color: #fff;
+	border-radius: 0.03rem;
+	margin-bottom: 0.06rem;
+	font-size: 0.12rem;
+	overflow: hidden;
+	background-color: #000000;
+	display: block;
+}
+.video-hover-function-container button.disabled,.video-student-set-container button.disabled{
+	border-color: #DDDDDD;
+	color: #DDDDDD;
+}
+.video-hover-function-container .button-set,.video-student-set-container .button-set{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.video-wrap:hover .video-hover-function-container{
+	display: block;
+}
+.hvideo_container .video-wrap:hover .video-student-set-container,
+.video-hearer-wrap .video-wrap:hover .video-student-set-container{
+	display: block;
+}
+
+div.video-participant-raise{
+	width: 100%;
+	height: 0.54rem;
+	background-color: #1250c4;
+	color: #fff;
+	padding: 0.1rem;
+	z-index: 100;
+	top: -0.54rem;
+}
+.video-participant-raise .content{
+	line-height: 0.34rem;
+}
+.video-participant-raise button{
+	margin-left: 0.1rem;
+	border-radius: 0.02rem;
+	cursor: pointer;
+	float: right;
+	width: 0.52rem;
+	height: 0.34rem;
+}
+.video-participant-raise .yes{
+	background-color: #f03a0e;
+}
+.video-participant-raise .no{
+	background-color: #3278fe;
+}
+.video-participant-raise .close{
+	width: 0.1rem;
+	height: 0.1rem;
+	background: url(../img/call_layout/bottom/btn_close.png) no-repeat center center;
+	background-size:0.1rem 0.1rem ;
+	margin-top: 0.12rem;
+}
+.gift-show-container{
+	position: absolute;
+	left: 0.1rem;
+	bottom: 0.34rem;
+	background-color: #211e10;
+	color: #fcd000;
+	padding: 0 0.06rem 0 0.25rem;
+	border-radius: 0.1rem;
+	z-index: 99;
+	height: 0.22rem;
+	font-size: 0.14rem;
+}
+.gift-show-container .gift-icon{
+	position: absolute;
+	width: 0.16rem;
+	height: 0.16rem;
+	left: 0.055rem;
+	top: 0.03rem;
+	background: url(../img/call_layout/bottom/icon_award.png) no-repeat center center;
+	background-size: 0.16rem 0.16rem;
+}
+/*.video-container .video-chairman-wrap .video-participant-wrap:hover .video-hover-function-container.role-chairman.role-teaching-assistant:not(.not-hover){
+	display: none;
+}*/
+.hvideo_container {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	background: #1a2642;
+}
+.hvideo_container ol{
+	width: 100%;
+	height: 100%;
+	display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+	justify-content: flex-start;
+}
+.other-video-container{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+.other-video-container .video-wrap:after{
+	padding-top: 75%;
+	display: inline-block;
+	content: '';
+}
+.hvideo_container ol li,.hvideo_container ol .stretch-video{
+	/*max-width: 15.6666666666666%;*/
+	/*width: 15.6666666666666%;*/
+	/*width: calc(100% / 6 - 0.15rem );*/
+	/*max-width: calc(100% / 6 - 0.1166666666666667rem );*/
+	/*position: relative;*/
+	width: calc(100% / 6 - 0.15rem );
+	height:calc((100% / 6 - 0.15rem ) * 3 / 4);
+	margin: 0.09rem 0 0.09rem 0.12rem;
+	z-index: 120;
+}
+
+.hvideo_container ol .stretch-video{
+	padding:0.1rem;
+	cursor:e-resize;
+	background-color: #ffffff;
+	margin: 0;
+}
+.hvideo_container ol .video-permission-container.margin-clear{
+	margin:0;
+}
+
+.hvideo_container ol li:last-of-type{
+	margin-right: 0.1rem;
+}
+.hvideo_container ol li .video-wrap{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #223050 url("../img/call_layout/user/student_small_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+}
+.hvideo_container ol li .video-wrap  .v-name {
+	width: 55%;
+	width: calc(100% - 0.9rem -  4.1025641025641%);
+}
+/*.hvideo_container .video-hover-function-container{
+	width: 100%;
+	height: 0.4rem;
+	top:-0.4rem;
+}
+.hvideo_container .video-hover-function-container .button-set.role-student{
+	!*margin-top: -0.72rem;*!
+	width: auto;
+	height: 100%;
+	display: flex;
+	top:0;
+	left: 0;
+	transform: none;
+}
+.hvideo_container .video-hover-function-container button{
+	width: 0.3rem;
+	height: 0.3rem;
+	box-sizing: border-box;
+	border-radius: 0.03rem;
+	background: transparent;
+	border: none;
+	background-size: 100%;
+	margin: 0.05rem 0 0 0.16rem;
+}*/
+/*老师端，学生框按钮图片：*/
+/*
+.hvideo_container .video-hover-function-container .scrawl-btn{
+	background-image: url("../img/call_layout/left/video/button/icon_control_tools_01.png");
+}
+.hvideo_container .video-hover-function-container .platform-btn{
+	background-image: url("../img/call_layout/left/video/button/icon_control_down.png");
+}
+.hvideo_container .video-hover-function-container .audio-btn{
+	background-image: url("../img/call_layout/left/video/button/icon_control_mute.png");
+}
+.hvideo_container .video-hover-function-container .video-btn{
+	background-image: url("../img/call_layout/left/video/button/icon_control_camera_02.png");
+}
+.hvideo_container .video-hover-function-container .gift-btn{
+	background-image: url(../img/call_layout/left/video/button/icon_control_gift.png);
+}
+*/
+
+/*关闭时：*/
+/*
+.hvideo_container .video-hover-function-container .scrawl-btn.off{
+	background-image: url("../img/call_layout/left/video/button/icon_control_tools_02.png");
+}
+.hvideo_container .video-hover-function-container .platform-btn.off{
+	background-image: url("../img/call_layout/left/video/button/icon_control_up.png");
+}
+.hvideo_container .video-hover-function-container .audio-btn.off{
+	background-image: url("../img/call_layout/left/video/button/icon_control_audio.png");
+}
+.hvideo_container .video-hover-function-container .video-btn.off{
+	background-image: url("../img/call_layout/left/video/button/icon_control_camera_01.png");
+}
+*/
+
+.video-participant-raise-btn{
+	width: 0.3rem;
+	height: 0.3rem;
+	background: rgba(0,0,0,0) url(../img/call_layout/left/video/icon_hand.png) no-repeat center center;
+	background-size: 0.3rem 0.3rem;
+	display: none;
+}
+
+.live-broadcast .media-control{/*直播控制条隐藏*/
+	display: none !important;
+}
+
+.player-poster[data-poster] .play-wrapper[data-poster] svg{
+	width: 0.5rem;
+	height: auto!important;
+}
+.Talk_stream
+{
+	/*object-fit: fill;*/ /*tkpc2.0.8*/
+}
+.hvideo
+{
+	/*overflow: hidden;*//*tkpc2.0.8*/
+}
+

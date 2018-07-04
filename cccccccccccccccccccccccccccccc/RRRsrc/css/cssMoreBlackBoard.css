@@ -1,0 +1,289 @@
+@charset "UTF-8";
+.black-board-container{
+    position: absolute;
+    width: 7.2rem;
+    z-index: 120;
+    transition-property:left,top;
+    transition-duration:0.4s;
+    /*transition: transform 0.4s;*/
+    border: 0.05rem solid rgb(40, 54, 88);
+    background-color:  rgb(40, 54, 88);
+    border-radius: 0.04rem;
+}
+.black-board-container .title-container{
+    height: 0.44rem;
+    position: relative;
+    line-height: 0.44rem;
+    vertical-align: middle;
+    background: #081b36;
+}
+.black-board-container .title-container .title{
+    color: #ffffff;
+    font-size: 0.14rem;
+    padding-left: 0.3365rem;
+}
+.black-board-container .title-container .close{
+    position: absolute;
+    margin-top: 0.075rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    background: url("../img/call_layout/blackboard/blackboard_close.png") no-repeat center center ;
+    background-size: 0.15rem auto;
+    right: 0.05rem;
+    cursor: pointer;
+}
+.black-board-container .title-container .close:hover{
+    background-image: url("../img/call_layout/blackboard/blackboard_close_hover.png");
+}
+.black-board-container  .tap-container .prev , .black-board-container  .tap-container .next{
+    width: 0.176rem;
+    height: 0.3352rem;
+    background: no-repeat center center ;
+    background-size: 0.07583rem auto;
+    position: relative;
+}
+.black-board-container  .tap-container .prev{
+    background-image: url("../img/call_layout/blackboard/prev.png");
+}
+.black-board-container  .tap-container .prev.disabled{
+    opacity: 0.65;
+    background-image: url("../img/call_layout/blackboard/prev_disabled.png");
+}
+.black-board-container  .tap-container .next{
+    background-image: url("../img/call_layout/blackboard/next.png");
+}
+.black-board-container  .tap-container .next.disabled{
+    opacity: 0.65;
+    background-image: url("../img/call_layout/blackboard/next_disabled.png");
+}
+.black-board-container  .tap-container {
+    display: flex;
+    border-bottom: 0.01rem solid #081b36;
+    background-color: #ffffff;
+}
+.black-board-container .tap-container .tap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+.black-board-container .tap-container .tap .tap-option {
+    float: left;
+    flex: 1;
+    /*width: 14.28571428571429%;
+    max-width: 14.28571428571429%;
+    min-width: 14.28571428571429%;*/
+    text-align: center;
+    height: 0.3352rem;
+    line-height: 0.3352rem;
+    position: relative;
+    cursor: pointer;
+    transition: margin-left 0.3s linear;
+}
+.black-board-container .tap-container .tap .tap-option.disabled{
+    pointer-events:none!important;
+    cursor: default !important;
+}
+.black-board-container .tap-container .tap .tap-option::after , .black-board-container  .tap-container .prev::after , .black-board-container  .tap-container .next::before{
+    position: absolute;
+    width: 0.01rem;
+    height: 0.1325rem;
+    background: #C1BFBF;
+    content: '';
+    right: 0;
+    top: 50%;
+    margin-top: -0.06725rem;
+}
+.black-board-container  .tap-container .next::before{
+    right: auto;
+    left: 0;
+}
+.black-board-container .tap-container .tap .tap-option:last-child::after{
+    display: none;
+}
+.black-board-container  .tap-container .tap .tap-option .text{
+    width: calc(100% - 0.01rem);
+    color: #000;
+    /* margin-left: -0.01rem; */
+    height: 100%;
+    display: block;
+}
+.black-board-container  .tap-container .tap .tap-option:last-of-type .text{
+    width: 100%;
+}
+.black-board-container  .tap-container .tap .tap-option.active .text{
+    background-color: #368BCB;
+    color: #fff!important;
+}
+
+.black-board-container  .tap-container .tap .tap-option:not(.disabled):hover .text{
+    color: #368BCB;
+}
+
+
+.black-board-container .tab-content-container .tab-content{
+
+}
+.black-board-container .tab-content-container .tab-content .tab-content-option{
+    width:100%;
+    height:100%;
+    background: #ffffff;
+}
+.black-board-container .blackboard-tool-container{
+    display: flex;
+    position: relative;
+    background: #081b36;
+    height: 0.46rem;
+}
+.black-board-container .blackboard-tool-container .blackboard-tool{
+    flex: 1;
+}
+.blackboard-tool .blackboard-tool-option{
+    float: left;
+}
+.blackboard-tool .blackboard-tool-option .tool-btn{
+    width: 0.3rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    text-align: center;
+    background:   no-repeat center center ;
+    background-size: 100% auto ;
+    margin: 0.08rem 0 0 0;
+    opacity: 1;
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.active{
+    background-color: #202c4a;
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.pencil-icon{
+    margin-left:0.3365rem;
+    background-image:url("../img/call_layout/blackboard/pen.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.pencil-icon:not(.active):hover{
+    background-image:url("../img/call_layout/blackboard/pen_hover.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.text-icon{
+    background-image:url("../img/call_layout/blackboard/text.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.text-icon:not(.active):hover{
+    background-image:url("../img/call_layout/blackboard/text_hover.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.eraser-icon{
+    background-image:url("../img/call_layout/blackboard/eraser.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.eraser-icon:not(.active):hover{
+    background-image:url("../img/call_layout/blackboard/eraser_hover.png");
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.colors-icon{
+    /*background-image:url("../img/call_layout/blackboard/color.png");*/
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.colors-icon:not(.active):hover{
+    /*background-image:url("../img/call_layout/blackboard/color_hover.png");*/
+}
+.blackboard-tool .blackboard-tool-option .tool-btn.colors-icon .current-color{
+    width: 60%;
+    margin: 20% 20%;
+    height: 60%;
+    display: block;
+}
+
+.blackboard-tool  .blackboard-tool-option.colors:hover .blackboard-color-size-box {
+    display: block;
+}
+.blackboard-tool  .blackboard-tool-option .blackboard-color-size-box {
+    width: 1.2rem;
+    overflow: hidden;
+    position: absolute;
+    bottom: calc(100% - 0.08rem);
+    right: calc(-1.9 * 0.24rem);
+    padding: 0 0.01rem;
+    background-color: #091A35;
+    color: #fff;
+    display: none;
+}
+.blackboard-color-size-box p{
+    height: 0.32rem;
+    line-height: 0.32rem;
+    padding-left: 0.05rem;
+}
+.blackboard-color-size-box .colors-container-title{
+    border-top:0.01rem solid #b8c1d0;
+    margin-top: 0.04rem;
+}
+.blackboard-color-size-box .tool-size-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.1rem 0 0.08rem;
+}
+.blackboard-color-size-box .tool-size-container li{
+    width: 0.24rem;
+    height: 0.24rem;
+    border: 0.01rem solid #323232;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blackboard-color-size-box .tool-size-container li span{
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+.blackboard-color-size-box .tool-size-container li.size-small span{
+    width: 0.03rem;
+    height: 0.03rem;
+}
+.blackboard-color-size-box .tool-size-container li.size-middle span{
+    width: 0.06rem;
+    height: 0.06rem;
+}
+.blackboard-color-size-box .tool-size-container li.size-big span{
+    width: 0.09rem;
+    height: 0.09rem;
+}
+.blackboard-color-size-box .tool-size-container li.active{
+    border-color: #ffffff;
+}
+.blackboard-tool  .blackboard-tool-option .colors-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.blackboard-tool  .blackboard-tool-option .colors-container .color-option {
+    width: 0.24rem;
+    height: 0.24rem;
+    border: 0.01rem solid #323232;
+    box-sizing: border-box;
+    margin: 0.02rem;
+}
+.blackboard-tool  .blackboard-tool-option .colors-container .color-option.active{
+    border-color: #ffffff;
+}
+.black-board-container .blackboard-tool-container   .blackboard-send-btn {
+    padding: 0 0.2rem;
+    height: 0.39rem;
+    background-color: #3C75BB;
+    border-radius: 0.03rem;
+    color: #fff;
+    margin: 0.035rem 0.15rem 0 0;
+    opacity:1;
+}
+
+.black-board-container .blackboard-tool-container   .blackboard-send-btn:hover{
+    background-color: #5984C3;
+    opacity:1;
+}
+.black-board-container  .blackboard-thumbnail-image{
+    position: absolute;
+    margin-top: 0.075rem;
+    /*width: 0.25rem;*/
+    height: 0.25rem;
+    background: no-repeat center center ;
+    background-size: 0.15rem auto;
+    right: 0.35rem;
+    cursor: pointer;
+    color: #ffffff;
+}

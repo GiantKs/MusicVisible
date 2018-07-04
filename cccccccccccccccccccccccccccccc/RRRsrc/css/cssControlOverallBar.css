@@ -1,0 +1,132 @@
+@charset "UTF-8";
+.h-tool.all-participant-function{
+    margin: 0 0 0.1rem 0;
+}
+.h-tool.all-participant-function .tl-all-participant-step-down  .tool-img-wrap.on{
+    background-image: url(../img/call_layout/bottom/icon_user_up_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-step-down  .tool-img-wrap.off{
+    background-image: url(../img/call_layout/bottom/icon_user_up_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_aduio_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .header-tool.disabled  .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_aduio_disabled.jpg);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .tool-img-wrap.off{
+    background-image: url(../img/call_layout/left/video/icon_mute_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-gift .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_gift_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-gift .tool-img-wrap.on:hover{
+    background: url("../img/call_layout/left/video/icon_gift_hover.png") no-repeat center center;
+    background-size: 100% auto;
+}
+/*截屏*/
+.h-tool.all-participant-function .tl-all-participant-capture .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .header-tool.disabled  .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .tool-img-wrap.off{
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+}
+
+/*--全体静音和全体发言--*/
+.h-tool.all-participant-function .tl-all-participant-mute .handle-audio-box{
+    width: auto;
+    position: absolute;
+    left:-1rem;
+    top:0;
+    background-color: #202c4a;
+}
+.h-tool.all-participant-function .tl-all-participant-mute .handle-audio-box li{
+    width: 0.5rem;
+    height: 0.5rem;
+    float: right;
+}
+.h-tool.all-participant-function .tl-all-participant-mute .mute_or_speaking_btn.active{
+    background-color: #161e32;
+}
+.h-tool.all-participant-function .tl-all-participant-mute .mute_or_speaking_btn{
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+    background-image: url(../img/call_layout/left/video/icon_aduio_normal.png);
+    background-size: 100%;
+}
+.h-tool.all-participant-function .tl-all-participant-mute .mute_or_speaking_btn:hover{
+    background-image: url(../img/call_layout/left/video/icon_aduio_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_mute_btn .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_aduio_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_mute_btn .tool-img-wrap:hover{
+    background-image: url(../img/call_layout/left/video/icon_aduio_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_mute_btn.disabled .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_aduio_disabled.jpg);
+    cursor: default;
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_speaking .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_mute_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_speaking .tool-img-wrap:hover{
+    background-image: url(../img/call_layout/left/video/icon_mute_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .all_speaking.disabled .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_mute_normal.png);
+    opacity: 0.4;
+    cursor: default;
+}
+/*截屏*/
+.h-tool.all-participant-function .tl-all-participant-capture .handle-capture-box{
+    width: auto;
+    position: absolute;
+    left:-1rem;
+    top:0;
+    background-color: #202c4a;
+}
+.h-tool.all-participant-function .tl-all-participant-capture .handle-capture-box li{
+    width: 0.5rem;
+    height: 0.5rem;
+    float: right;
+}
+.h-tool.all-participant-function .tl-all-participant-capture .allcapture_or_samllcapture_btn.active{
+    background-color: #161e32;
+}
+.h-tool.all-participant-function .tl-all-participant-capture .allcapture_or_samllcapture_btn{
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+    background-size: 100%;
+}
+/*截屏的两个hover，disable，normal*/
+.h-tool.all-participant-function .tl-all-participant-capture .allcapture_or_samllcapture_btn:hover{
+    background-image: url(../img/call_layout/left/video/icon_capture_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .all_capture_btn .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .all_capture_btn .tool-img-wrap:hover{
+    background-image: url(../img/call_layout/left/video/icon_capture_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .all_capture_btn.disabled .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_capture_normal.png);
+    cursor: default;
+}
+.h-tool.all-participant-function .tl-all-participant-capture .small_capture_btn .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_samllcapture_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .small_capture_btn .tool-img-wrap:hover{
+    background-image: url(../img/call_layout/left/video/icon_samllcapture_hover.png);
+}
+.h-tool.all-participant-function .tl-all-participant-capture .small_capture_btn.disabled .tool-img-wrap{
+    background-image: url(../img/call_layout/left/video/icon_samllcapture_normal.png);
+    opacity: 0.4;
+    cursor: default;
+}

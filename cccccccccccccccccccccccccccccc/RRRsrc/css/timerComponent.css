@@ -1,0 +1,373 @@
+.timer-teachTool-wrap {
+	width: 3.6rem;
+	height: 1.4rem;
+	border: 0.01rem solid;
+	background-color: #202C4A;
+	z-index: 999;
+	/*position: absolute;*/
+	/*left: 100rem;*/
+	/*top: 100rem;*/
+}
+
+.timer-teachTool-header {
+	width: 100%;
+	height: 0.28rem;
+	display: flex;
+	justify-content: space-between;
+	background: #0b1c38;
+	color: #bdbdbd;
+	line-height: 0.28rem;
+}
+
+.timer-teachTool-triangle-top {
+	width: 0;
+	height: 0;
+	margin-left: 0.1rem;
+	margin-bottom: 0.05rem;
+	border-left: 0.1rem solid transparent;
+	border-right: 0.1rem solid transparent;
+	border-bottom: 0.1rem solid #F2F2F2;
+	cursor: pointer;
+}
+
+.timer-teachTool-num-div {
+	width: 0.5rem;
+	height: 1.12rem;
+	float: left;
+	margin-left: 0.16rem;
+	margin-top: 0.02rem;
+}
+
+.timer-teachTool-triangle-down {
+	width: 0;
+	height: 0;
+	margin-left: 0.1rem;
+	margin-top: 0.05rem;
+	border-left: 0.1rem solid transparent;
+	border-right: 0.1rem solid transparent;
+	border-top: 0.1rem solid #F2F2F2;
+	cursor: pointer;
+}
+
+.timer-teachTool-triangle-down:hover {
+	border-top: 0.1rem solid green;
+}
+
+.timer-teachTool-triangle-top:hover {
+	border-bottom: 0.1rem solid green;
+}
+
+.timer-teachTool-num-content {
+	height: 0.7rem;
+	width: 0.4rem;
+	margin-top: 0.02rem;
+	margin-bottom: 0.02rem;
+	background: #F2F2F2;
+	font-size: 0.6rem;
+	line-height: 0.7rem;
+	text-align: center;
+}
+
+.timer-teachTool-colon {
+	width: 0.2rem;
+	height: 0.7rem;
+	float: left;
+	margin-top: 0.18rem;
+	margin-left: 0.08rem;
+	margin-right: -0.08rem;
+}
+
+.timer-teachTool-colon div {
+	width: 0.05rem;
+	height: 0.05rem;
+	background: #F2F2F2;
+	border-radius: 0.05rem;
+	margin-left: 0.02rem;
+	margin-top: 0.2rem;
+}
+
+.timer-teachTool-startBtn {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer-rectangle-normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 0.35rem;
+	color: white;
+	font-size: 0.12rem;
+	float: left;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	margin-top: 0.15rem;
+}
+
+.timer-teachTool-startBtn:hover {
+	background: url('../img/call/timer-rectangle-press.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.timer-teachTool-stopBtn {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer_stop_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 0.35rem;
+	color: white;
+	display: none;
+	font-size: 0.12rem;
+	float: left;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	margin-top: 0.15rem;
+}
+.timer-teachTool-overBtn {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer_over_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 0.35rem;
+	color: white;
+	display: none;
+	font-size: 0.12rem;
+	float: left;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	margin-top: 0.15rem;
+}
+
+.timer-teachTool-overBtn:hover {
+	background: url('../img/call/timer_over_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.stop-btn-Img {
+	width: 0.6rem;
+	height: 0.6rem;
+	background: url('../img/call/timer_stop_normal.png') no-repeat center center;
+	background-position: 100% 100%;
+	position: absolute;
+	left: 1.2rem; /*tkpc2.0.8*/
+	top: 0.5rem;
+	border-radius: 0.3rem;
+}
+
+.timer-teachTool-closeSpan {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer_close_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	margin-right: 0.05rem;
+	cursor: pointer;/*tkpc2.0.8*/
+}
+
+.timer-teachTool-closeSpan:hover {
+	background: url('../img/call/timer_close_press.png') no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;/*tkpc2.0.8*/
+}
+
+.timer-teachTool-againBtn {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer_again_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 0.35rem;
+	margin-top: 0.15rem;/*tkpc2.0.8*/
+	color: white;
+	font-size: 0.12rem;
+	float: left;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	display: none;
+}
+
+.timer-teachTool-againBtn:hover {
+	background: url('../img/call/timer_again_press.png') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.timer-teachTool-againBtn-unclickable {
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/call/timer_restart_not.png') no-repeat center center;
+	background-size: 100% 100%;
+	text-align: center;
+	line-height: 0.35rem;
+	margin-top: 0.15rem;/*tkpc2.0.8*/
+	color: white;
+	font-size: 0.12rem;
+	float: left;
+	margin-left: 0.2rem;
+	cursor: pointer;
+	display: none;
+}
+
+.timer-teachTool-wrap {
+	width: 3.6rem;
+	height: 1.4rem;
+	border: 0.01rem solid;
+	background-color: #202C4A;
+	z-index: 999;
+	/*position: absolute;*/
+	/*left: 100rem;*/
+	/*top: 100rem;*/
+}
+
+.timer-teachTool-wraps {
+	width: 3rem;
+	height: 1.4rem;
+	border: 0.01rem solid;
+	background-color: #202C4A;
+	z-index: 999;
+	/*position: absolute;*/
+	/*left: 1rem;*/
+	/*top: 1rem;*/
+}
+
+.timer-teachTool-headers {
+	width: 100%;
+	height: 0.28rem;
+	display: flex;
+	justify-content: space-between;
+	background: #0b1c38;
+	color: #bdbdbd;
+	line-height: 0.28rem;
+}
+
+.timer-teachTool-triangle-tops {
+	width: 0;
+	height: 0;
+	margin-left: 0.1rem;
+	margin-bottom: 0.05rem;
+	border-left: 0.1rem solid transparent;
+	border-right: 0.1rem solid transparent;
+	border-bottom: 0.1rem solid #F2F2F2;
+}
+
+.timer-teachTool-num-divs {
+	width: 0.5rem;
+	height: 1.12rem;
+	float: left;
+	margin-left: 0.17rem;/*tkpc2.0.8*/
+	margin-top: 0.02rem;
+}
+
+.timer-teachTool-triangle-downs {
+	width: 0;
+	height: 0;
+	margin-left: 0.1rem;
+	margin-top: 0.05rem;
+	border-left: 0.1rem solid transparent;
+	border-right: 0.1rem solid transparent;
+	border-top: 0.1rem solid #F2F2F2;
+}
+
+.timer-teachTool-triangle-downs:hover {
+	border-top: 0.1rem solid green;
+}
+
+.timer-teachTool-triangle-tops:hover {
+	border-bottom: 0.1rem solid green;
+}
+
+.timer-teachTool-num-contents {
+	height: 0.7rem;
+	width: 0.4rem;
+	margin-top: 0.02rem;
+	margin-bottom: 0.02rem;
+	background: #F2F2F2;
+	font-size: 0.6rem;
+	line-height: 0.7rem;
+	text-align: center;
+}
+
+.timer-teachTool-colons {
+	width: 0.2rem;
+	height: 0.7rem;
+	float: left;
+	margin-top: 0.18rem;
+	margin-left: 0.08rem;
+	margin-right: -0.08rem;
+}
+
+.timer-teachTool-colons div {
+	width: 0.05rem;
+	height: 0.05rem;
+	background: #F2F2F2;
+	border-radius: 0.05rem;
+	margin-left: 0.02rem;
+	margin-top: 0.2rem;
+}
+
+.screen-share-wrap_button {
+	position: absolute;
+	width: 122px;
+	height: 38px;
+	left: 50%;
+	bottom: 5%;
+	margin-left: -60.7px;
+	/* margin-top: 36px; */
+	border: solid 0.03rem #de1919;
+	background: #de1919;
+}
+
+.screen-shareing-wrap_button {
+	position: absolute;
+	width: 122px;
+	height: 20px;
+	left: 50%;
+	top: 50%;
+	margin-left: -60.7px;
+	margin-top: -50px;
+	border: .03rem solid #d7e5ff;
+}
+
+.timer-teachTool-startBtns {
+	width: 0.8rem;
+	height: 0.35rem;
+	text-align: center;
+	line-height: 0.35rem;
+	color: white;
+	float: left;
+	margin-left: 0.1rem;
+	cursor: pointer;
+	margin-top: 0.1rem;
+}
+
+.stop-btn-Imgs {
+	width: 0.6rem;
+	height: 0.6rem;
+	background: url('../img/call/timer_stop_btn_bg.png') no-repeat center center;
+	background-size: 100% 100%;  /*tkpc2.0.8*/
+	position: absolute;
+	left: 1.2rem;
+	top: 0.5rem;
+	border-radius: 0.3rem;
+}
+
+.timer-teachTool-closeSpans {
+	margin-right: 0.05rem;
+	cursor: default;
+}
+
+.timer-teachTool-closeSpans:hover {
+	color: #96CDCD;
+}
+
+.timer-teachTool-againBtns {
+	width: 0.8rem;
+	height: 0.35rem;
+	background: url('../img/call/timer_again_normal.png') no-repeat center center;
+	background-size: 100% 100%; /*tkpc2.0.8*/
+	text-align: center;
+	line-height: 0.35rem;
+	margin-top: 0.1rem;
+	color: white;
+	float: left;
+	margin-left: 0.1rem;
+	cursor: pointer;
+	display: none;
+}

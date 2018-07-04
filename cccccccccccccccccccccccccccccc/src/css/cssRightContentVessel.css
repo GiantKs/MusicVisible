@@ -1,0 +1,1101 @@
+@charset "UTF-8";
+.lc-video-all-container {
+	z-index: 107;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.tk-tool-bottom {
+	z-index: 105;
+	margin-left: -1.6rem
+}
+
+.lc-tool-container .tk-tool-right {
+	margin-top: 0.35rem;
+	z-index: 106;
+}
+
+.tl-all-participant-tools {
+	width: 100%;
+	height: 100%;
+	/* background: url("../img/call/icon_box_normal.png") no-repeat center center;
+	background-size: 100% 100%; */
+	position: relative;
+	/* background-color: #202c4a; */
+	cursor: pointer;
+}
+
+.tl-all-participant-tools:hover {
+	background: url("../img/call/icon_box_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	background-color: #202c4a;
+}
+
+.tl-all-participant-tools-active {
+	cursor: pointer;
+	/* background: url("../img/call/icon_box_pressed.png") no-repeat center center;
+	background-size: 100% 100%; */
+	background-color: #202c4a;
+}
+
+
+
+
+
+.tl-all-participant-tools .toolBox{
+	width: 100%;
+	height: 100%;
+	background:#202c4a url("../img/call/icon_box_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	cursor: pointer;
+}
+
+.tl-all-participant-tools .toolBox:hover {
+	background:#202c4a url("../img/call/icon_box_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.tl-all-participant-tools-active .toolBox {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	background: url("../img/call/icon_box_pressed.png") no-repeat center center;
+	background-size: 100% 100%;
+	background-color: #202c4a;
+}
+
+
+
+
+
+
+
+
+
+
+
+.teach-expansion-column {
+	width: calc(100% * 1);
+	height: auto;
+	position: absolute;
+	right: 100%;
+	top: 0;
+	background-color: #202c4a;
+	display: none;
+}
+
+.teach-expansion-column-one {
+	width: 1.2rem;
+	height: 0.5rem;
+	border: 0.01rem solid;
+	position: absolute;
+	left: -1.2rem;
+	background-color: #202c4a;
+	display: none;
+}
+
+.teach-expansion-column-client {
+	height: 1rem;
+}
+
+.teach-box-left {
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+.answer-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_answer_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.answer-implement-bg:hover {
+	background: url("../img/call/icon_answer_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.answer-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.turnplate-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_turnplate_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.turnplate-implement-bg:hover {
+	background: url("../img/call/icon_turnplate_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.turnplate-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.timer-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_timer_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+.timer-teachTool-startBtns
+{
+    width: 0.8rem;
+    height: 0.35rem;
+    text-align: center;
+    line-height: 0.35rem;
+    color:white;
+    float: left;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    margin-top:0.1rem;
+}
+.stop-btn-Imgs
+{
+    width: 0.6rem;
+    height: 0.6rem;
+    background:  url('../img/call/timer_stop_btn_bg.png') no-repeat center center;
+    background-position: 100% 100%;
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    border-radius:0.3rem;
+}
+.timer-teachTool-closeSpans{
+    margin-right:0.05rem ;
+    cursor: default;
+}
+.timer-teachTool-closeSpans:hover
+{
+    color: #96CDCD;
+}
+.timer-teachTool-againBtns
+{
+    
+    width: 0.8rem;
+    height: 0.35rem;
+    background: url('../img/call/timer_again_normal.png') no-repeat center center;
+    background-position: 100% 100%;
+    text-align: center;
+    line-height: 0.35rem;
+    margin-top: 0.1rem;
+    color:white;
+    float: left;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    display:none ;
+}
+
+.timer-implement-bg:hover {
+	background: url("../img/call/icon_timer_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.timer-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.tl-all-participant-sharing {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_timer_share.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-all-participant-sharing:hover {
+	background: url("../img/call/icon_timer_share_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.icon-base-style {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background-size: 100%!important;
+	position: relative;
+	cursor: pointer;
+}
+
+.icon-base-style:hover {
+	background-size: 100% 100%;
+}
+
+.icon-notice {
+	background: url("../img/Icon/icon-notice.png") no-repeat center center;
+}
+
+.icon-notice:hover {
+	background: url("../img/Icon/icon-notice-hover.png") no-repeat center center;
+}
+
+.icon-inform {
+	background: url("../img/Icon/icon-inform.png") no-repeat center center;
+}
+
+.icon-inform:hover {
+	background: url("../img/Icon/icon-inform-hover.png") no-repeat center center;
+}
+
+.icon-broadcast {
+	background: url("../img/Icon/icon-broadcast.png") no-repeat center center;
+}
+
+.icon-broadcast:hover {
+	background: url("../img/Icon/icon-broadcast-hover.png") no-repeat center center;
+}
+
+.tl-more-black-board {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call_layout/controlOverallBar/icon_blackboard_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-more-black-board:hover {
+	background-image: url("../img/call_layout/controlOverallBar/icon_blackboard_hover.png");
+}
+
+.tl-more-black-board.disabled {
+	background-image: url("../img/call_layout/controlOverallBar/icon_blackboard_disabled.png");
+}
+
+.responder-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_responder_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.responder-implement-bg:hover {
+	background: url("../img/call/icon_responder_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.responder-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.tl-live-participant-sign {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_sign_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-live-participant-sign:hover {
+	background: url("../img/call/icon_sign_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.tl-live-participant-sign.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.tl-live-participant-vote {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_vote_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-live-participant-vote:hover {
+	background: url("../img/call/icon_vote_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.tl-live-participant-vote.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.tl-live-participant-luckdraw {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_luckdraw_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-live-participant-luckdraw:hover {
+	background: url("../img/call/icon_luckdraw_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.tl-live-participant-luckdraw.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.notalking-implement-bg {
+	position: relative;
+	cursor: pointer;
+}
+
+.notalking-implement-bg:hover {
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.notalking-implement-bg.disabled {
+	opacity: 0.2;
+}
+
+.kickout-implement-bg {
+	position: relative;
+	cursor: pointer;
+}
+
+.kickout-implement-bg:hover {
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.kickout-implement-bg.disabled {
+	opacity: 0.2;
+}
+
+.information-implement-bg {
+	position: relative;
+	cursor: pointer;
+}
+
+.information-implement-bg:hover {
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.live-luckdraw-teacher-img{
+	float: left;
+	width: 0.4rem;
+	height: 0.4rem;
+	background: url("../img/call/icon_luckdraw_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.live-luckdraw-teacher-close{
+	background-image: url(../img/luckdraw/cancel.png);
+	background-size: 0.2rem 0.2rem;
+	position: absolute;
+	top: .1rem;
+	right: .1rem;
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.live-luckdraw-teacher{
+	z-index:999;
+	width: 5rem;
+	height: 8rem;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	background-image: url(../img/luckdraw/luckdrawbg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.live-luckdraw-teacher-title{
+	height: 20%;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: .6rem;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0rem 0.08rem 0.05rem #C19803;
+}
+
+.live-luckdraw-teacher-option{
+	margin-top: 16%;
+    text-align: center;
+    height: 28%;
+}
+.live-luckdraw-teacher-option-title{
+	font-size: .3rem;
+	font-weight: 900;
+	color: #FFE933;
+	text-align: center;
+	text-shadow: 0rem 0.02rem 0rem #000000;
+}
+.live-luckdraw-teacher-option-numBox{
+	margin-top: .1rem;
+	text-align: center;
+}
+.live-luckdraw-teacher-option-numj{
+	display: inline-block;
+	width: .2rem;
+	height: .4rem;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+    cursor: pointer;
+}
+.live-luckdraw-teacher-option-numj:first-of-type{
+	background-image: url(../img/luckdraw/reduce.png);
+}
+.live-luckdraw-teacher-option-numj:last-of-type{
+	background-image: url(../img/luckdraw/plus.png);
+}
+.live-luckdraw-teacher-option-num{
+	display: inline-block;
+	margin: 0 .2rem;
+	width: .6rem;
+	height: .5rem;
+	font-size: .4rem;
+	background: #fff;
+	border: 2px solid #000;
+	border-radius: 0.1rem;
+	text-align: center;
+	line-height: .4rem;
+	vertical-align: middle;
+    outline: none;
+}
+
+.live-luckdraw-teacher-button{
+	display: block;
+	width: 2.0rem;
+	height: .65rem;
+	margin: 0 auto;
+	background-image: url(../img/luckdraw/beginButton.png);
+	background-size: 100% auto;
+	margin-bottom: .03rem;
+    color: #fff;
+    font-size: .22rem;
+}
+
+
+.live-base-student-close{
+	background-image: url(../img/call_layout/left/video/player/btn_closed_normal.png);
+	background-size: 0.4rem 0.4rem;
+	position: absolute;
+	top: 0;
+	right: 0.1rem;
+	float: right;
+	width: 0.3rem;
+	height: 0.3rem;
+}
+
+.live-luckdraw-student .live-base-student{
+	z-index:999;
+	width: 30%;
+	height: 50%;
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	background-color: #FFFFFF;
+	border:1px #1a2642 solid;
+}
+
+.live-base-student-title{
+	height: 0.5rem;
+	background-color: #1a2642;
+}
+
+.live-base-student-name{
+	background-size: 0.4rem 0.4rem;
+	color:#ffffff;
+	position: absolute;
+	top: 0.1rem;
+	left: 0.1rem;
+	width: 1.0rem;
+	height: 0.3rem;
+}
+
+.live-base-student-show .live-base-student-content{
+	width: 100%;
+	height: 100%;
+}
+.live-luckdraw-teacher-input{
+	vertical-align: middle;
+	border: 0;
+	width: .18rem;
+	height: .18rem;
+	outline: none;
+	border-radius: .08rem;
+	background: #645A8E;
+	cursor: pointer;
+}
+.live-luckdraw-teacher-input-name{
+	margin-left: 0.05rem;
+	vertical-align: middle;
+	color: #fff;
+	font-size: .16rem;
+}
+.live-luckdraw-teacher-luckdrawTitle{
+	width: 1.2rem;
+    height: .28rem;
+    text-align: center;
+    line-height: .28rem;
+    margin: auto;
+    margin-top: 10%;
+    font-size: .1rem;
+    color: #fff;
+	background-image: url(../img/luckdraw/winnerbg.png);
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.live-luckdraw-teacher-list{
+    width: 100%;
+    height: 26%;
+    /* margin-top: .02rem; */
+    padding-left: .12rem;
+    padding-top: 1px;
+}
+.live-luckdraw-teacher-list-item{
+    position: relative;
+    width: 2.7rem;
+    height: .81rem;
+    margin: auto;
+    margin-top: .2rem;
+    padding-top: 1%;
+	padding-left: .15rem;
+	color: #363636;
+}
+.live-luckdraw-teacher-listNum{
+    background-image: url(../img/luckdraw/listNum.png);
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+	width: .6rem;
+    height: .6rem;
+    position: absolute;
+    top: -.3rem;
+    left: -.3rem;
+}
+.live-luckdraw-teacher-listNum>span{
+    display: inline-block;
+    width:.3rem;
+    height:.3rem;
+    position: absolute;
+    left: 0.03rem;
+    bottom: .05rem;
+    text-align: center;
+    line-height: .3rem;
+}
+.live-luckdraw-listTime{
+	height: .2rem;
+	line-height: .2rem;
+}
+.live-luckdraw-listBox{
+
+}
+.live-luckdraw-listBox:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.live-luckdraw-listItem{
+    width: 20%;
+	height: .22rem;
+	line-height: .22rem;
+    float: left;
+    font-size: .1rem;
+	margin-top: 1%;
+	
+}
+.live-luckdraw-listItem.addSpot{
+	display: flex;
+}
+.live-luckdraw-listItem .addEllipsis{
+	display: block;
+	float: left;
+	height: 100%;
+	max-width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.live-luckdraw-emitBox{
+	width: 34%;
+    margin: auto;
+    overflow: hidden;
+	/* margin-top: 0.06rem; */
+	text-align: center;
+}
+.live-luckdraw-emitLeft{
+	float: left;
+	
+}
+.live-luckdraw-emitLeft.isDisable{
+	color: #969595;
+}
+.live-luckdraw-emitRight{
+	float: right;
+}
+.live-luckdraw-emitRight.isDisable{
+	color: #969595;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.programm-share {
+	width: 70%;
+	height: 70%;
+	z-index:999;
+	position: absolute;
+	left: 15%;
+	top: 15%;
+	background-color: #081B36;
+	border:10px #283658 solid;
+	border-radius: .15rem;
+}
+.programm-share-title{
+	width: 100%;
+	height: 16%;
+	position: relative;
+	text-align: center;
+}
+.programm-share-name {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size:28px;
+	color:#fff;
+}
+.programm-share-close{
+	background: url(../img/call_layout/left/video/player/icon_share_closed.png) no-repeat center center;
+	background-size: 0.3rem 0.3rem;
+	position: absolute;
+	top: .1rem;
+	right: .1rem;
+	float: right;
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.programm-share-body{
+	width: 100%;
+	height: 84%;
+	background: #fff;
+	padding: 0 5%;
+	padding-top: .2rem;
+}
+.programm-share-body:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+.programm-share-item {
+	width: 33%;
+	height: 50%;
+	float: left;
+
+	cursor: pointer;
+	padding: 0 5%;
+}
+.programm-share-item-box:hover {
+	 border: 1px solid #3278fe;
+ }
+ .programm-share-item-box:hover .tk-programm-share-btn{
+	color: #3278fe;
+}
+ .programm-share-item-box{
+	 width: 100%;
+	 height: 100%;
+	 padding: 15% 0;
+	 position: relative;
+	 border: 1px solid rgba(0,0,0,0);
+	 box-shadow: 0 0 .2rem #E9E9E9;
+	 border-radius: 5px;
+ }
+ .programm-share-item-img{
+	 width: 100%;
+	 height: 100%;
+ }
+.programm-share-img{
+	background: url("../img/call_layout/png-programm-share.png") no-repeat center top;
+	background-size: 80%;
+}
+.screen-share-img{
+	background: url("../img/call_layout/png-screen-share.png") no-repeat center top;
+	background-size: 80%;
+}
+.area-share-img{
+	background: url("../img/call_layout/png-area-share.png") no-repeat center top;
+	background-size: 80%;
+}
+
+.programm-share-item-box:hover .tk-programm-share-btn{
+	color: #3278fe;
+}
+.programm-share-item-box-active .tk-programm-share-btn{
+	color: #3278fe;
+}
+.tk-programm-share-btn{
+	display: inline-block;
+	color: #656566;
+	font-size:0.20rem;
+	width:1.12rem;
+	height:0.28rem;
+	line-height: 0.28rem;
+	text-align: center;
+	margin-top: calc(20% - 0.28rem);
+	cursor: pointer;
+	position: absolute;
+	bottom: 15%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.programm-share-item-border{
+	width: 100%;
+	height: .05rem;
+	border-radius: .025rem;
+	background: #3278fe;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: none;
+}
+.programm-share-item-box-active .programm-share-item-border{
+	display: block;
+}
+.programm-share-select-box{
+	position: absolute;
+	bottom: 22%;
+	left: 0;
+	right: 0;
+    margin: auto;
+    width: 40%;
+}
+.programm-share-select{
+	width: 100%;
+	height: 0.40rem;
+    border-color: #3278fe;
+	border-radius: 0.08rem;
+	border-width: 0.02rem;
+    outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding-right: .4rem;
+	background: url(../img/call_layout/left/video/player/icon-share-select.png) no-repeat scroll calc(100% - .2rem) center transparent;
+}
+.programm-share-select-tit{
+	text-align: center;
+	font-size: 0.18rem;
+	line-height: 0.18rem;
+	margin-bottom: .1rem;
+	color: #3278fe;
+}
+
+/* .programm-share-select-icon{
+	width: .2rem;
+	height: .1rem;
+	background: url(../img/call_layout/left/video/player/icon-share-select.png) no-repeat center;
+	position: absolute;
+	right: .2rem;
+	top: 0;
+	bottom: 0;
+	pointer-events: none;
+} */
+.tk-programm-share-start-btn{
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 10%;
+	margin: auto;
+	font-size:0.20rem;
+	color: #fff;
+	border-radius:0.05rem;
+	border:0.1rem solid #3278fe;
+	width:1.20rem;
+	height:0.28rem;
+	background: #3278fe;
+	width: 1.20rem;
+	height: 0.40rem;
+}
+
+
+
+
+
+
+
+
+
+
+.programm-share-stop-img{
+	height:100%;
+	width:100%;
+	background: url("../img/call/icon_timer_sharing.png") no-repeat center center;
+	background-size:50% 70%;
+
+}
+
+
+
+.tk-programm-share-active{
+	width: 100%;
+	height: 28px;
+	position: absolute;
+	bottom: 5%;
+	left: 0;
+	text-align: center;
+
+}
+
+.tk-programm-share-radio{
+	position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+	margin: auto;
+	cursor: pointer;
+}
+
+
+
+.tk-full-share-btn{
+	position: absolute;
+	right: 25%;
+	font-size:20px;
+	color: #3278fe;
+	margin-top: -20%;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+.tk-area-share-btn{
+	position: absolute;
+	right: 25%;
+	font-size:20px;
+	color: #3278fe;
+	margin-top: -20%;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+
+
+
+.programm-share-select-close{
+	background: url(../img/call_layout/left/video/player/icon_share_closed.png) no-repeat center center;
+	background-size: 0.3rem 0.3rem;
+	position: absolute;
+	top: 0.01rem;
+	right: 0.01rem;
+	float: right;
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.programm-share-select-name {
+	position: absolute;
+	width: 100%;
+	font-size:28px;
+	text-align:center;
+	color:#3278fe;
+}
+
+.tk-programm-share-select-btn{
+	position: absolute;
+	right: 15%;
+	font-size: 20px;
+	color: #3278fe;
+	bottom:0rem;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+
+.tk-programm-share-stop-btn{
+	position: absolute;
+	left: 15%;
+	font-size: 20px;
+	color: #ff0400;
+	bottom:0rem;
+	border-radius:5px 5px 5px 5px;border:1px solid #ff0400;width:120px; height:28px;
+}
+
+.programm-share-select-area{
+	position: absolute;
+	width: 90%;
+	height: 70%;
+	right:5%;
+	top:20%;
+}
+
+#windowsel{
+	width: 60%;
+    position: absolute;
+    left: 50%;
+	top: 20%;
+	transform: translateX(-50%);
+    margin-top: 320px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.live-luckdraw-student{
+	z-index:999;
+	width: 5rem;
+	background-color: #232C48;
+	position: absolute;
+	left: 2rem;
+	top: 1rem;
+
+	/* -webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%); */
+}
+.live-luckdraw-student-img{
+	line-height:0rem;
+	position: relative;
+}
+.live-luckdraw-student-londing{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: .3rem;
+	font-size: .24rem;
+	bottom: .4rem;
+	line-height: .3rem;
+	color: #fff;
+	font-weight: 900;
+	-webkit-text-stroke: 1px #6A3636;
+}
+.live-luckdraw-winnersListBox{
+
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	bottom: .6rem;
+	left: 1.05rem;
+}
+.live-luckdraw-winnersListTitle{
+	width: 100%;
+	height: .5rem;
+	text-align: center;
+	line-height: .5rem;
+	font-size: .2rem;
+	color: #fff;
+	font-weight: 700;
+	text-shadow: -.02rem -.02rem .02rem #B21515;
+}
+.live-luckdraw-winnersList{
+	/* background: rgba(255,255,255,.3); */
+	width: 100%;
+	height: 2.1rem;
+	margin-top: .4rem;
+}
+.live-luckdraw-winnerList-item{
+	width:45%;
+	height:.42rem;
+	float: left;
+	line-height: .6rem;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.live-luckdraw-winnerList-item.isme{
+	color:red;
+}
+.live-luckdraw-winnerList-item.isme:before{
+	content: '(我)';
+}
+.live-luckdraw-winnerList-item:nth-of-type(2),
+.live-luckdraw-winnerList-item:nth-of-type(4),
+.live-luckdraw-winnerList-item:nth-of-type(6),
+.live-luckdraw-winnerList-item:nth-of-type(8),
+.live-luckdraw-winnerList-item:nth-of-type(10){
+	float: right;
+}
+
+
+
+
+
+
+.live-luckdraw-student-canclebox{
+	width:100%;
+	padding: .2rem 0rem;
+	text-align: center;
+}
+.live-luckdraw-student-cancle{
+	width: .3rem;
+	height: .3rem;
+	background-image: url(../img/luckdraw/cancelS.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}

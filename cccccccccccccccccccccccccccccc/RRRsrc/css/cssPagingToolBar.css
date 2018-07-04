@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.tk-tool-bottom {
+    z-index: 105;
+}
+.header-left-page-time-container {
+    position: absolute;
+    bottom: auto;
+    top:calc(100% - 0.5rem);
+    left: 50%;
+    height: 0.5rem;
+    background-color: #202c4a;
+    transition:all 0.4s ease-out;
+    z-index: 118;
+}
+.header-left-page-time-container .h-page-container .h-page-next-prev-container{
+    display: flex;
+}
+.header-left-page-time-container .h-page-container .h-page-next-prev-container , .header-left-page-time-container .h-page-container .h-page-skip-container{
+    height: 0.5rem;
+    line-height: 0.5rem;
+    color: #fff;
+}
+
+.h-page-next-prev-container button{
+    width: 0.5rem;
+    height: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    background:  no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-page-next-prev-container button.pointer-events{
+    pointer-events: none;
+    cursor: default !important;
+}
+.h-page-next-prev-container button.lc-prev-page{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_left_normal.png) ;
+}
+.h-page-next-prev-container button.lc-next-page , .h-page-next-prev-container button.lc-add-page{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_right_normal.png) ;
+}
+.h-page-next-prev-container button.lc-zoom-small{
+    background-image: url(../img/call_layout/lc/pages/icon_small_normal.png) ;
+}
+.h-page-next-prev-container button.lc-zoom-big{
+    background-image: url(../img/call_layout/lc/pages/icon_big_normal.png) ;
+}
+.h-page-next-prev-container button.lc-full.no{
+    background-image: url(../img/call_layout/lc/pages/icon_full_screen_normal.png) ;
+}
+.h-page-next-prev-container button.lc-full.yes{
+    background-image: url(../img/call_layout/lc/pages/icon_initial_screen_normal.png) ;
+}
+.h-page-next-prev-container button.lc-volume.no{
+    background-image: url(../img/call_layout/lc/pages/icon_volume_sound_normal.png);
+}
+.h-page-next-prev-container button.lc-volume.yes{
+    background-image: url(../img/call_layout/lc/pages/icon_volume_mute_normal.png);
+}
+.h-page-next-prev-container button.lc-courseware-remarks{
+    background-image: url(../img/call_layout/lc/pages/icon_remark_normal.png);
+}
+.h-page-next-prev-container button.lc-prev-page.disabled{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_left_disabled.png);
+}
+.h-page-next-prev-container button.lc-next-page.disabled , .h-page-next-prev-container button.lc-add-page.disabled{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_right_disabled.png);
+}
+.h-page-next-prev-container button.lc-zoom-small.disabled{
+    background-image: url(../img/call_layout/lc/pages/icon_small_disabled.png);
+}
+.h-page-next-prev-container button.lc-zoom-big.disabled{
+    background-image: url(../img/call_layout/lc/pages/icon_big_disabled.png);
+}
+.h-page-next-prev-container button.lc-prev-page:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_left_hover.png) ;
+}
+.h-page-next-prev-container button.lc-next-page:hover, .h-page-next-prev-container button.lc-add-page:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_pages_right_hover.png) ;
+}
+.h-page-next-prev-container button.lc-zoom-small:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_small_hover.png) ;
+}
+.h-page-next-prev-container button.lc-zoom-big:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_big_hover.png) ;
+}
+.h-page-next-prev-container button.lc-full.no:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_full_screen_hover.png) ;
+}
+.h-page-next-prev-container button.lc-full.yes:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_initial_screen_hover.png) ;
+}
+.h-page-next-prev-container button.lc-volume.no:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_volume_sound_hover.png);
+}
+.h-page-next-prev-container button.lc-volume.yes:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_volume_mute_hover.png);
+}
+.h-page-next-prev-container button.lc-courseware-remarks:hover{
+    background-image: url(../img/call_layout/lc/pages/icon_remark_hover.png);
+}
+.h-page-next-prev-container .page-print {
+    /*width: 0.68rem;*/
+    height: 100%;
+    text-align: center;
+    font-size: 0.13rem;
+}
+.page-print-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-print-content .h-page-print-oblique{
+    display: inline-block;
+    margin: 0 0.04rem;
+}
+.h-page-next-prev-container .page-print .curr-page , .h-page-skip-container .page-num {
+    color: #fff;
+}
+.page-print .curr-page{
+    width: 0.24rem;
+    height: 0.2rem;
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid rgb(102, 102, 102);
+    /*margin-right: 0.06rem;*/
+    border-radius: 0.03rem;
+}
+.page-print .all-page{
+    display:inline-block;
+    text-align:left ;
+}
+.h-page-skip-container .page-num , .h-page-skip-container .page-num-ok {
+    margin: 0 0.1rem;
+    background: #2c3c62;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 0.5rem;
+    height: 0.34rem;
+}
+.h-page-skip-container .page-num-ok {
+    margin-right: 0.2rem;
+    width: auto;
+    padding: 0 0.16rem;
+}
+
+.header-left-page-time-container .h-page-container div.h-page-skip-container{
+    background: none;
+}
+.lc-container.add-position-relative.add-fl.areaExchange #page_wrap{
+    display: none;
+}

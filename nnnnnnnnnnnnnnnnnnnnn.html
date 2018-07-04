@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="qrcode"></div>
+</body>
+</html>
+
+
+<script type='text/javascript'src='http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js'></script>
+
+<script type="text/javascript"src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+<script>
+    function ajax(opt) {
+        opt = opt || {};
+        opt.method = opt.method.toUpperCase() || 'POST';
+        opt.url = opt.url || '';
+        opt.async = opt.async || true;
+        opt.data = opt.data || null;
+        opt.success = opt.success || function () {};
+        opt.list = opt.list || function () {};
+        var xmlHttp = null;
+        if (XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        }
+        else {
+            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        var params = [];
+        for (var key in opt.data){
+            params.push(key + '=' + opt.data[key]);
+        }
+        var postData = params.join('&');
+        if (opt.method.toUpperCase() === 'POST') {
+            xmlHttp.open(opt.method, opt.url, opt.async);
+            xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+            xmlHttp.send(postData);
+        }
+        else if (opt.method.toUpperCase() === 'GET') {
+            xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+            xmlHttp.send(null);
+        }
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                opt.success(xmlHttp.responseText);
+            }else{
+                opt.list()
+            }
+        };
+    }
+    ajax({
+        method: 'POST',
+        url: 'http://testapi.xinxuewen.cn/Member/login?api=Member.login&app_key=218fbc52&verson=1.0&t=1521186758&sig=98e442c42b418baed219383eb39395bd&sv=0',
+        data: {
+            mobile:'18344444444' ,
+            password:'123456'
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            debugger
+        }
+    });
+
+    jQuery(function(){
+        jQuery('#qrcode').qrcode('');
+    })
+</script>

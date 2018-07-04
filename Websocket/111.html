@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript" src="./node_modules/pako/dist/pako.js"></script>
+
+
+<script >
+
+
+    var b64Data     = 'H4sIAAAAAAAAAyvKSwcA/tecgAMAAAA=';
+    var ticketData = 'rng';
+
+    var data = unzip(b64Data); //解压后的
+
+    var dataZip = zip(ticketData); //压缩后的
+
+
+
+    function unzip(b64Data){
+        var strData     = atob(b64Data);
+
+        // Convert binary string to character-number array
+        var charData    = strData.split('').map(function(x){return x.charCodeAt(0);});
+
+
+        // Turn number array into byte-array
+        var binData     = new Uint8Array(charData);
+
+
+        // // unzip
+        var data        = pako.inflate(binData);
+
+
+        // Convert gunzipped byteArray back to ascii string:
+        strData     = String.fromCharCode.apply(null, new Uint16Array(data));
+        return strData;
+    }
+
+
+    function zip(str){
+        var binaryString = pako.gzip(str, { to: 'string' });
+
+        return btoa(binaryString);
+    }
+</script>

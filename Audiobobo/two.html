@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+/* 声明变量 */
+try {
+var audio,
+    context = new (window.AudioContext ||
+        window.webAudioContext ||
+        window.webkitAudioContext)(),
+    /* 创建一个1024长度的缓冲区 `bufferSize` */
+    processor = context.createScriptProcessor(1024),
+    /*创建一个分析节点 analyser node */
+    analyser = context.createAnalyser();
+
+/* 将 processor 和 audio 连接 */
+processor.connect(context.destination);
+/* 将 processor 和 analyser 连接 */
+analyser.connect(processor);}catch(e) {
+    throw new Error('The Web Audio API is unavailable');
+}
+
+/* 定义一个 Uint8Array 字节流去接收分析后的数据 */
+var data = new Uint8Array(analyser.frequencyBinCount);
+
+
+
+var Sound = {
+    element: undefined,
+    play: function() {
+        var sound = context.createMediaElementSource(this.element);
+        this.element.onended = function() {
+            sound.disconnect();
+            sound = null;
+            /* 当文件结束时置空事件处理 */
+            processor.onaudioprocess = function() {};
+        }
+        /* 连接到 analyser. */
+        sound.connect(analyser);
+        sound.connect(context.destination);
+
+        processor.onaudioprocess = function() {
+            /* 产生频率数据 不断赋值给全局变量data*/
+            analyser.getByteTimeDomainData(data);
+        };
+        /* 调用 MediaElement 的 `play`方法. */
+        /*ary.push(this.element)*/
+        this.element.play();
+    }
+}
+
+function loadAudioElement(url) {
+    return new Promise(function(resolve, reject) {
+        var audio = new Audio();
+        audio.addEventListener('canplay', function() {
+            /* Resolve the promise, passing through the element. */
+            resolve(audio);
+        });
+        /* Reject the promise on an error. */
+        audio.addEventListener('error', reject);
+        audio.src = url;
+    });
+}
+
+loadAudioElement('./aa.mp3').then(function(elem) {
+    /* Instantiate the Sound class into our hoisted variable. */
+    audio = Object.create(Sound);
+    /* Set the element of `audio` to our MediaElement. */
+    audio.element = elem;
+    /* Immediately play the file. */
+    audio.play();
+}, function(elem) {
+    /* Let's throw an the error from the MediaElement if it fails. */
+    throw elem.error;
+});
+setInterval(()=>{
+    console.error('data' + data);
+})
+
+</script>

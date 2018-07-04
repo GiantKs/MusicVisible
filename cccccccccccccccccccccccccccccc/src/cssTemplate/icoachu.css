@@ -1,0 +1,515 @@
+/*英联邦样式*/
+.icoachu .h-tool .tool-pencil-extend ul li,.icoachu .h-tool .tool-text-extend ul li,.icoachu .h-tool .tool-shape-extend ul li{
+    border-bottom:0.01rem solid #2260d4;
+}
+.icoachu .header-tool-extend-option-wrap{
+    border-top:0.01rem solid #2260d4;
+}
+.icoachu .page-print .curr-page{
+	border-color: #fff;
+}
+/*设备切换*/
+.icoachu .startdetection .net-testing .device-test-header{
+	background-color: #3278fe;
+}
+/*右下角*/
+.icoachu .chatbox,.icoachu .chatbox .input-box{
+	background-color: #E5E7ED;
+}
+.icoachu .chat-list{
+	padding-top: 0.1rem;
+	padding-bottom: 0.44rem;
+}
+.icoachu .chat-list .notice{
+    margin: 0 auto 0.1rem;
+    color: #fff;
+}
+.icoachu .chat-list .notice .send-time{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 0.2rem;
+}
+.icoachu .chat-list .username{
+	color: #3278FE;
+}
+.icoachu .chat-list .notice .the-msg{
+	display: flex;
+    margin: 0 auto;
+    height: 0.2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #C7C7C9;
+    border-radius: 0.03rem;
+}
+.icoachu .user-sended{
+	border-radius: 0;
+}
+.icoachu .input-box,.icoachu .chat-subject{
+	height: 0.44rem;
+}
+.icoachu .chat-input{
+	margin-left: 0;
+}
+.icoachu .sendBtn{
+	margin-right: 0;
+	background-color: #3578FC!important;
+	border-radius: 0.03rem;
+}
+.icoachu .input{
+	line-height: 0.24rem;
+	border-radius:0.03rem;
+	padding: 0.1rem;
+	width: 96%;
+	border: 0.01rem solid #DCDCDC;
+}
+/*左侧列表*/
+.icoachu .tk-app-list .tk-list-item,.icoachu .tk-app-list .tk-app-list-title{
+	border-color: #3578FC;
+}
+.icoachu .tk-list .tk-list-item.active{
+	background-color: #3578FC;
+}
+.icoachu div.tk-app-list-title{
+    background: #023696;
+}
+
+.icoachu .alert-error-confrim .title-text{
+    border-color: #3578FC;
+}
+.icoachu div.alert-title.active{
+    border-color: #fc5c67;
+}
+.alert-error-confrim .alert-contant,.alert-error-confrim .alert-isOk{
+    border-color: #EDEEF2;
+}
+    /*底部视频*/
+.icoachu .hvideo_container,.icoachu .other-video-container{
+	background: #EDEEF2;
+}
+
+
+.icoachu .setting-win-container .win-bottom-container {
+    border-top: 0.01rem solid #dddddd;
+}
+.icoachu .header-wrap{
+    background-color:#16284c ;
+}
+.icoachu .tool-container .tool-icon-wrap{
+    background-color:#3278fe ;
+}
+.icoachu  .tool-container .tool-icon.active{
+    background-color:#1250c4;
+}
+.icoachu  .tool-extend-container, .icoachu  .tool-extend-container .tool-extend{
+    background: #1250c4;
+}
+
+.icoachu  .header-left-page-time-container{
+    background-color: #3278fe;
+}
+.icoachu .lc-container , .icoachu .lc-container .lc-full-vessel{
+    background-color: #eceef2;
+}
+.icoachu .video-container{
+    background-color: #e6e8ee;
+}
+.icoachu .other-video-container ol li .video-participant-wrap{
+    background: #b2d6f8 url(../img/call_layout/user/icon_user_small_normal.png) no-repeat center center;
+    background-size: 0.86rem auto;
+}
+/*.icoachu .video-container .video-chairman-wrap .video-wrap{
+	background: #b2d6f8 url(../img/call_layout/user/icon_teacher_normal.png) no-repeat center center;
+	background-size: 1.39rem 1.4rem;
+}*/
+/*.icoachu .v-name-wrap{
+    background: #475663;
+}*/
+/*.icoachu .video-container .video-hearer-wrap .video-wrap{
+	background: #b2d6f8 url(../img/call_layout/user/icon_user_big_nomal.png) no-repeat center center;
+	background-size: 1.24rem 1.42rem;
+}*/
+.icoachu .v-chat-container #chat.chat-box{
+    background: none;
+    height: calc(100% - 0.08rem);
+}
+.icoachu .h-tool{
+    background-color: #3278fe;
+}
+.icoachu .h-tool li.active .header-tool{
+    background-color: #1250c4;
+}
+.icoachu .h-tool li  .header-tool-extend{
+    background: #1250c4;
+}
+.icoachu .h-tool .tool-pencil-extend ul,.icoachu .h-tool  .tool-text-extend,.icoachu .h-tool .tool-shape-extend ul{
+    background: #1250c4;
+}
+
+.icoachu .startdetection .net-testing{
+	background-color: #3278fe;
+}
+.icoachu  .h-tool  .header-tool-extend ul li.active-color{
+    background-color: #3278fe;
+}
+.icoachu .h-tool .tool-pencil-extend ul li.active ,.icoachu  .h-tool .tool-text-extend ul li.active , .icoachu  .h-tool .tool-shape-extend ul li.active{
+    background-color:#3278fe ;
+}
+.icoachu .win-top-container{
+    background-color: #3278fe;
+}
+.icoachu .setting-win-container{
+    background-color: #ffffff;
+}
+.icoachu .curtom-select .select_box{
+    color: #444444;
+    background: #ffffff;
+    border: 0.01rem solid #cccccc;
+}
+.icoachu  .curtom-select  .select_showbox{
+    background: #fff;
+}
+.icoachu  .curtom-select  .select_showbox .show-text{
+    color: #3278fe;
+}
+.icoachu .curtom-select .select_option{
+    border: 0.01rem solid #cccccc;
+    background: #ffffff;
+}
+.icoachu .curtom-select .select_option li.selected{
+    background-color: #e6e8ee!important;
+    color: #3278fe!important;
+}
+.icoachu .curtom-select .select_option li:hover{
+    background-color:rgba(230, 232, 238, 0.54)!important ;
+    color: #444444;
+}
+.icoachu .tool-set-extend .select_option::-webkit-scrollbar , .icoachu  .text-select-wrap .select_option::-webkit-scrollbar , .icoachu  .custom-scroll-bar::-webkit-scrollbar{
+    background: #b8d6f8;
+}
+.icoachu .tool-set-extend .select_option::-webkit-scrollbar-corner , .icoachu  .text-select-wrap .select_option::-webkit-scrollbar-corner , .icoachu  .custom-scroll-bar::-webkit-scrollbar-corner{
+    background: #b8d6f8;
+}
+.icoachu .win-btn-container button.win-btn-no{
+    color: #3278fe;
+}
+.icoachu .win-btn-container button.win-btn-yes{
+    background-color: #3278FE;
+}
+.icoachu .win-btn-container button.win-btn-no{
+    border-color: #3278FE;
+}
+.icoachu .h-btn-wrap .h-room-start{
+    background-color: #04C88E;
+}
+.icoachu .h-btn-wrap .h-room-end{
+    background-color: #F0390D;
+}
+.icoachu .send-message-btn{
+    background-color: #3278fe;
+}
+
+.icoachu .t-participant-user-list li .tk-list-title-context,.icoachu .tk-app-list-title .tk-list-title-context,.icoachu .tool-courseware-list-extend .t-option-content-wrap{
+    color: #ffffff;
+}
+.icoachu .t-participant-user-list li.active, .icoachu.tool-courseware-list-extend li.active {
+    background: #1250c4;
+}
+.icoachu .use-pic{
+    background: url("../img/call_layout/left/video/user_pic.png") no-repeat;
+    background-size: 0.24rem 0.24rem;
+}
+
+/*换色图标*/
+.icoachu .t-participant-user-list li .tk-icon-after-container button.v-user-update-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-update.on {
+    background-image: url(../img/call_layout/left/video/icon_user_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.audio-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-device-microphone.on {
+    background-image: url(../img/call_layout/left/video/icon_audio_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.pencil-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.on {
+    background-image: url(../img/call_layout/left/video/icon_tools_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.pencil-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.on {
+    background-image: url(../img/call_layout/left/video/icon_tools_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.pencil-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.on {
+    background-image: url(../img/call_layout/left/video/icon_tools_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.v-user-update-icon.up.disabled,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-update.up.disabled {
+    background-image: url(../img/call_layout/left/video/icon_user_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.pencil-icon.on.disabled,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-user-pen.on.disabled {
+    background-image: url(../img/call_layout/left/video/icon_tools_onyellow.png)!important;
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container button.audio-icon.on.disabled,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-device-microphone.on.disabled {
+    background-image: url(../img/call_layout/left/video/icon_audio_onyellow.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container .tk-listitem-icon.video-icon.on,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-device-video.on{
+	background-image: url(../img/call_layout/left/video/icon_camera_on.png);
+}
+.icoachu .t-participant-user-list li .tk-icon-after-container .tk-listitem-icon.video-icon.off,.icoachu .video-participant-wrap .v-name-wrap .v-device-open-close .v-device-video.off{
+	background-image: url(../img/call_layout/left/video/icon_camera_off.png);
+}
+
+/*鼠标滑过改变图片*/
+.icoachu .tool-container .tool-icon.tl-left-document-list:hover {
+    background-image: url(../img/call_layout/left/icon_document_hover.png);
+}
+.icoachu .tool-container .tool-icon.tl-left-media-document-list:hover {
+    background-image: url(../img/call_layout/left/icon_media_hover.png);
+}
+.icoachu .tool-container .tool-icon.tl-left-message:hover {
+    background-image: url(../img/call_layout/left/icon_message_hover.png);
+}
+.icoachu .tool-container .tool-icon.tl-left-setting:hover {
+    background-image: url(../img/call_layout/left/icon_setting_hover.png);
+}
+.icoachu .tool-container .tool-icon.tl-left-help {
+    background-image: url(../img/call_layout/left/icon_help_normal.png);
+}
+.icoachu .tool-container .tool-icon.tl-left-help:hover
+{
+    background: url("../img/call_layout/left/icon_help_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.icoachu .h-tool.all-participant-function .tl-all-participant-gift .tool-img-wrap.on:hover {
+    background-image: url(../img/call_layout/left/video/icon_gift_hover.png);
+}
+.icoachu .h-tool.all-participant-function .tl-all-participant-mute .tool-img-wrap.on:hover {
+    background-image: url(../img/call_layout/left/video/icon_aduio_hover.png);
+}
+.icoachu .h-tool li.tl-mouse .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_mouse_hover.png);
+}
+.icoachu .h-tool li.tl-laser .tool-img-wrap:hover{
+    background-image: url(../img/call_layout/top/tools/icon_cursor_hover.png);
+}
+.icoachu .h-tool li.tl-pencil .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_pencil_normal.png");
+    background-size: 100% 100%;
+}
+.icoachu .h-tool li.tl-pencil .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_pencil_hover.png);
+    background-size: 100% 100%;
+}
+.icoachu .h-tool li.tl-text .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_fonts_hover.png);
+}
+.icoachu .h-tool li.tl-shape .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_shape_hover.png);
+}
+.icoachu .h-tool li.tl-undo .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_revoked_hover.png);
+}
+.icoachu .h-tool li.tl-redo .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_recover_hover.png);
+}
+.icoachu .h-tool li.tl-eraser .tool-img-wrap:hover {
+    background-image: url(../img/call_layout/top/tools/icon_eraser_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-add-page:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_pages_right_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-prev-page:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_pages_left_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-zoom-small:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_small_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-zoom-big:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_big_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-rotate-left {
+    background-size: 0.22rem auto;
+    background-image: url(../img/call_layout/lc/pages/icon_rotate_left_norma.png);
+}
+.icoachu .h-page-next-prev-container button.lc-rotate-right {
+    background-size: 0.22rem auto;
+    background-image: url(../img/call_layout/lc/pages/icon_rotate_right_norma.png);
+}
+.icoachu .h-page-next-prev-container button.lc-full.no{
+    background-image: url(../img/call_layout/lc/pages/icon_full_screen_normal.png);
+}
+.icoachu .h-page-next-prev-container button.lc-full.no:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_full_screen_hover.png);
+}
+.icoachu .h-page-next-prev-container button.lc-full.yes{
+    background-image: url(../img/call_layout/lc/pages/icon_initial_screen_normal.png);
+}
+.icoachu .h-page-next-prev-container button.lc-full.yes:hover {
+    background-image: url(../img/call_layout/lc/pages/icon_initial_screen_hover.png);
+}
+
+.icoachu .h-btn-wrap button.disabled {
+    opacity: 0.4;
+}
+
+.icoachu .h-logo-wrap{
+    background-image: url("../img/call_layout/logo/icu_logo.png");
+    display: block;
+}
+
+/*鼠标滑过*/
+.icoachu .win-btn-container button.win-btn-no:hover {
+    background: #dae6fc;
+}
+.icoachu .h-btn-wrap .h-room-start:hover {
+    background: #32cfa0;
+}
+.icoachu .h-btn-wrap .h-room-end:hover{
+    background-color: #ef5d3a;
+}
+.icoachu .h-btn-wrap .h-room-raise:hover{
+    background-color: #ef5d3a;
+}
+
+.icoachu .video-container .video-hearer-wrap .video-wrap{
+	background: #B1D5F7 url(../img/call_layout/user/icon_user_big_nomal.png) no-repeat center center;
+}
+.icoachu .video-container .video-chairman-wrap .video-wrap{
+	background: #B1D5F7 url(../img/call_layout/user/icon_teacher_normal.png) no-repeat center center;
+}
+/*工具栏设置蓝色*/
+.icoachu .tl-all-participant-tools{
+    background-color: #3278fe;
+}
+.icoachu .tl-all-participant-tools:hover{
+    background-color: #3278fe;
+}
+.icoachu .tl-all-participant-tools:active{
+    background-color: #3278fe;
+}
+.icoachu .teach-expansion-column{
+    background-color: #1250c4;
+}
+.icoachu .teach-expansion-column:active{
+    background-color: #3278fe;
+}
+
+.icoachu .tl-all-participant-tools-active{
+    background-color: #3278fe;
+}
+/*下课提示框*//*ybl*/
+.icoachu .alert-contant{
+    background-color: #e6e8ee;
+}
+.icoachu .alert-isOk{
+    background-color: #e6e8ee;
+}
+.icoachu .title-text{
+    border-color:#e6e8ee;
+
+}
+/*.icoachu .alert-error-confrim.alert-box center.alert-contant{
+    color:black;
+}*/
+.icoachu .alert-box{
+   color:black;
+}
+.icoachu .alert-title{
+    background-color: #3278fe;
+}
+.icoachu .content-wrap{
+    background-color: #e6e8ee;
+}
+.icoachu .chat-subject{
+    background-color: #e6e8ee;
+}
+.icoachu .alert-isOk button{
+    background-color: #3278fe;
+}
+.icoachu .alert-isOk button.alert-cancel{
+    background-color:#e6e8ee;
+    border-style:solid;
+    border-width:1px;
+    border-color: #3278fe;
+}
+.icoachu .alert-isOk button.alert-cancel:hover{
+    background-color: #b2d6f8;
+}
+/*.icoachu .alert-isOk button.alert-cancel:active{
+    background-color: #3278fe;
+}*/
+.icoachu .title-text{
+    color:#e6e8ee;
+}
+.icoachu .alert-cancel{
+    color:#3278fe;
+}
+.icoachu .input-box{
+    background:#e6e8ee;
+}
+/*笔文字形状拉框样式*/
+.icoachu .h-tool  .header-tool-extend ul li[data-select=true]{
+    background-color: #3278FE;
+}
+.icoachu .h-tool  .tool-text-extend ul{
+    background: #1250c4;
+}
+/*聊天区*/
+.icoachu .input-box, .icoachu .chat-subject{
+        height: 0.51rem
+}
+.icoachu .normal .tool-container .tool-icon-wrap {
+    background-color: #2b5fc5;
+}
+.icoachu .welcome-classroom {
+    text-align: center;
+    width: 100%;
+    padding-left: 6%;
+    box-sizing: content-box;
+    color: #990000;
+    word-break:keep-all;           /* 不换行 */
+    white-space:nowrap;          /* 不换行 */
+}
+.icoachu .span.emotion{
+    width:0.24rem;
+}
+.icoachu .chat-accessory{
+    width:0.35rem;
+}
+.icoachu .input {
+    height: 100%;
+    width: 100%;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    /* margin-left: 2.5%; */
+    border-radius: 0.05rem 0 0 0.05rem;
+    /* box-shadow: 0 0.02rem #d8d9db inset; */
+    color: #000000;
+    line-height: 0.255rem;
+    border: none;
+    background: #fefefe;
+}
+.icoachu .sendBtn {
+    vertical-align: top;
+    height: 100%;
+    color: #fff;
+    border-radius: 0 0.05rem 0.05rem 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    width: 15%;
+    text-align: center;
+    cursor: default;
+    min-width: 0.8rem;
+    margin-right: 2.5%;
+    background: #dddddd;
+}
+
+.inputContentEditable {
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    color: #000000;
+    overflow: auto;
+    border-right: #fff 2px inset;
+    border-top: #fff 2px inset;
+    border-left: #fff 2px inset;
+    border-bottom: #fff 2px inset;
+    height:0.45rem;
+    background: #dddddd;
+}

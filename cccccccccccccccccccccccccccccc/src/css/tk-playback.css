@@ -1,0 +1,77 @@
+/*回放相关的样式*/
+@charset "UTF-8";
+.playback #all_wrap.all-wrap{
+    height: calc(100% - 0.5rem);
+}
+.playback #all_wrap.all-wrap .playback-barrier-bed{
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    /*background-color: rgba(0,0,0,0.3);*/
+    position: absolute;
+    top:0;
+    left:0;
+}
+.playback .video-controller-replay.video-controller{
+    width: 100%;
+    height: 0.5rem;
+    z-index: 989;
+}
+.playback .replay-container{
+    width: 100%;
+    height: 0.05rem;
+}
+.playback #playback_video_progress_slide.video-progress-bar-vessel{
+    width: 100%;
+    border-radius: 0;
+    height: 0.04rem;
+    background: transparent;
+}
+.playback #playback_video_progress_slide.video-progress-bar-vessel .video-progress-bar{
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    z-index: 999;
+    background: transparent;
+    height: 0.05rem;
+}
+.playback .video-func-btn-container.video-func-btn-container-replay{
+    height: calc(100% - 0.04rem);
+    background: #202c4a;
+}
+
+.tk-slide.tk-playback-progress-slider{
+    width: 100%;
+    height: 0.04rem;
+}
+.tk-slide.tk-playback-progress-slider .bar.bar-0 , .tk-slide.tk-playback-progress-slider .handle.handle-0{
+    background-color: #da4817;
+}
+.tk-slide.tk-playback-progress-slider .bar.bar-0 , .tk-slide.tk-playback-progress-slider .bar.bar-1{
+    height: 0.04rem;
+}
+.tk-slide.tk-playback-progress-slider:after, .tk-slide.tk-playback-progress-slider::after {
+    display: block;
+    content: '';
+    height: 0.2rem;
+    margin-top: -0.1rem;
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: 990;
+}
+.tk-slide.tk-playback-progress-slider .handle.handle-0{
+    width: 0.12rem;
+    height: 0.12rem;
+    transform: translate(0rem , -0.06rem);
+    z-index: 998;
+}
+.tk-slide.tk-playback-progress-slider .handle.handle-0:after, .tk-slide.tk-playback-progress-slider .handle.handle-0::after{
+    width: 0.24rem;
+    height: 0.24rem;
+    transform:translate(-0.12rem , -0.12rem);
+    z-index: 999;
+}
+.video-controller-replay:hover .tk-slide.tk-playback-progress-slider .handle.handle-0{
+    display: block;
+}

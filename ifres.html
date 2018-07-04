@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="on">
+
+</div>
+
+<iframe id="rng" src="./ifres1.html" frameborder="0"></iframe>
+<iframe id="aaa" src="./ifres2.html" frameborder="0"></iframe>
+
+</body>
+</html>
+<script>
+
+     aaa.onload=function(){
+         aaa.contentWindow.postMessage({a:1323},'*');
+     }
+
+
+
+    window.addEventListener('message',function(e){
+        if(e.data.flag){
+            rng.contentWindow.postMessage(e.data.data,'*');
+        }
+    })
+</script>

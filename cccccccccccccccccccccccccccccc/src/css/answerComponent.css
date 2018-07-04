@@ -1,0 +1,585 @@
+.answer-teach-wrapDiv {
+	width: 4.4rem;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	z-index: 110;
+	overflow: hidden;
+	border-radius: 0.05rem;
+}
+
+.answer-hover {
+	width: 90%;
+	height: 50%;
+	position: absolute;
+	top: 0.4rem;
+	left: 0;
+	z-index: 121;
+	display: flex;
+	justify-content: space-around;
+}
+/*tkpc2.0.8*/
+.answer-hover div {
+	width: 0.5rem;
+	height: 1rem;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	color: white;
+	float: left;
+	word-wrap: break-word;
+	visibility: hidden;
+	flex-shrink: 0;
+}
+/*tkpc2.0.8*/
+.answer-hover div p {  
+	width: 100%;
+	height: 0.162rem;
+	line-height: 0.162rem;
+	text-align: center;
+	font-size: 0.1rem;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+.answer-teach-header {
+	display: flex;
+	background: #0b1c38;
+	justify-content: space-between;
+	border-bottom: 0.01rem solid;
+}
+
+.answer-teach-headerImg {
+	background: url('../img/call/answer_component_headerDot.png');
+	float: left;
+	margin-top: 0.05rem;
+}
+
+.answer-teach-header-left {
+	width: 4.42rem;
+	height: 0.3rem;
+	background: #0b1c38;
+}
+
+.answer-teach-header-left-grey {
+	color: #bdbdbd;
+	float: left;
+	margin-left: 0.1rem;
+	line-height: 0.3rem;
+}
+
+.answer-teach-header-left-green {
+	color: #2196f3;
+	line-height: 0.3rem;
+	float: left;
+	margin-left: 0.1rem;
+}
+
+.answer-teach-header-right {
+	width: 0.3rem;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	margin-right: 0.05rem;
+	cursor: pointer; /*tkpc2.0.8*/
+	background-image: url('../img/call/timer_close_normal.png');
+	background-size: 100% 100%;
+}
+
+.answer-teach-header-right:hover {
+	background-image: url('../img/call/timer_close_press.png');
+	background-size: 100% 100%;
+}
+
+.answer-teach-content {
+	width: 4.4rem;
+	background: #202C4A;
+	height: 100%;
+	overflow: hidden;
+}
+
+.answer-teach-optionUl {
+	width: 4.4rem;
+	height: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.answer-teach-optionUl li {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	border: 0.03rem solid #074496;
+	background: #1e2b48;
+	margin-top: 0.3rem;
+	margin-left: 0.45rem;
+	line-height: 0.45rem;
+	text-align: center;
+	color: white;
+	font-size: 0.25rem;
+}
+
+.answer-teach-add {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	background: #368bcb;
+	border: 0.03rem solid #074496;
+	float: left;
+	margin-left: 0.45rem;
+	margin-top: 0.3rem;
+	line-height: 0.4rem;
+	text-align: center;
+	color: white;
+	font-size: 0.25rem;
+	color: white;
+	cursor: pointer;
+}
+
+.answer-teach-add:hover {
+	background: #66ccff;
+}
+
+.answer-teach-reduce {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	background: #368bcb;
+	border: 0.03rem solid #074496;
+	float: left;
+	margin-left: 0.45rem;
+	margin-top: 0.3rem;
+	line-height: 0.4rem;
+	text-align: center;
+	color: white;
+	font-size: 0.25rem;
+	color: white;
+	cursor: pointer;
+}
+
+.answer-teach-reduce:hover {
+	background: #66ccff;
+}
+
+.answer-teach-begin {
+	width: 80%;
+	height: 0.3rem;
+	background: #074496;
+	float: left;
+	margin-left: 10%;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+	line-height: 0.3rem;
+	border-radius: 0.05rem;
+	color: #fefefe;
+	text-align: center;
+	cursor: pointer;
+}
+
+.answer-teach-begin:hover {
+	background: #4293d0;
+}
+
+.answer-teach-lis {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 0.5rem;
+	border: 0.03rem solid black;
+	margin-left: 0.3rem;
+	margin-top: 0.3rem;
+	line-height: 0.5rem;
+	text-align: center;
+	color: white;
+	font-size: 0.25rem;
+}
+
+.changeOneAnswer {
+	color: red;
+	font-size: 0.25rem;
+	width: 100%;
+	text-align: center;
+}
+
+#result-teach-mytime {
+	color: #2196f3;
+	line-height: 0.3rem;
+	margin-left: 0.1rem;
+}
+
+#result-student-mytime {
+	color: #2196f3;
+	line-height: 0.3rem;
+	margin-left: 0.1rem;
+}
+
+#result-teach-mytimes {
+	color: #2196f3;
+	line-height: 0.3rem;
+	margin-left: 0.1rem;
+}
+
+.result-teach-wrapDiv {
+	width: 4.4rem;
+	height: 100%;
+	margin: auto;
+	position: relative;
+	display: none;
+	z-index: 669;
+}
+
+.result-teach-headerImg {
+	background: url('../img/call/answer_component_headerDot.png');
+	float: left;
+	margin-top: 0.05rem;
+}
+
+.result-teach-header {
+	width: 4.4rem;
+	height: 0.3rem;
+	display: flex;
+	justify-content: space-between;
+	background: #202C4A;
+}
+
+.result-teach-header-left {
+	display: flex;
+}
+
+.result-teach-header-left-grey {
+	color: #fefefe;
+	float: left;
+	margin-left: 0.1rem;
+	line-height: 0.3rem;
+}
+
+.result-teach-content {
+	width: 4.4rem;
+	background: #202C4A;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	border-top: 0.01rem solid black;
+}
+
+.result-teach-close {
+	width: 0.3rem;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	margin-right: 0.05rem;
+	background: url('../img/call/timer_close_normal.png') no-repeat center center;
+	background-size: 100% 100%;
+	color: grey;
+	cursor: pointer; /*tkpc2.0.8*/
+	display: none;
+}
+
+.result-teach-close:hover {
+	background: url('../img/call/timer_close_press.png') no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer; /*tkpc2.0.8*/
+}
+
+.detailDiv {
+	width: 1rem;
+	height: 0.3rem;
+	border-radius: 0.15rem;
+	background: black;
+	color: grey;
+	line-height: 0.3rem;
+	text-align: center;
+	float: right;
+	margin-right: 0.2rem;
+	margin-top: 0.2rem;
+}
+
+.result-teach-coordinate-div {
+	width: 90%;
+	position: relative;
+	left: 10%;
+}
+
+.result-teach-heart-span {
+	position: absolute;
+	top: 90%;
+	left: -2%;
+	color: #fefefe;
+}
+
+.result-teach-staff-div {
+	width: 90%;
+	height: 1.5rem;
+	border-left: 0.01rem solid #fefefe;
+	border-bottom: 0.01rem solid #fefefe;
+	float: left;
+}
+
+.result-teach-allResult {
+	width: 90%;
+	height: 0.2rem;
+	position: relative;
+	left: 0.02rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.result-teach-allResult li {
+	text-align: center;
+	color: #2196f3;
+}
+
+.result-teach-accuracy-div {
+	width: 80%;
+	float: left;
+	margin-left: 10%;
+}
+
+.result-teach-accuracy-left {
+	width: 100%;
+	height: 0.2rem;
+	border-radius: 0.1rem;
+	background: #5E5E5E;
+	display: inline-block;
+}
+
+.result-teach-accuracy-right {
+	background-color: #074496;
+	padding: 0 0.2rem;
+	height: 0.3rem;
+	border-radius: 0.1rem;
+	color: #fff;
+	margin: 0.035rem 0.15rem 0 0;
+	opacity: 1;
+	float: right;
+	margin-top: 0.15rem;
+	line-height: 0.3rem;
+}
+
+.result-teach-accuracy-right-text {
+	font-size: 0.1rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.result-teach-true-result {
+	width: 95%;
+	height: 0.3rem;
+	float: left;
+	margin-left: 2.5%;
+	line-height: 0.3rem;
+	display: flex;
+	justify-content: center;
+	border-radius: 0.15rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0.1rem;
+}
+
+.result-teach-end-question {
+	width: 80%;
+	height: 0.4rem;
+	background: #074496;
+	color: white;
+	float: left;
+	margin-left: 10%;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+	text-align: center;
+	line-height: 0.4rem;
+	border-radius: 0.03rem;
+	cursor: pointer;
+}
+
+.result-teach-end-question:hover {
+	background: #4293d0;
+	cursor: pointer;
+}
+
+.result-teach-restart-question {
+	width: 80%;
+	height: 0.4rem;
+	background: #074496;
+	color: white;
+	float: left;
+	margin-left: 10%;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+	text-align: center;
+	line-height: 0.4rem;
+	border-radius: 0.03rem;
+	display: none;
+	cursor: pointer;
+}
+
+.result-teach-restart-question:hover {
+	background: #4293d0;
+	cursor: pointer;
+}
+
+.spans {
+	display: inline-block;
+	width: 0.1rem;
+	height: 0.2rem;
+	color: #fefefe;
+	text-align: center;
+	line-height: 0.2rem;
+	margin-left: 0.05rem;
+}
+
+.activeUl {
+	background: red;
+}
+
+.answersPeople {
+	color: #fefefe;
+	left: 0.2rem;
+	top: 0.2rem;
+	position: absolute;
+	z-index: 121;
+}
+
+.answer-stu-lis {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #2196f3;
+	color: white;
+	font-size: 0.12rem;
+	text-align: center;
+}
+
+.answer-stu-lis p {
+	position: absolute;
+	width: 100%;
+	top: -0.14rem;
+	left: 0;
+	text-align: center;
+}
+
+.result-student-allResult {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	z-index: 121;
+	justify-content: space-around;
+}
+
+.result-student-allResult li {
+	position: relative;
+	cursor: pointer;
+}
+
+.result-A-stu {
+	height: 100%;
+	color: white;
+	position: relative;
+	text-align: center;
+	border: 1px solid;
+}
+
+.publish-the-answer {
+	/*width:0.6rem;
+	height:0.2rem;
+	display: inline-block;*/
+	background-color: #074496;
+	padding: 0 0.2rem;
+	height: 0.3rem;
+	border-radius: 0.03rem;
+	color: #fff;
+	margin: 0.035rem 0.15rem 0 0;
+	opacity: 1;
+	cursor: pointer;
+	margin-left: 0.1rem;
+}
+
+.xiang-qing-div {
+	cursor: pointer;
+	color: #fefefe;
+}
+
+.xiang-qing-div:hover {
+	cursor: pointer;
+	color: white;
+}
+
+.dialCanvas {
+	width: 3.55rem;
+	height: 3.55rem;
+}
+
+.answer-table-div {
+	width: 90%;
+	height: 2rem;
+	display: none;
+	float: left;
+	margin-left: 5%;
+	overflow:auto;
+}
+
+.answer-table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed; /*tkpc2.0.8*/
+}
+
+.answer-table tr {
+	width: 100%; /*tkpc2.0.8*/
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	height: 0.28rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.answer-table td {
+	width:33.3%; /*tkpc2.0.8*/
+	text-align: center;
+	border: 1px solid white;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.table-true-result {
+	color: white;
+}
+
+.table-false-result {
+	color: cornflowerblue;
+}
+
+.result-teach-published-warning {
+	color: red;
+	width: 50%;
+	height: 0.2rem;
+	display: inline-block;
+	display: none;
+	position: absolute;
+	right:12%;
+	top:60%;
+	text-align: center;
+	background: #202C4A;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 0.2rem;
+}
+
+.answer-table-first-tr {
+	width: 100%;
+	height: 0.3%;
+	border: 1px solid white;
+}
+
+.answer-table-first-tr th {
+	color: white;
+	width: 33.3%;
+	text-align: center;
+	border: 1px solid white;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

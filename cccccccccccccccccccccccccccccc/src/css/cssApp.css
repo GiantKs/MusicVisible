@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.all-wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+button.disabled , .all-wrap.disabled  , .all-wrap .playback-barrier-bed.disabled{
+    pointer-events: none ;
+    cursor: default !important;
+}
+.disabled{
+    cursor: default !important;
+}
+li.disabled , span.disabled , .t-ul-option-wrap.disabled , .translate.disabled , .temporary-disabled{
+    pointer-events: none ;
+    cursor: default !important;
+}
+.tk-ignore.ignore-disabled{
+    pointer-events:auto!important;
+    cursor: auto !important;
+}
+
+/*===扩展功能样式===*/
+/*全屏样式*/
+:full-screen{}
+:-moz-full-screen{
+    background-color: #fff;
+}
+:-webkit-full-screen{}
+:-o-full-screen{}
+:-ms-full-screen{}
+
+.main-content-wrap{
+    position: relative;
+    width: 100%;
+    height:10.32rem;
+    height: -webkit-calc(100% - 0.48rem);
+    height: -moz-calc(100% - 0.48rem);
+    height: calc(100% - 0.48rem);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+}
+.tool-and-literally-and-othervideo-wrap{
+    width: calc(100% - 4.1rem);
+    flex: 1;
+}
+.tool-and-literally-wrap{
+    width: 100%;
+    /*	height: 80%;
+        height: calc(100% - 2rem);*/
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    position: absolute;
+}

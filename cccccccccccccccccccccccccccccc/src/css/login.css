@@ -1,0 +1,12 @@
+/*登录界面的样式*/
+@charset "UTF-8";
+.join{
+    position: absolute;top: 50%;width:100%;height:180px;margin-top:-90px;text-align: center;
+}
+
+.wait-room-wrap{
+    color: #b8c1d0;font-size: 40px;
+}
+.add-letter-spacing-5px{
+    letter-spacing: 5px;
+}

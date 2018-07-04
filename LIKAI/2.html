@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var pc = new RTCPeerConnection();
+    pc.onaddstream = function(obj) {
+        var vid = document.createElement("video");
+        document.appendChild(vid);
+        vid.srcObject = obj.stream;
+    }
+
+    // Helper functions
+    function endCall() {
+        var videos = document.getElementsByTagName("video");
+        for (var i = 0; i < videos.length; i++) {
+            videos[i].pause();
+        }
+
+        pc.close();
+    }
+
+    function error(err) { endCall(); }
+
+
+   /* var offer = getOfferFromFriend();
+    navigator.getUserMedia({video: true}, function(stream) {
+        pc.onaddstream({stream: stream});
+        pc.addStream(stream);
+
+        pc.setRemoteDescription(new RTCSessionDescription(offer), function() {
+            pc.createAnswer(function(answer) {
+                pc.setLocalDescription(new RTCSessionDescription(answer), function() {
+                    // send the answer to a server to be forwarded back to the caller (you)
+                }, error);
+            }, error);
+        }, error);
+    })*/
+</script>

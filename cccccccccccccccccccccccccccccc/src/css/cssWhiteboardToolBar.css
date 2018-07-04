@@ -1,0 +1,430 @@
+@charset "UTF-8";
+.lc-tool-container{
+    width: 0.5rem;
+    /*height: 100%;*/
+    position: absolute;
+    top: 0;
+    left:calc(100% - 0.5rem);
+    /*right: 0;*/
+    transition: all 0.4s;
+    margin-top: 0.4rem ;
+    z-index: 999;
+}
+.h-tool{
+    background-color: #202c4a;
+}
+.h-tool li{
+    width: 0.5rem;
+    height: 0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    position: relative;
+}
+.h-tool li .header-tool{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.h-tool li.active .header-tool{
+    background-color:#161e32;
+}
+.h-tool li .tool-img-wrap{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    background:url("../img/call_layout/top/tools/icon_cursor_normal.png") no-repeat center center ;
+    background-size:100% 100% ;
+}
+.h-tool li span.tool-img-wrap.h-tool-color{
+    background: none;
+}
+.h-tool li span.tool-img-wrap.h-tool-color .tool-color-show{
+    width: 0.18rem;
+    height: 0.18rem;
+}
+
+.h-tool li.tl-mouse .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_mouse_normal.png");
+}
+.h-tool li.tl-mouse .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_mouse_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-laser .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_cursor_normal.png");
+}
+.h-tool li.tl-laser .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_cursor_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-pencil .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_pencil_normal.png");
+}
+.h-tool li.tl-pencil .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_pencil_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-text .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_fonts_normal.png");
+}
+.h-tool li.tl-text .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_fonts_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-shape .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_shape_normal.png");
+}
+.h-tool li.tl-shape .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_shape_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-shape .tool-img-wrap:active{
+    background-image:url("../img/call_layout/top/tools/icon_shape_pressed.png");
+}
+.h-tool li.tl-undo .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_revoked_normal-.png");
+}
+.h-tool li.tl-undo .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_revoked_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-redo .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_recover_normal.png");
+}
+.h-tool li.tl-redo .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_recover_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-eraser .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_eraser_normal.png");
+}
+.h-tool li.tl-eraser .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_eraser_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-clear .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_clean_normal.png");
+}
+.h-tool li.tl-clear .tool-img-wrap:hover{
+    background: url("../img/call_layout/top/tools/icon_clean_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+.h-tool li.tl-zoom-big .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_big_normal.png");
+}
+.h-tool li.tl-zoom-small .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_small_normal.png");
+}
+.h-tool li.tl-undo .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_revoked_disabled.png");
+}
+.h-tool li.tl-redo .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_recover_disabled.png");
+}
+.h-tool li.tl-clear .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_clean_disabled.png");
+}
+.h-tool li.tl-eraser .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_eraser_disabled.png");
+}
+.h-tool li.tl-zoom-big .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_big_disabled.png");
+}
+.h-tool li.tl-zoom-small .header-tool.disabled  .tool-img-wrap{
+    background-image:url("../img/call_layout/top/tools/icon_small_disabled.png");
+}
+
+.h-tool li .tool-img-wrap .tool-color-show{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -0.13rem;
+    margin-top: -0.1rem;
+}
+.h-tool li .tool-img-wrap .tool_triangle{
+    position: absolute;
+    bottom:-0.03rem;
+    right:-0.1rem;
+    width: 0.04rem;
+    height: 0.04rem;
+    background: url("../img/call_layout/tool_triangle.png") no-repeat center center;
+    -webkit-background-size:100% 100%;
+    background-size:100% 100%;
+}
+.h-tool li  .header-tool-extend{
+    display: none;
+    position: absolute;
+    top: 0;
+    background: #161e32;
+    z-index: 1828;
+    height: auto !important;
+    opacity:0;
+    transition: opacity 0.5s;
+}
+.h-tool li.more  .header-tool-extend{
+    display: block!important;
+    opacity: 1!important;
+}
+.h-tool.all-participant-function{
+    margin: 0 0 0.1rem 0;
+}
+.h-tool.all-participant-function .tl-all-participant-step-down  .tool-img-wrap.on{
+    background-image: url(../img/call_layout/bottom/icon_user_up_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-step-down  .tool-img-wrap.off{
+    background-image: url(../img/call_layout/bottom/icon_user_up_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_aduio_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .header-tool.disabled  .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_aduio_disabled.jpg);
+}
+.h-tool.all-participant-function .tl-all-participant-mute .tool-img-wrap.off{
+    background-image: url(../img/call_layout/left/video/icon_mute_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-gift .tool-img-wrap.on{
+    background-image: url(../img/call_layout/left/video/icon_gift_normal.png);
+}
+.h-tool.all-participant-function .tl-all-participant-gift .tool-img-wrap.on:hover{
+    background: url("../img/call_layout/left/video/icon_gift_hover.png") no-repeat center center;
+    background-size: 100% 100%;
+}
+
+/*========涂鸦工具拓展 start ======*/
+/*画笔 、 文字、 形状*/
+.h-tool .tool-pencil-extend ul  , .h-tool  .tool-text-extend ul ,.h-tool .tool-shape-extend ul {
+    background: #161e32;
+    color: #fff;
+    font-size: 0.12rem;
+}
+.h-tool .tool-pencil-extend ul li  , .h-tool  .tool-text-extend ul li ,.h-tool .tool-shape-extend ul li{
+    width: 1.4rem;
+    height: 0.4rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+.h-tool .tool-pencil-extend ul li.active , .h-tool .tool-text-extend ul li.active , .h-tool .tool-shape-extend ul li.active{
+    background-color:#4468d0 ;
+}
+.h-tool .tool-pencil-extend ul li span , .h-tool  .tool-text-extend  ul li span ,.h-tool .tool-shape-extend ul li span{
+    display: block;
+    padding-left: 0.48rem;
+    text-align: left;
+    position: relative;
+}
+
+.h-tool .tool-pencil-extend ul li span:before ,.h-tool .tool-shape-extend ul li span:before{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 0.48rem;
+    height: 0.4rem;
+    content: "";
+    background:url("../img/call_layout/top/tools/brush/icon_pencil.png") no-repeat center center;
+    background-size: 0.4rem 0.4rem;
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_pencil] .tool-img-wrap {
+    background-image: url("../img/call_layout/top/tools/brush/icon_pencil.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_pencil] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/brush/icon_pencil_hover.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_pencil] .tool-img-wrap:link {
+    background-image: url("../img/call_layout/top/tools/brush/icon_pencil_01.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_highlighter] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/brush/icon_highlighterl.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_highlighter] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/brush/icon_highlighterl_hover.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_highlighter] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/brush/icon_highlighterl_1.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_line] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/brush/icon_line.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_line] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/brush/icon_line_hover.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_line] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/brush/icon_line_1.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_arrow] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/brush/icon_arrow.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_arrow] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/brush/icon_arrow_hover.png");
+}
+.h-tool .tool-pencil-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-pencil .header-tool[data-iconclass=tool_arrow] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/brush/icon_arrow_1.png");
+}
+
+.h-tool  div.tool-text-extend ul li{
+    width: 1.2rem;
+}
+.h-tool  .header-tool-extend ul li[data-select=true]{
+    background-color: #4468d0;
+}
+.h-tool  div.tool-text-extend  ul li span{
+    padding-left: 0.14rem;
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle_empty] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/shape/icon_rectangle_01.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle_empty] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/shape/icon_rectangle_01_hover.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(1) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle_empty] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/shape/icon_shape.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/shape/icon_rectangle_02.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/shape/icon_rectangle_02_hover.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(2) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_rectangle] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/shape/icon_rectangle.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse_empty] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/shape/icon_round_01.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse_empty] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/shape/icon_round_01_hover.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(3) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse_empty] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/shape/icon_circle_link.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse] .tool-img-wrap{
+    background-image: url("../img/call_layout/top/tools/shape/icon_round_02.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse] .tool-img-wrap:hover{
+    background-image: url("../img/call_layout/top/tools/shape/icon_round_02_hover.png");
+}
+.h-tool .tool-shape-extend ul li:nth-of-type(4) span:before , .h-tool li.tl-shape .header-tool[data-iconclass=tool_ellipse] .tool-img-wrap:link{
+    background-image: url("../img/call_layout/top/tools/shape/icon_circle_link2.png");
+}
+.tool-color-extend.tk-tool-color-extend{
+    left: auto;top: auto;right: 100%;bottom: 0;
+}
+.header-tool-extend.tool-color-extend{
+    width: 2.4rem;
+    color: #fff;
+    font-size: 0.12rem;
+    line-height: normal;
+    height: 3rem;
+    overflow: hidden;
+    cursor: default;
+}
+.tool-measure-container{
+    width:100%;
+    height: 0.9rem;
+    box-sizing: border-box;
+    padding: 0.15rem 0.1rem 0.1rem 0.1rem;
+}
+.h-tool-measure-title{
+    width: 100%;
+    text-align: left;
+}
+.h-tool-measure{
+    width: 0.38rem;
+    height: 0.38rem;
+    border: 0.01rem solid transparent ;
+    line-height: 0.38rem;
+    width:calc(0.4rem - 2px) ;
+    height:calc(0.4rem - 2px) ;
+    line-height:calc(0.4rem - 3px) ;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0.1rem 0.3rem 0 0;
+    display: inline-block;
+    cursor: default;
+}
+.h-tool-measure.active{
+    border-color: #f03a0e ;
+}
+.h-tool-measure span{
+    display: inline-block;
+    background: #fff;
+    width: 0.04rem;
+    height: 0.04rem;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.h-tool-measure.h-tool-measure-middle span{
+    width: 0.08rem;
+    height: 0.08rem;
+}
+.h-tool-measure.h-tool-measure-big span{
+    width: 0.12rem;
+    height: 0.12rem;
+}
+
+.tool-color-container{
+    width: 100%;
+    height: 2.1rem;
+}
+.header-tool-extend-option-wrap{
+    box-sizing: border-box;
+    padding: 0.1rem 0.09rem;
+
+    border-top: 0.01rem solid #1a243c;
+    color: #fff;
+    line-height: normal;
+}
+.h-tool-extend-option-title{
+    text-align: left;
+    padding:0;
+}
+
+.h-color-list-wrap{
+    width: 2.21rem;
+    margin-top: 0.04rem;
+    background-color: #000;
+}
+.h-tool-extend-option-content .h-curr-color{
+    margin-top: 0.18rem ;
+    display: block;
+    width: 0.4rem;
+    height:0.2rem;
+    background-color: #000000;
+}
+.h-color-simple{
+    width: 0.12rem;
+    margin-right: 0.1rem;
+}
+.h-color-simple li , .h-color-more li{
+    width: 0.1rem;
+    height: 0.1rem;
+    position: relative;
+    cursor: default;
+}
+.h-color-simple li:last-child{
+    margin-bottom: 0.01rem;
+}
+.h-color-more li,.h-color-simple li{
+    margin-top: 0.01rem;
+    margin-left: 0.01rem;
+}
+.h-color-simple li:after , .h-color-more li:after{
+    content: "";
+    display: block;
+    width: 0.12rem;
+    height: 0.12rem;
+    position: absolute;
+    top: -0.01rem;
+    left: -0.01rem;
+}
+
+.h-color-simple li.active:after , .h-color-more li.active:after{
+    border: 0.01rem solid #fff;
+}
+/*========涂鸦工具拓展 end ======*/

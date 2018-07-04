@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+#chat {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-wrap,
+.chat-wrap>div,
+.chat-wrap .chat-middle,
+.chat-wrap .chat-middle ul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.chat-wrap .chat-middle ul {
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #fff;
+    padding: 0 0.2rem;
+}
+.send-msg-text {
+    color: black;
+}
+
+/*======WJ code start 2017.05.22========*/
+
+
+/*.chat-wrap  .chat-middle ul li{
+   	border-bottom: 0.01rem solid #283658;
+   }*/
+
+.chat-wrap .chat-middle ul li {
+    overflow: hidden;
+    font-size: 0.12rem;
+}
+
+.chat-wrap .chat-middle ul li .msg-top {
+    margin-top: 0.15rem;
+    height: 0.24rem;
+    line-height: 0.24rem;
+    font-size: 0.12rem;
+    color: #aaa;
+    display: flex;
+}
+
+.chat-wrap .chat-middle ul li .msg-top .msg-name {
+    display: inline-block;
+    width: 75%;
+    width: calc(100% - 0.65rem);
+    flex: 1;
+    color: #3278FE;
+    /*padding-left: 0.1rem;*/
+}
+
+
+/*翻译的文本的样式*/
+
+.chat-wrap .chat-middle ul li .msg-bottom-box {
+    overflow: hidden;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom-box .trans-result {
+    width: 100%;
+    background: #fff;
+    color: #3278FE;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 0.01rem solid #ddd;
+    word-wrap: break-word;
+    text-align: left;
+    line-height: 0.2rem;
+    min-height: 0.2rem;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom-box.my-box {
+    text-align: right;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom-box.my-box .trans-result {
+    background: #3278FE;
+    color: #fff;
+    border: 0.01rem solid #3278FE;
+}
+
+.chat-wrap .chat-middle ul li .msg-top .msg-time .colon,
+.msg-container .list .remind-msg .time .colon {
+    display: inline-block;
+    padding: 0 0.05rem;
+    font-style: normal;
+}
+.chat-wrap .chat-middle ul li .msg-top .msg-time{
+    display: flex;
+}
+.msg-container .list .remind-msg .msg{
+    flex: 1;
+}
+.chat-wrap .chat-middle ul li .msg-bottom {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 0.1rem 0.4rem 0.1rem 0.1rem;
+    min-height: 0.2rem;
+    display: inline-block;
+    word-wrap: break-word;
+    position: relative;
+    box-sizing: border-box;
+    border: 0.01rem solid #ddd;
+    color: #666;
+    text-align: left;
+    line-height: 0.2rem;
+}
+
+
+/*翻译的图片样式*/
+
+
+/*other：*/
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.06rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    cursor: pointer;
+    background: url("../img/call_layout/dialog/btn_translation_02_normal.png") no-repeat;
+    background-size: 100%;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate:hover {
+    background: url("../img/call_layout/dialog/btn_translation_02_hover.png") no-repeat;
+    background-size: 100%;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate:active {
+    background: url("../img/call_layout/dialog/btn_translation_02_pressed.png") no-repeat;
+    background-size: 100%;
+}
+
+
+/*自己：*/
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate.translated {
+    background: url("../img/call_layout/dialog/btn_translation_01_normal.png") no-repeat;
+    background-size: 100%;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate.translated:hover {
+    background: url("../img/call_layout/dialog/btn_translation_01_hover.png") no-repeat;
+    background-size: 100%;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom .translate.translated:active {
+    background: url("../img/call_layout/dialog/btn_translation_01_pressed.png") no-repeat;
+    background-size: 100%;
+}
+
+.chat-wrap .chat-middle ul li .msg-bottom.my-msg {
+    color: #fff;
+    background-color: #3278FE;
+    border: 0.01rem solid #3278FE;
+}
+
+.text-r {
+    text-align: right;
+}
+
+
+/*======WJ code end 2017.05.22========*/
+
+.chat-wrap  .chat-middle{
+    height: 82%;
+    height:calc(100% - 0.608rem);
+}
+
+
+.video-container .v-chat-container{
+    background-color: #1a2642 ;
+    position: relative;
+    height:auto;
+    margin-bottom: 0.1rem;
+    min-height: 1.54rem;
+    height: calc(100% - 6.28rem );
+}
+
+
+.send-mgs-wrap{
+    margin-bottom: 1.9390243902439%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+.send-msg-text , .send-message-btn{
+    border: none;
+    outline:none;
+    border-radius: 0.04rem;
+    height: 0.44rem;
+    display: block;
+}
+
+.send-msg-text{
+    width:75.99487179487179% ;
+    padding-left:3.84615384615385%;
+}
+.send-message-btn{
+    margin-left:2.56410256410256%;
+    background-color: #f03a0e;
+    color: #fff;
+    width: 20.51282051282051%;
+
+}
+.msg-container .list .remind-msg {
+    font-size: 0.12rem;
+    color: #aaa;
+    padding-top: 0.15rem;
+    display: flex;
+    align-items: center;
+}
+.msg-container .list .remind-msg  .user{
+    color: #fff;
+    padding-right: 0.05rem;
+    display: inline-block;
+    max-width: 55%;
+    max-width: calc(100% - 0.14rem * 10);
+}
+.msg-container .list .remind-msg .time{
+    display: inline-block;
+    padding:0 0.1rem 0 0rem ;
+    min-width: calc(100% - 0.14rem * 19);
+}
+
+/*样式覆盖*/
+.send-mgs-wrap input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #aab2bd;
+    /* placeholder字体大小  */
+    font-size: 0.12rem;
+    /* placeholder位置  */
+    text-align: left;
+}
+
+.send-mgs-wrap input::-moz-input-placeholder {
+    /* placeholder颜色  */
+    color: #aab2bd;
+    /* placeholder字体大小  */
+    font-size: 0.12rem;
+    /* placeholder位置  */
+    text-align: left;
+}
+

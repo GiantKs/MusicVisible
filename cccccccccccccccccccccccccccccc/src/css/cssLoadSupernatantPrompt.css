@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.supernatant-container{
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+.supernatant-container .load-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.supernatant-container .load-container .icon{
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: url(../img/spinner.gif) no-repeat top center;
+    background-size: 100% auto;
+    margin: 0 auto;
+}
+.supernatant-container .load-container .content{
+    display: block;
+    color: #DDD;
+    margin-top: 0.1rem;
+}

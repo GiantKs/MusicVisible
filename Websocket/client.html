@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<button id="ev">
+    发送给client2
+</button>
+</body>
+</html>
+
+<script>
+    var ws = new WebSocket("ws://localhost:8080");
+
+    ws.onopen = function(evt) {
+        console.log("Connection open ...");
+    };
+
+    ws.onmessage = function(evt) {
+        console.log( "Received Message: " + evt.data);
+
+    };
+
+    ws.onclose = function(evt) {
+        console.log("Connection closed.");
+    };
+
+    ev.onclick=function () {
+        ws.send(input.value);
+    }
+
+</script>

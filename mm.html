@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*var obj = {};
+    var o = [{isright: true},{isright: true},{isright: false},{isright: false}]
+    o.forEach((item,index)=>{
+       obj[String.fromCharCode('A'.charCodeAt() + index)]=[]
+    })
+    console.log(obj);*/
+
+    console.log(MathBarGraph([{isright: true}, {isright: true}, {isright: false}, {isright: false}], [{
+        id: "9c51397a-28a4-f57a-f9e9-f7a3011293b0",
+        name: "小罗伯特唐尼",
+        targets: [3, 4],
+        groups: undefined,
+        committime: '1523175503'
+    }, {
+        id: "9c51397a-28a4-f57a-f9e9-f7a3011293b0",
+        name: "小罗伯特唐尼",
+        targets: [],
+        groups: undefined,
+        committime: '1523175503'
+    }, {
+        id: "9c51397a-28a4-f57a-f9e9-f7a3011293b0",
+        name: "小罗伯特唐尼",
+        targets: [0, 1],
+        groups: undefined,
+        committime: '1523175503'
+    }, {
+        id: "9c51397a-28a4-f57a-f9e9-f7a3011293b0",
+        name: "小罗伯特唐尼",
+        targets: [1, 0],
+        groups: undefined,
+        committime: '1523175503'
+    },]));
+
+
+    function MathBarGraph(ALLOptions,ALLPeopleArray) {
+       var optionsObj = {},nullarray=[],returnAry=[],concentary=[],correctAry=[],correctNumberAry=[],correctStr='';
+       ALLOptions.forEach((item,index)=>{
+           optionsObj[String.fromCharCode('A'.charCodeAt() + index)]=[];
+           returnAry.push(String.fromCharCode('A'.charCodeAt() + index));
+           if(item.isright==true){
+               correctAry.push(index);
+               correctStr+= String.fromCharCode('A'.charCodeAt() + index)+ ' ';
+           }
+       });
+       ALLPeopleArray.forEach((item,index)=>{
+           item.targets.sort(function compare(cur,nex){
+               return cur-nex;
+           });
+           if(item.targets.length==0){
+               nullarray.push(item);
+               return false
+           }else if(correctAry.length == item.targets.length){
+               var babyFlag=[];
+               correctAry.forEach((itembabyg,indexbabyg)=>{
+                   itembabyg == item.targets[indexbabyg]?babyFlag.push(1):babyFlag.push(2);
+               });
+               var iscorrect = babyFlag.find((i,ind)=>{
+                  return i==2
+               });
+               iscorrect?null:correctNumberAry.push(item);
+           }
+           item.targets.forEach((itembaby,index)=>{
+               for(let k in optionsObj){
+                   if(String.fromCharCode( 'A'.charCodeAt() + itembaby ) == k){
+                       optionsObj[k].push(item);
+                   }
+               }
+           })
+       });
+       returnAry.forEach((itemGshow,index)=>{
+           concentary.push({[itemGshow]:optionsObj[itemGshow].length/ALLPeopleArray.length});
+       });
+       concentary.push({n:nullarray.length/ALLPeopleArray.length});
+      return {correct:correctStr,accuracy:correctNumberAry.length/ALLPeopleArray.length,line:concentary}
+   }
+
+
+    console.log(Object.keys({a: 1, b: 2}));
+
+
+</script>

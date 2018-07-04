@@ -1,0 +1,73 @@
+/**
+ * @description 提供展板的样式
+ * @author R37
+ * @date 2017/10/25
+ */
+
+/* 公共组件 */
+.btn-close {
+    position: absolute;
+    top: .03rem;
+    right: .1rem;
+
+    background-image:  url("../../../../../img/call/timer_close_normal.png");
+}
+
+/* 跑马灯css3实现 */
+.marquee div {
+   -webkit-animation: marquee 10s linear infinite;
+   animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+   0% {
+       transform: translateX(100%);
+   }
+   100% {
+       transform: translateX(0);
+   }
+}
+
+/*
+Inform组件
+*/
+.ifm {
+    z-index: 160;
+    position: absolute;
+    top: 0;
+    
+    width: 100%; 
+
+    color: #fff;
+}
+.ifm a {
+    text-decoration: none; 
+    color: #fff;
+}
+ /*
+ Notice组件
+ */
+ .ntc {
+    height: 1.2rem;
+    margin: .05rem;
+    padding: .05rem;
+
+    overflow: hidden;
+    border-radius: .05rem;
+
+    background-color: #fff;
+    color: #182236;
+ }
+.ntc h6{
+     text-align: center;
+ }
+.ntc p{
+    text-indent: .1rem;
+}
+
+ /*
+ Broadcast组件
+ */
+.notice.brd {
+    word-break: break-word;
+    color: #dc143c;
+ }

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.lc-video-all-container{
+    z-index: 107;width: 100%;height: 100%; display: none;background:rgba(0,0,0,0.5);
+}
+.tk-tool-bottom{
+    z-index: 105;margin-left: -1.6rem
+}
+.lc-tool-container .tk-tool-right{
+    margin-top: 0.35rem;z-index: 106;
+}
+.tool-color-show.tk-tool-color{
+    background-color: #000000;
+}
+.tool-color-extend.tk-tool-color-extend{
+    left: auto;top: auto;right: 100%;bottom: 0;
+}

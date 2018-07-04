@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         video{
+             width: 100px;
+             height: 100px;
+         }
+    </style>
+</head>
+<body>
+<video id="vid2" src=""></video>
+</body>
+</html>
+<script>
+   let pc1 = new webkitRTCPeerConnection();
+   let pc2 = new webkitRTCPeerConnection();
+    if (navigator.mediaDevices) {
+        navigator.mediaDevices.getUserMedia (
+            {
+                audio: true,
+                video: true}
+        ).then(function(stream) {
+            pc1.addStream(stream);
+        })
+    }
+
+    /*=======================================*/
+    pc1.createOffer(gotDescription1,()=>{
+        console.log('sssss');});
+    //...
+    function gotDescription1(desc){
+        console.log(desc);
+        pc1.setLocalDescription(desc);
+        /*trace("Offer from pc1 \n" + desc.sdp);*/
+        console.log(desc.sdp);
+        pc2.setRemoteDescription(desc);
+        /*pc2.createAnswer(gotdescription2);*/
+    }
+
+
+    pc2.onaddstream = function gotRemoteStream(e){
+        console.log(e,'不走');
+        vid2.srcObject = e.stream;
+    }
+
+
+</script>

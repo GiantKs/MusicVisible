@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.audio-progress-outside{
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    height: 0.03rem;
+    top: auto;
+    bottom: 0.12rem;
+    position: absolute;
+    z-index: 99;
+    overflow: initial;
+    background-color: transparent;
+}
+
+.tk-slide.tk-audio-volume-slider{
+    /*left: 0.4rem;*/
+    width: 1.2rem;
+    margin-top: 0.15rem;
+}

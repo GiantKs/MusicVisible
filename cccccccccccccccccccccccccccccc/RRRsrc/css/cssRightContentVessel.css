@@ -1,0 +1,509 @@
+@charset "UTF-8";
+.lc-container{
+	background-color: #121a2c;
+	width: 14.6rem;
+	width: calc(100% - 0.5rem );
+	height:100%;
+	flex: 1;
+}
+/*手机端样式*/
+.lc-container.phone{
+	width: 100%;
+	height: 100%;
+	background: #161616;
+}
+.lc-container.add-position-relative.add-fl.areaExchange {
+	position: fixed;
+	left: 15.4rem;
+	top: .5rem;
+	width: 3.7rem;
+	height: 2.775rem;
+	z-index: 999;
+}
+
+.lc-container .lc-full-vessel{
+	background-color: #121a2c;
+	width: 100%;height: 100%;
+}
+
+.tl-all-participant-tools {
+	width: 100%;
+	height: 100%;
+	background: url("../img/call/icon_box_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	background-color: #202c4a;
+	cursor: pointer;
+}
+
+.tl-all-participant-tools:hover {
+	background: url("../img/call/icon_box_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	background-color: #202c4a;
+}
+
+.tl-all-participant-tools.active {
+	cursor: pointer;
+	background: url("../img/call/icon_box_pressed.png") no-repeat center center;
+	background-size: 100% 100%;
+	background-color: #202c4a;
+}
+
+.teach-expansion-column {
+	width: calc(100% * 1);
+	height: auto;
+	position: absolute;
+	right: 100%;
+	background-color: #202c4a;
+	display: none;
+}
+
+.teach-expansion-column-one {
+	width: 1.2rem;
+	height: 0.5rem;
+	border: 0.01rem solid;
+	position: absolute;
+	left: -1.2rem;
+	background-color: #202c4a;
+	display: none;
+}
+
+.teach-expansion-column-client {
+	height: 1rem;
+}
+
+.teach-box-left {
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+.answer-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_answer_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.answer-implement-bg:hover {
+	background: url("../img/call/icon_answer_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.answer-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.turnplate-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_turnplate_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.turnplate-implement-bg:hover {
+	background: url("../img/call/icon_turnplate_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.turnplate-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.timer-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_timer_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+.screen-shareing-wrap_button{
+    position: absolute;
+    width: 170px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    margin-left: -60.7px;
+    margin-top: -50px;
+    border: .03rem solid #d7e5ff;
+}
+.timer-teachTool-startBtns
+{
+    width: 0.8rem;
+    height: 0.35rem;
+    text-align: center;
+    line-height: 0.35rem;
+    color:white;
+    float: left;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    margin-top:0.1rem;
+}
+.stop-btn-Imgs
+{
+    width: 0.6rem;
+    height: 0.6rem;
+    background:  url('../img/call/timer_stop_btn_bg.png') no-repeat center center;
+    background-position: 100% 100%;
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    border-radius:0.3rem;
+}
+.timer-teachTool-closeSpans{
+    margin-right:0.05rem ;
+    cursor: default;
+}
+.timer-teachTool-closeSpans:hover
+{
+    color: #96CDCD;
+}
+.timer-teachTool-againBtns
+{
+    
+    width: 0.8rem;
+    height: 0.35rem;
+    background: url('../img/call/timer_again_normal.png') no-repeat center center;
+    background-position: 100% 100%;
+    text-align: center;
+    line-height: 0.35rem;
+    margin-top: 0.1rem;
+    color:white;
+    float: left;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    display:none ;
+}
+
+.timer-implement-bg:hover {
+	background: url("../img/call/icon_timer_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.timer-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+.tl-all-participant-sharing {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_timer_share.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-all-participant-sharing:hover {
+	background: url("../img/call/icon_timer_share_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.icon-base-style {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background-size: 100%!important;
+	position: relative;
+	cursor: pointer;
+}
+
+.icon-base-style:hover {
+	background-size: 100% 100%;
+}
+
+.icon-notice {
+	background: url("../img/Icon/icon-notice.png") no-repeat center center;
+}
+
+.icon-notice:hover {
+	background: url("../img/Icon/icon-notice-hover.png") no-repeat center center;
+}
+
+.icon-inform {
+	background: url("../img/Icon/icon-inform.png") no-repeat center center;
+}
+
+.icon-inform:hover {
+	background: url("../img/Icon/icon-inform-hover.png") no-repeat center center;
+}
+
+.icon-broadcast {
+	background: url("../img/Icon/icon-broadcast.png") no-repeat center center;
+}
+
+.icon-broadcast:hover {
+	background: url("../img/Icon/icon-broadcast.png") no-repeat center center;
+}
+
+.tl-more-black-board {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call_layout/controlOverallBar/icon_blackboard_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.tl-more-black-board:hover {
+	background-image: url("../img/call_layout/controlOverallBar/icon_blackboard_hover.png");
+}
+
+.tl-more-black-board.disabled {
+	background-image: url("../img/call_layout/controlOverallBar/icon_blackboard_disabled.png");
+}
+
+.responder-implement-bg {
+	width: 50%;
+	height: 50%;
+	float: left;
+	background: url("../img/call/icon_responder_normal.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	cursor: pointer;
+}
+
+.responder-implement-bg:hover {
+	background: url("../img/call/icon_responder_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.responder-implement-bg.disabled {
+	background-color: #202c4a;
+	opacity: 0.2;
+}
+
+
+
+
+
+.programm-share-img{
+	background: url("../img/call_layout/png-programm-share.png") no-repeat center center;
+	height:100%;
+}
+.s-active {
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+.s-active:hover {
+	border: 1px solid #3278fe;
+}
+
+.programm-share-stop-img{
+	height:100%;
+	width:100%;
+	background: url("../img/call/icon_timer_sharing.png") no-repeat center center;
+	background-size:50% 70%;
+}
+
+.screen-share-img{
+	background: url("../img/call_layout/png-screen-share.png") no-repeat center center;
+	height:100%;
+}
+
+.area-share-img{
+	background: url("../img/call_layout/png-area-share.png") no-repeat center center;
+	height:100%;
+}
+
+.programm-share-close{
+	background: url(../img/call_layout/left/video/player/icon_share_closed.png) no-repeat center center;
+	background-size: 0.3rem 0.3rem;
+	position: absolute;
+	top: 0;
+	right: 0rem;
+	float: right;
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.programm-share-title{
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top:0;
+	left: 0;
+	text-align: center;
+	line-height: 30px;
+}
+.programm-share-name {
+	font-size:28px;
+	color:#3278fe;
+}
+.programm-share-name-info{
+	position: absolute;
+	margin-left: 30px;
+	font-size:20px;
+	color:#FF0000;
+}
+.programm-share-area{
+	position: absolute;
+	width: 30%;
+	height: 60%;
+	left:2%;
+	top:10%;
+	cursor: pointer;
+}
+
+.screen-share-area{
+	 position: absolute;
+	 width: 30%;
+	 height: 60%;
+	 right:2%;
+	 top:10%;
+	 cursor: pointer;
+ }
+.area-share-area{
+	position: absolute;
+	width: 30%;
+	height: 60%;
+	left:35%;
+	top:10%;
+	cursor: pointer;
+}
+.programm-share {
+	z-index:999;
+	width: 40%;
+	height: 70%;
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	background-color: #FFFFFF;
+	border:1px #1a2642 solid;
+}
+
+.tk-programm-share-active{
+	width: 100%;
+	height: 28px;
+	position: absolute;
+	bottom: 5%;
+	left: 0;
+	text-align: center;
+}
+
+.tk-programm-share-radio{
+	position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+	margin: auto;
+	cursor: pointer;
+}
+
+.tk-programm-share-btn{
+	color: #3278fe;
+	font-size:20px;
+	border:1px #1a2642 solid;
+	border-radius:5px 5px 5px 5px;
+	border:1px solid #3278fe;
+	width:120px;
+	height:28px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.tk-full-share-btn{
+	position: absolute;
+	right: 25%;
+	font-size:20px;
+	color: #3278fe;
+	margin-top: -20%;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+.tk-area-share-btn{
+	position: absolute;
+	right: 25%;
+	font-size:20px;
+	color: #3278fe;
+	margin-top: -20%;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+
+.tk-programm-share-start-btn{
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 5%;
+	margin: auto;
+	font-size:20px;
+	color: #3278fe;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+
+.programm-share-select-close{
+	background: url(../img/call_layout/left/video/player/icon_share_closed.png) no-repeat center center;
+	background-size: 0.3rem 0.3rem;
+	position: absolute;
+	top: 0.01rem;
+	right: 0.01rem;
+	float: right;
+	width: 0.2rem;
+	height: 0.2rem;
+}
+.programm-share-select-name {
+	position: absolute;
+	width: 100%;
+	font-size:28px;
+	text-align:center;
+	color:#3278fe;
+}
+
+.tk-programm-share-select-btn{
+	position: absolute;
+	right: 15%;
+	font-size: 20px;
+	color: #3278fe;
+	bottom:0rem;
+	border-radius:5px 5px 5px 5px;border:1px solid #3278fe;width:120px; height:28px;
+}
+
+.tk-programm-share-stop-btn{
+	position: absolute;
+	left: 15%;
+	font-size: 20px;
+	color: #ff0400;
+	bottom:0rem;
+	border-radius:5px 5px 5px 5px;border:1px solid #ff0400;width:120px; height:28px;
+}
+
+.programm-share-select {
+	z-index:999;
+	width: 40%;
+	height: 70%;
+	position: absolute;
+	left: 30%;
+	top: 20%;
+	background-color: #FFFFFF;
+	border:1px #1a2642 solid;
+}
+
+.programm-share-select-area{
+	position: absolute;
+	width: 90%;
+	height: 70%;
+	right:5%;
+	top:20%;
+}
+
+#windowsel{
+	width: 60%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20%;
+	margin: auto;
+}

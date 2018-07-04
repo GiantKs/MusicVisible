@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body id="body">
+
+</body>
+</html>
+<script>
+    console.log(document.documentElement.clientHeight);
+     var oldurl ;
+     var str='http://192.168.1.17/static/login/index.html?endtype=1&amp;clientversion=2018010800&amp;companyid=10193&amp;companydomain=xxwjy&result=2';
+
+    oldurl=str.replace(/\&amp;/g,'&');
+
+    console.log(oldurl);
+</script>

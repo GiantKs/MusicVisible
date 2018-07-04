@@ -1,0 +1,112 @@
+<html>
+<body>
+Local: <br>
+<video id="localVideo" autoplay></video><br>
+Remote: <br>
+<video id="remoteVideo" autoplay></video>
+
+<script>
+    // 仅仅用于控制哪一端的浏览器发起offer，#号后面有值的一方发起
+    var isCaller = window.location.href.split('#')[1];
+
+    // 与信令服务器的WebSocket连接
+    var socket = new WebSocket("ws://192.168.1.228:8080");
+
+    // stun和turn服务器
+    /*var iceServer = {
+        "iceServers": [{
+            "url": "stun:stun.l.google.com:19302"
+        }, {
+            "url": "turn:numb.viagenie.ca",
+            "username": "webrtc@live.com",
+            "credential": "muazkh"
+        }]
+    };*/
+
+    // 创建PeerConnection实例 (参数为null则没有iceserver，即使没有stunserver和turnserver，仍可在局域网下通讯)
+    var pc = new webkitRTCPeerConnection();
+
+    // 发送ICE候选到其他客户端
+    pc.onicecandidate = function(event){
+        console.log(event,'wwwwwwwwwwww');
+        if (event.candidate !== null) {
+            socket.send(JSON.stringify({
+                "event": "_ice_candidate",
+                "data": {
+                    "candidate": event.candidate
+                }
+            }));
+        }
+    };
+
+    // 如果检测到媒体流连接到本地，将其绑定到一个video标签上输出
+    pc.onaddstream = function(event){
+        document.getElementById('remoteVideo').src = URL.createObjectURL(event.stream);
+    };
+
+    // 发送offer和answer的函数，发送本地session描述
+    var sendOfferFn = function(desc){
+        console.log(desc,'6666666666');
+            pc.setLocalDescription(desc);
+            socket.send(JSON.stringify({
+                "event": "_offer",
+                "data": {
+                    "sdp": desc
+                }
+            }));
+        },
+        sendAnswerFn = function(desc){
+            pc.setLocalDescription(desc);
+            socket.send(JSON.stringify({
+                "event": "_answer",
+                "data": {
+                    "sdp": desc
+                }
+            }));
+        };
+
+    // 获取本地音频和视频流
+    navigator.webkitGetUserMedia({
+        "audio": true,
+        "video": true
+    }, function(stream){
+        //绑定本地媒体流到video标签用于输出
+        document.getElementById('localVideo').src = URL.createObjectURL(stream);
+        //向PeerConnection中加入需要发送的流
+        pc.addStream(stream);
+        //如果是发起方则发送一个offer信令
+        if(isCaller){
+            pc.createOffer(sendOfferFn, function (error) {
+                console.log('Failure callback: ' + error);
+            });
+        }
+    }, function(error){
+        //处理媒体流创建失败错误
+        console.log('getUserMedia error: ' + error);
+    });
+
+    //处理到来的信令
+    socket.onmessage = function(event){
+        var json = JSON.parse(event.data);
+        console.log('onmessage: ', json);
+        //如果是一个ICE的候选，则将其加入到PeerConnection中，否则设定对方的session描述为传递过来的描述
+        if( json.event === "_ice_candidate" ){
+            console.log(json.data.candidate,'json.data.candidatejson.data.candidatejson.data.candidate')
+            pc.addIceCandidate(new RTCIceCandidate(json.data.candidate));
+        } else {
+            pc.setRemoteDescription(new RTCSessionDescription(json.data.sdp));
+            // 如果是一个offer，那么需要回复一个answer
+            if(json.event === "_offer") {
+                pc.createAnswer(sendAnswerFn, function (error) {
+                    console.log('Failure callback: ' + error);
+                });
+            }
+        }
+    };
+</script>
+</body>
+</html>
+
+
+
+我早已经褪去了那些“更青春”些的“时髦”念头、支持完成这些的念头的动力储藏在我根本没体会过的时候也早就被毁掉了，这也是我不愿意的，但是我只能欣然接受，也是导致我每天都觉得错过了一个亿想法的前提吧，我觉得我是好的，起码我对得起我应该对得起的这部分人，老天他应该也会像对普通人一样派一个带着美丽透彻心灵的姑娘到我身边来吧，起码我会留住“青春”吧。

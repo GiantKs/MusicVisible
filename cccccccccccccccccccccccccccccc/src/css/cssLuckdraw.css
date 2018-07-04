@@ -1,0 +1,12 @@
+
+
+.live-luckdraw-teacher-hover {
+	 width: 90%;
+	 height: 50%;
+	 position: absolute;
+	 top: 0.4rem;
+	 left: 0;
+	 z-index: 120;
+	 display: flex;
+	 justify-content: space-around;
+ }

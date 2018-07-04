@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+/*桌面共享 xgd 2017-10-12*/
+.screen-share-wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../img/call/icon_timer_sharing.png") no-repeat  center center;
+}
+
+/*桌面共享 xgd 2017-10-12*/
+.screen-share-all {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+}
+.screen-share-unall{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+}

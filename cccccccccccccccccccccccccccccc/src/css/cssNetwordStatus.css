@@ -1,0 +1,27 @@
+@charset "utf-8";
+.network-status-container{
+    height: 100%;
+    line-height: 0.48rem;
+    color: #fff;
+}
+
+.network-status-container .rtt-container ,
+.network-status-container .packetsLost-container ,
+.network-status-container .network-container{
+	display: inline-block;
+    padding-right: 0.1rem;
+}
+.network-status-container .rtt-container .value ,
+.network-status-container .packetsLost-container .value  ,
+.network-status-container .network-container .value {
+	display: inline-block;
+	padding-left: 0.03rem;	
+}
+
+.network-status-container .rtt-container{
+	padding-left: 0.1rem;
+}
+
+.network-status-container .network-container .value{
+	color:#25821b;
+}

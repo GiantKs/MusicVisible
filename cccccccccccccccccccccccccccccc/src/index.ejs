@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;" id="all_root"  data-appVersions="<%= htmlWebpackPlugin.options.appVersions %>" >
+<head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="UTF-8">
+    <meta name="author" content="talk,http://www.talk-cloud.com">
+    <!--强制让文档的宽度与设备的宽度为1：1 ， 并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <!--WebApp全屏模式隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--苹果强制全屏显示-->
+    <meta name="apple-touch-fullscreen"  content="yes"  />
+    <!--强制全屏显示-->
+    <meta name="full-screen" content="yes" />
+    <!--制定iphone中safari顶端的状态条的样式，（default：白色 ;  black:黑色，black-translucent：半透明）-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--告诉设备忽略将页面中的地址识别-->
+    <meta name="format-detection" content="address=no" />
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--如果安装了 Google Chrome Frame，则使用 GCF 来渲染页面，如果没有安装 GCF，则使用最高版本的 IE 内核进行渲染。-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <link href="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/literally/css/<%= htmlWebpackPlugin.options.lcName %>.css?versions=<%= htmlWebpackPlugin.options.lcVersions %>" rel="stylesheet" >
+</head>
+<body class="normal"  style="overflow: hidden; position: relative;" >
+<section id="tk_app"  class="add-position-absolute-top0-left0" style="width: 100%;height: 100%;" ></section>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/cloudvPlayer.min.js"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/clappr-video360.min.js"></script>
+<script type="text/javascript" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/swfobject.js"></script> -->
+<!-- <script type="text/javascript" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/callswfplay.js"></script> -->
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/adp/<%= htmlWebpackPlugin.options.adpName %>.js?versions=<%= htmlWebpackPlugin.options.adpVersions %>"></script>
+<script>
+    ;(function () {
+        var sdkDevStr =  "<%= htmlWebpackPlugin.options.__SDKDEV__ %>" ;
+        var appVersions =  "<%= htmlWebpackPlugin.options.appVersions %>" ;
+        var appVersionsTime =  "<%= htmlWebpackPlugin.options.appVersionsTime %>" ;
+        var sdkVersions =  "<%= htmlWebpackPlugin.options.sdkVersions %>" ;
+        var sdkVersionsTime =  "<%= htmlWebpackPlugin.options.sdkVersionsTime %>" ;
+        window.__SDKDEV__  = ( sdkDevStr === 'true' );
+        window.__APPVERSIONS__  = appVersions ;
+        window.__APPVERSIONSTIME__  = appVersionsTime ;
+        window.__SDKVERSIONS__  = appVersions ;
+        window.__SDKVERSIONSTIME__  = appVersionsTime ;
+    })();
+</script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/tk/<%= htmlWebpackPlugin.options.sdkName %>.js?versions=<%= htmlWebpackPlugin.options.sdkVersions %>"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/literally/js/<%= htmlWebpackPlugin.options.lcName %>.js?versions=<%= htmlWebpackPlugin.options.lcVersions %>"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/tk/tkLivePlayBack.js"></script>
+
+
+<!--<style>
+    #testVideoContainer{
+        position: absolute;
+        width: 7rem;
+        height: 5rem;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999;
+        display: flex;
+        top:0;
+        left:0;
+    }
+</style>
+<div id="testVideoContainer"></div>-->
+
+<noscript>
+
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+            codebase="<a href='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=11,0,0,0'>
+					 http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=11,0,0,0</a>"
+            width="100%" height="100%" id="cloudvPlayer" align="middle" display="none">
+        <param name="movie" value="cloudvPlayer.swf" />
+        <param name="wmode" value="transparent" />
+        <param name="quality" value="high" />
+        <param name="bgcolor" value="#000000" />
+        <param name="allowScriptAccess" value="always" />
+        <param name="allowFullScreen" value="true" />
+        <param name="allowFullScreenInteractive" value="true" />
+        <embed type="application/x-shockwave-flash" src="cloudvPlayer.swf" width="100%" height="100%"
+               quality="high" bgcolor="#000000" name="cloudvPlayer" align="middle" wmode="transparent"
+               allowFullScreen="true" allowScriptAccess="always" allowFullScreenInteractive="true"
+               pluginspage="<a href='http://www.macromedia.com/go/getflashplayer'>http://www.macromedia.com/go/getflashplayer</a>" />
+    </object>
+</noscript>
+
+<script type="text/javascript">
+
+    window.GLOBAL = window.GLOBAL || {} ;
+    window.GLOBAL.getUrlParams = window.GLOBAL.getUrlParams ||  function(key) {
+        // var urlAdd = decodeURI(window.location.href);
+        var urlAdd = decodeURIComponent(window.location.href);
+        var urlIndex = urlAdd.indexOf("?");
+        var urlSearch = urlAdd.substring(urlIndex + 1);
+        var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i");
+        var arr = urlSearch.match(reg);
+        if(arr != null) {
+            return arr[2];
+        } else {
+            return "";
+        }
+        //reg表示匹配出:$+url传参数名字=值+$,并且$可以不存在，这样会返回一个数组
+    };
+    window.GLOBAL.loadScript =  window.GLOBAL.loadScript || function (url, callback) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if( typeof(callback) != "undefined"  && typeof callback === 'function' ){
+            if (script.readyState) {
+                script.onreadystatechange = function () {
+                    if (script.readyState == "loaded" || script.readyState == "complete") {
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                };
+            } else {
+                script.onload = function () {
+                    callback();
+                };
+            }
+        }
+        script.src = url;
+        var loadJs = document.getElementById('cloudvPlayer') || document.body ;
+        loadJs.appendChild(script);
+    }
+
+    function getBrowserInfo(){  //获取浏览器基本信息
+        var userAgent=window.navigator.userAgent ,
+            rMsie=/(msie\s|trident.*rv:)([\w.]+)/,
+            rFirefox=/(firefox)\/([\w.]+)/,
+            rOpera=/(opera).+version\/([\w.]+)/,
+            rChrome=/(chrome)\/([\w.]+)/,
+            rSafari=/version\/([\w.]+).*(safari)/;
+        function uaMatch (ua){
+            var match=rMsie.exec(ua);
+            if(match != null) {
+                return {browser:"IE",version:match[2] || "0"};
+            }
+            match=rFirefox.exec(ua);
+            if(match != null) {
+                return {browser:match[1] || "",version:match[2] || "0"};
+            }
+            match=rOpera.exec(ua);
+            if(match != null) {
+                return {browser:match[1] || "",version:match[2] || "0"};
+            }
+            match=rChrome.exec(ua);
+            if(match != null) {
+                return {browser:match[1] || "",version:match[2] || "0"};
+            }
+            match=rSafari.exec(ua);
+            if(match != null) {
+                return {browser:match[2] || "",version:match[1] || "0"};
+            }
+            if(match != null) {
+                return {browser:"",version:"0"};
+            }
+        };
+        var browserMatch=uaMatch( userAgent.toLowerCase() );
+
+        //判断访问终端
+        var browser={
+            versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPad') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                    chrome: u.toLowerCase().indexOf('chrome') > 1, //谷歌内核
+                    qq: u.toLowerCase().indexOf('qqbrowser') > 1, //qq浏览器
+                    baidu: u.toLowerCase().indexOf('bidubrowser') > 1, //百度浏览器
+                    maxthon: u.toLowerCase().indexOf('maxthon') > 1, //遨游浏览器
+                    uc: u.toLowerCase().indexOf('ubrowser') > 1, //遨游浏览器
+
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase() ,
+            info:{
+                browserName:browserMatch.browser , //浏览器使用的版本名字
+                browserVersion:browserMatch.version ,//浏览器使用的版本号
+                appCodeName:navigator.appCodeName , //返回浏览器的代码名。
+                appMinorVersion:navigator.appMinorVersion , //返回浏览器的次级版本。
+                appName:navigator.appName , //返回浏览器的名称。
+                appVersion:navigator.appVersion ,  //	返回浏览器的平台和版本信息。
+                browserLanguage:navigator.browserLanguage , //	返回当前浏览器的语言。
+                cookieEnabled: navigator.cookieEnabled , //	返回指明浏览器中是否启用 cookie 的布尔值。
+                cpuClass:navigator.cpuClass , //	返回浏览器系统的 CPU 等级。
+                onLine:navigator.onLine , //	返回指明系统是否处于脱机模式的布尔值。
+                platform:navigator.platform , //	返回运行浏览器的操作系统平台。
+                systemLanguage:navigator.systemLanguage ,  //返回 OS 使用的默认语言。
+                userAgent:navigator.userAgent , //返回由客户机发送服务器的 user-agent 头部的值。
+                userLanguage:navigator.userLanguage , //	返回 OS 的自然语言设置。
+            }
+        }
+        return browser ;
+    }
+
+
+    function getBrowserKernel(){
+        /*trident://IE内核;presto://opera内核;webKit://苹果、谷歌内核;gecko://火狐内核;webApp:Safari*/
+        var versions = getBrowserInfo().versions;
+        /*var trident = versions.trident;
+        var gecko = versions.gecko;
+        var webKit = versions.webKit;
+
+        if(trident || gecko){
+            ieKernel = true;
+        }
+        if(webKit )
+            ieKernel = false;*/
+        /*if(versions.chrome && !versions.maxthon && !versions.qq && !versions.baidu && !versions.uc ) {
+            ieKernel = false;
+        } else {
+            ieKernel = true;
+        }
+
+        return ieKernel;*/
+        return true;
+    }
+
+    var roomtype = window.GLOBAL.getUrlParams("roomtype");
+    var endtype = window.GLOBAL.getUrlParams("endtype");
+
+
+    var pullUrl ="";
+    var width = 800;
+    var height = 450;
+    if(roomtype == 10 ) {
+        var ieKernel = false;
+        ieKernel = getBrowserKernel();
+        if(ieKernel){
+            var swfUrl = "<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/swfobject.js";
+            window.GLOBAL.loadScript(swfUrl);
+        }
+    }
+    //直播调用设置拉流地址和调用 只能在这里调用
+    function broadcastInit(pullWidth,pullHeight,broadcastPullUrl){
+        width = pullWidth;
+        height = pullHeight;
+        pullUrl = broadcastPullUrl;
+        readyLoadSwf();
+    }
+
+    function setWidthAndHeight(pullWidth,pullHeight){
+        width = pullWidth;
+        height = pullHeight;
+    }
+
+
+    //初始化播放器
+    function initSwf() {
+
+        var swfVersionStr = "11.3.0"; // flash版本号
+        var xiSwfUrlStr = "playerProductInstall.swf";
+
+        // json对象，为flash传递一些初始化信息
+        var flashvars = {};
+        flashvars.bufferUrl = ""; //取消缓冲图片
+        flashvars.bufferTime =3000;
+        //flashvars.bufferTime = 2;
+
+        // 设置flash的样式
+        var params = {};
+        params.quality = "high";             // video开启平滑处理时要求设置为高品质
+        params.bgcolor = "#000000";          // swf容器的背景色，不影响网页背景色
+        params.wmode = "transparent";
+        params.allowfullscreen = "true";     // 是否允许全屏
+        params.allowscriptaccess = "always"; // 是否允许跨域
+        params.allowFullScreenInteractive = "true"; // 是否允许带键盘交互的全屏
+
+
+        // 嵌入flash完成时的object标签的ID，name等属性
+        var attributes = {};
+        attributes.id = "cloudvPlayer";
+        attributes.name = "cloudvPlayer";
+        attributes.align = "middle";
+
+        //embedSWF 参数解释：
+        // 参数1：swf 文件地址
+        // 参数2：swf 文件容器
+        // 参数3：flash 的宽度
+        // 参数4：flash 的高度
+        // 参数5：正常播放该 flash 的最低版本
+        // 可选参数信息：
+        // 参数6：版本低于当前要求时，执行该 swf 文件，跳转到官方下载最新版本的 flash 插件
+        // 参数7：为flash传递一些参数信息
+        // 参数8：设置flash的样式
+        // 参数9：嵌入flash完成时的object标签的ID，name等属性
+        // 参数10：定义一个在执行embedSWF方法后，嵌入flash成功或失败后都可以回调的 JS 函数
+        swfobject.embedSWF("cloudvPlayer.swf", "flashContent", '100%', '100%', swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
+        swfobject.createCSS("#flashContent", "display:block; text-align:left; background-color: #000000;");
+
+    }
+
+
+    // 网页加载完毕，开始加载播放器
+    function readyLoadSwf() {
+        initSwf();
+    }
+
+    // 播放器加载完毕，播放器通知回调接口
+    function loadWsPlayerComplete() {
+        onPlayHandler();
+        console.warn("loadWsPlayerComplete!");
+    }
+
+    //播放入口
+    function onPlayHandler() {
+        var args = {
+            url: pullUrl,
+            isLive: true,
+            videoType: "rtmp",
+            enableControlBar: false,  //屏蔽界面控制按钮
+        };
+        // cloudvPlayer为播放器初始化中的attributes.id值
+        //console.error("cloudvPlayer" , thisMapMovie("cloudvPlayer"));
+        thisMapMovie("cloudvPlayer").jsPlay(args);
+    }
+
+    // 获取播放器对象
+    function thisMapMovie(movieName) {
+        if (window.document[movieName]) {
+            return window.document[movieName];
+        }
+        if (navigator.appName.indexOf("Microsoft Internet") == -1) {
+            if (document.embeds && document.embeds[movieName]) return document.embeds[movieName];
+        } else {
+            return document.getElementById(movieName);
+        }
+    }
+
+    function onCloseHandler() {
+        //thisMapMovie("cloudvPlayer").jsClose();
+        //console.log(pullUrl);
+        pullUrl = "";
+    }
+
+    function wsPlayerLogHandler(log, obj) {
+        console.log(log);
+        if (obj) {
+            for (var id in obj) {
+                console.log(id + ":" + obj[id]);
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

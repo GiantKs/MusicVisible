@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    　　#box div{
+        width:200px;
+        height:200px;
+        background:#ccc;
+        display:none;
+    }
+    　.on{color:#fff;background:red;}
+</style>
+</head>
+<body>
+<div id="box">
+    　　<input type="button" value="书籍" class="on">
+    　　<input type="button" value="图片">
+    　　<input type="button" value="专栏">
+    　　<div style="display:block;">书籍</div>
+    　　<div>图片</div>
+    　　<div>专栏</div>
+</div>
+</body>
+</html>
+<script>
+    //获取元素
+    var oBox=document.getElementById("box");
+    var aBtn=oBox.getElementsByTagName("input");
+    var aDiv=oBox.getElementsByTagName("div");
+    //aBtn是一组元素，所以需要用到for循环
+    for(var i=0;i<aBtn.length;i++){
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            for(var i=0;i<aBtn.length;i++){//先清空所有的样式
+                aBtn[i].className='';
+                aDiv[i].style.display='none';
+            }
+            //给当前的按钮和div添加样式
+            this.className='on';
+            aDiv[this.index].style.display='block';
+        };
+    }
+</script>

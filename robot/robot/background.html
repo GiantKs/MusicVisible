@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robot</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/background.js"></script>
+    <style>
+        body {
+            padding:0;margin:0; font-size:12px; line-height:20px;
+        }
+        .board {
+            box-shadow: 0px 0px 10px #333;
+            -webkit-box-shadow: 0px 0px 10px #333;
+            border-radius: 3px;
+            color: white;
+            background-color: #fffbcf;
+        }
+    </style>
+</head>
+<body>
+<span id="hehe"></span>
+<span id="d"></span>
+<div>
+    <p  id="content"></p>
+</div>
+<input type="button" value="open dev"  id="start"/>
+<input type="button" value="close dev" id="close"/>
+<input type="button" value="clear canvas" onclick="clearCanvas()"/>
+<canvas id="myCanvas" class="board" width="100%" height="960" style="border:1px solid black;"></canvas><br/>
+
+</body>
+<script>
+    var pageY=8191;
+    var pageX=14335;
+    var width = 640;
+	var editorExtensionId='hfodaclodabmboaiejapnphdgoagnmbi';
+	var port;
+    var height = 960;
+    var offsetX = 0.5;
+    var offsetY =0.5; //to smoothen the line
+    var ratioX = 1, ratioY = 1;
+    var counter = 1;
+    var watchdog = 1;
+    var started = 0;
+    var x1,y1,x2,y2,res=2;
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d'); 
+    var isStart = 0;
+    context.translate(offsetX,offsetY);
+
+        $(document).ready(function() {
+            height = $(window).height() > height ? height : $(window).height() - 20;
+            width = height * pageX / pageY;
+
+            if(width > $(window).width() * 0.68){
+                width = $(window).width() * 0.68;
+                height = width * pageY / pageX;
+            }
+
+            ratioX = width/pageX;
+            ratioY = height/pageY;
+            $(canvas).attr("width",width);
+            $(canvas).attr("height",height);
+            //alert('canvas width =' + width);
+            //alert('canvas height =' + height);
+        });
+
+    /*上面 初始化画布的宽和高*/
+    $(document).ready(function(){
+        console.error(chrome.runtime , chrome.hid , chrome);
+        port=chrome.runtime.connect(editorExtensionId);
+        $('#start').click(function(){
+            port.postMessage({cmd:'open'});
+            port.onMessage.addListener( function(msg){
+                if(msg.status == 1){
+                    lineTo(msg.x,msg.y,msg.s);
+                    return;
+                }
+
+                if(msg.status == 0){
+                    $('#hehe').html('设备连接成功');
+                }else if(msg.status == 2){
+                    $('#hehe').html('usb操作权限获取失败');
+                }else if(msg.status == 3){
+                    $('#hehe').html('指定的usb设备未找到');
+                }else if(msg.status == 4){
+                    $('#hehe').html('usb设备连接失败及打开设备失败');
+                }
+                else if(msg.status == 5){
+                    $('#hehe').html('存在打开的设备');
+                }
+            })
+        });
+
+        $('#close').click(function(){
+            port.postMessage({cmd:'close'});
+        })
+    });
+    function lineTo(x, y,s){
+        var tx= ratioX*x;
+        var ty=ratioY*y;
+        var tw=1.2;
+        var con='x='+x+'y='+y+'s='+s;
+        $('#content').text(con);
+        if (s==16 ||s==0) {
+            isStart=0;
+            return;
+        }
+        if(isStart > 0){
+            x2 = Math.floor(ratioX * x);
+            y2 = Math.floor(ratioY * y);
+            // w2=tw;
+            var d = Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+
+            if(d > res){
+                tx = Math.round((x1 + x2) / 2 * 100) / 100;
+                ty = Math.round((y1 + y2) / 2 * 100) / 100;
+                if (isStart == 1) {
+                    context.lineTo(tx, ty);
+                } else {
+                    context.quadraticCurveTo(x1, y1, tx, ty);
+                    context.lineWidth = tw;
+                    context.stroke();
+                    context.beginPath();
+                    context.moveTo(tx,ty);
+                }
+                x1 = x2;
+                y1 = y2;
+            }
+            isStart++;
+        }else{
+            /* 初始化画点*/
+            isStart = 1;
+            context.beginPath();
+            context.lineCap = "round";
+            context.strokeStyle = "#000";//新增
+            x1 =tx;
+            y1 =ty;
+            context.moveTo(tx,ty);//起点
+            isStart++;
+        }
+    }
+    function clearCanvas(){
+        var c = document.getElementById('myCanvas');
+        var cxt = c.getContext("2d");
+        c.height = c.height;
+    }
+
+</script>
+</html>

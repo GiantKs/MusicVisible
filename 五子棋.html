@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        img {
+            border:0;
+        }
+        ol,ul,li {
+            list-style:none;
+        }
+        #wasp {
+            width:500px;
+            height:500px;
+            margin:100px auto;
+            border:5px solid #333;
+            background:#fdda9c;
+            position:relative;
+            overflow:hidden;
+        }
+        #Board {
+            width:550px;
+            height:550px;
+            position:absolute;
+            top:-25px;
+            left:-25px;
+        }
+        .cBefore {
+            width:100%;
+            height:100%;
+            position:absolute;
+            background:rgba(0,0,0,0.2);
+            z-index:10;
+        }
+        .cButt {
+            width:100px;
+            height:200px;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin:-120px 0 0 -90px;
+            background:#fff;
+            padding:20px 40px;
+        }
+        .cButt input {
+            width:100px;
+            height:50px;
+            margin:5px 0;
+            border-radius:5px;
+        }
+        #Board li {
+            width:50px;
+            height:50px;
+            position:relative;
+            float:left;
+        }
+        #Board li::before {
+            content:"";
+            width:100%;
+            position:absolute;
+            border-bottom:1px solid #333;
+            top:50%;
+            left:0;
+        }
+        #Board li::after {
+            content:"";
+            height:100%;
+            position:absolute;
+            border-right:1px solid #333;
+            top:0;
+            left:50%;
+        }
+        #Board li span {
+            display:block;
+            width:46px;
+            height:46px;
+            position:absolute;
+            background:#000000;
+            top:2px;
+            left:2px;
+            border-radius:50%;
+            z-index:9;
+        }
+        #aaaa {
+            width:500px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<div id="wasp">
+    <ul id="Board">
+    </ul>
+</div>
+<div id="aaaa">
+
+</div>
+</body>
+</html>
+<script>
+    window.onload = function fnGobang() {
+        var oWasp = document.getElementById("wasp");
+        var oBoard = document.createElement("ul");
+        oBoard.id = "Board";
+        oWasp.appendChild(oBoard);
+        var gridSize = 50; //棋格尺寸
+
+        var W = oBoard.offsetWidth / gridSize; //行
+        var H = oBoard.offsetWidth / gridSize; //列
+
+        var arrBlack = []; //黑子
+        var arrWhite = []; //白子
+        var Pass = 0;
+        var noPass = false; //棋子判定
+        var S = R = L = 1; //
+        // ============================================================================
+
+        for (var i = 0; i < W * H; i++) {
+            var cGrid = document.createElement("li");
+            oBoard.appendChild(cGrid);
+        }
+        var oGoard = oBoard.getElementsByTagName("li");
+        // ============================================================================
+        for (var i = 0; i < oGoard.length; i++) {
+            oGoard[i].index = i;
+            oGoard[i].onclick = function() {
+                if (!this.childNodes[0]) { //如果没有子元素。则添加棋子span;
+                    if (noPass) { //棋子分组
+                        arrWhite.push(this.index)
+                    } else {
+                        arrBlack.push(this.index)
+                    }
+                    var cPieces = document.createElement("span");
+                    if (noPass) {
+                        cPieces.style.background = "#fff"
+                    } //白子
+                    this.appendChild(cPieces);
+
+                    fnTorting(arrBlack, Pass) //冒泡排序数组
+                    fnTorting(arrWhite, Pass)
+
+                    function fnTorting(arr, pa) { //冒泡排序函数;
+                        for (var j = arr.length; j > 0; j--) {
+                            if (arr[j] < arr[j - 1]) {
+                                pa = arr[j];
+                                arr[j] = arr[j - 1];
+                                arr[j - 1] = pa;
+                            }
+                        }
+                    }
+
+                    // ============================================================================
+
+                    if (!noPass) {
+                        fnWin(arrBlack, "黑棋胜！") //黑胜
+                    } else {
+                        fnWin(arrWhite, "白棋胜！") //白胜
+                    }
+
+                    // ============================================================================
+
+                    function fnWin(arr, a) { //取胜判定函数
+                        if (arr.length >= 5) {
+                            for (var j = 0; j < arr.length; j++) { //alert(j)
+                                if ((arr[j + 4] - arr[j] == 4) && ((arr[j] + arr[j + 1] + arr[j + 2] + arr[j + 3] + arr[j + 4]) / 5 == arr[j + 2])) { //横
+                                    alertWin(a) //判胜
+                                }
+                                for (var k = j + 1; k < arr.length; k++) {
+
+                                    if (arr[k] - arr[j] === S * W) { //纵
+                                        if (S == 4) {
+                                            alertWin(a) //判胜
+                                            S = 1;
+                                            break;
+                                        } else {
+                                            S++
+                                        }
+                                    }
+                                    if (arr[j] % W >= 4) { //边界判定
+                                        if (arr[k] - arr[j] === L * (W - 1)) { //左斜
+
+                                            if (L == 4) {
+                                                alertWin(a) //判胜
+                                                L = 1;
+                                                break;
+                                            } else {
+                                                L++
+                                            }
+                                        }
+                                    }
+                                    if (arr[j] % W < 7) { //边界判定
+                                        if (arr[k] - arr[j] === R * (W + 1)) { //右斜
+                                            if (R == 4) {
+                                                alertWin(a) //判胜
+                                                R = 1;
+                                                break;
+                                            } else {
+                                                R++
+                                            }
+                                        }
+                                    }
+                                }
+                                S = L = R = 1;
+                            }
+                        }
+                    }
+                    noPass = !noPass; //棋子转换
+                }
+            }
+        }
+        // ============================================================================
+
+        function alertWin(a) { //结束
+
+            var cBefore = document.createElement("div");
+            cBefore.className = "cBefore";
+            var cButt = document.createElement("div");
+            cButt.className = "cButt";
+
+            for (var i = 0; i < 3; i++) { //按钮
+                var cButton = document.createElement("input");
+                cButton.type = "button"
+                cButt.appendChild(cButton)
+            }
+
+            var oButt = cButt.getElementsByTagName("input");
+            oButt[0].value = a;
+            oButt[0].style.cssText = "background:none;border:none;"
+            oButt[1].value = "重新开始";
+            oButt[2].value = "返回游戏";
+
+            for (var i = 1; i < 3; i++) {
+                oButt[i].index = i;
+                oButt[i].onclick = function() {
+                    if (this.index == 2) {
+                        cBefore.removeChild(cButt);
+                        cBefore.style.background = "rgba(0,0,0,0)"
+                    } else {
+                        wasp.removeChild(oBoard);
+                        fnGobang()
+                    }
+                }
+            }
+            cBefore.appendChild(cButt);
+            oBoard.appendChild(cBefore);
+        }
+    }
+</script>

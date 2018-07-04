@@ -1,0 +1,45 @@
+@charset "UTF-8";
+.tool-extend-container.tk-weight .tk-app-list .tk-list{
+    overflow-x: hidden;
+}
+
+/*用户列表*/
+.tool-user-list-extend .user-extend-list {
+    display: none;
+    width: auto;
+    height: auto;
+    min-width: 1rem;
+    left: 0;
+    right: auto;
+    top:100%;
+    background: #1c2947;
+    display: table;
+    z-index: 130;
+    pointer-events: initial ;
+    cursor:pointer;
+}
+.tool-user-list-extend .user-extend-list .icon-btn{
+  	min-width: 1rem;
+    width: auto;
+    height: auto;
+    display: block;
+	color: #1588f1;
+    padding: 0.03rem 0 0.03rem 0.08rem;
+    text-align: left;
+    position: relative;
+}
+.tool-user-list-extend .user-extend-list .extend-container{
+    position: relative;
+    height: auto;
+    right: auto;
+}
+.tool-user-list-extend .user-extend-list .extend-container .extend-option{
+    width: 0.5rem;
+    height: 100%;
+    min-width: 1rem;
+    display: block;
+    padding: 0.01rem 0;
+}
+.tool-user-list-extend .user-extend-list .extend-container .extend-option:hover{
+	color: #FFFFFF;
+}

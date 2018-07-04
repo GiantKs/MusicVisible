@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var AceDate = null ;
+    var pc = new webkitRTCPeerConnection();
+
+    // 发送ICE候选到其他客户端
+    pc.onicecandidate = function(event){
+        console.log(event,'onicecasdasdandidateEvent');
+    }
+    console.log(11);
+
+    navigator.webkitGetUserMedia({
+        "audio": true,
+        "video": true
+    }, function(stream){
+        pc.addStream(stream);
+    },function (err) {
+        
+    });
+    pc.createOffer(function (IceDate) {
+        pc.setLocalDescription(IceDate);
+        console.log(IceDate,'IceDate');
+         /*pc.addIceCandidate(new RTCIceCandidate())*/
+    },()=>{
+        console.log('www');
+    });
+
+    pc.onaddstream = function(event){
+        Log.error(event)
+        /*document.getElementById('remoteVideo').src = URL.createObjectURL(event.stream);*/
+    };
+
+</script>
+
+该RTCPeerConnection.onicecandidate属性是一个EventHandler指定icecandidate事件发生在RTCPeerConnection实例上时要调用的函数。只要本地ICE代理需要通过信令服务器将消息传递给其他对等方，就会发生这种情况。这使得ICE代理可以与远程对端进行协商，而浏览器本身不需要知道有关用于信令的技术的任何细节; 只需实施此方法即可使用您选择的任何消息传递技术将ICE候选人发送给远程对等体。

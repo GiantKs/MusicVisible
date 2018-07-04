@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.lc-tool-container .tk-tool-right {
+    margin-top: 0.35rem;
+    z-index: 106;
+}
+.areaExchange #lc_tool_container{
+    display: none;
+}
+

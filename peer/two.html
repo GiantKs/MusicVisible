@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video id="vid2" src=""></video>
+
+</body>
+</html>
+<script>
+    pc2 = new webkitRTCPeerConnection();
+    pc2.onaddstream = gotRemoteStream;
+    //...
+    function gotRemoteStream(e){
+        vid2.srcObject = e.stream;
+    }
+</script>

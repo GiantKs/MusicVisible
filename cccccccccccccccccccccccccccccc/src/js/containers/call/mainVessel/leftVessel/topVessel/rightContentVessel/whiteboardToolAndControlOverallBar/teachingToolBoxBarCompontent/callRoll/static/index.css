@@ -1,0 +1,98 @@
+.call-roll, .sign-in {
+    z-index: 999;
+    position: fixed;
+    top: .6rem;
+    left: .9rem;
+    height: auto;
+    border-radius: .05rem;
+    background: #3288FF;
+    border: 3px solid #3288FF;
+    color: #fff;
+}
+.sign-in {
+    left: 6.9rem;
+    width: 3.75rem;
+    height: 4rem;
+    background: url('./img/signin-bg.png') no-repeat center;
+    background-size: 100%;
+}
+.sign-in .timer {
+    position: absolute;
+    top: 1.35rem;
+    left: 1.25rem;
+    font-size: .5rem;
+}
+.sign-in .button {
+    position: absolute;
+    bottom: .66rem;
+    left: 1.18rem;
+}
+.call-roll select {
+    color: #555;
+    display: inline-block;
+    height: .4rem;
+    border: 1px solid #D8F2FF;
+    box-shadow: 0 0 .05rem #D8F2FF;
+    vertical-align: middle;
+}
+/* 设置body内滚动条样式 */
+.panel-body {
+    scrollbar-base-color: rgba(85, 85, 85, 1);
+    scrollbar-face-color: rgba(103, 100, 103, 0.96);
+    scrollbar-shadow-color: rgba(85, 85, 85, 1);
+    scrollbar-highlight-color: #C3D6DA;
+    scrollbar-3dlight-color: #3D5054;
+    scrollbar-darkshadow-color: #85989C;
+    scrollbar-track-color: rgba(85, 85, 85, 1);
+    scrollbar-arrow-color: rgba(121, 119, 121, 0.92);
+}
+/* .panel-body::-webkit-scrollbar {
+    display: none;
+}
+.panel-body::-webkit-scrollbar-button {
+    display: none;
+}
+.panel-body::-webkit-scrollbar-thumb {
+    display: none;
+}
+.callroll-list::-webkit-scrollbar {
+    width: 2px;
+    background: rgba(0,0,0,.6);
+}
+.callroll-list::-webkit-scrollbar {
+    display: none;
+}
+.callroll-list::-webkit-scrollbar-button {
+    display: none;
+} */
+/*滚动条整体*/.panel-body::-webkit-scrollbar,
+.callroll-list::-webkit-scrollbar {
+    width: 0.08rem;
+    /*滚动条宽度*/
+  }
+  /*滚动条按钮*/.panel-body::-webkit-scrollbar-track,
+  .callroll-list::-webkit-scrollbar-track {
+    background-color:#d6e9fc;
+    /*滑道全部*/
+  }
+  .panel-body::-webkit-scrollbar-track-piece,
+  .callroll-list::-webkit-scrollbar-track-piece {
+    background-color: #d6e9fc;
+    /*滑道*/
+    -webkit-border-radius: 0.04rem;
+    /*滑道圆角宽度*/
+  }
+  .panel-body::-webkit-scrollbar-thumb,
+  .callroll-list::-webkit-scrollbar-thumb{
+    background-color: #999999;
+    /*滑动条表面*/
+    border: solid 0.01rem #c0c0c0;
+    /*滑动条边框*/
+    border-radius: 0.04rem;
+    /*滑动条圆角宽度*/
+  }
+  /*横竖滚动条交角*/
+  .panel-body::-webkit-scrollbar-corner,
+  .callroll-list::-webkit-scrollbar-corner{
+    background-color: #999999;
+  }

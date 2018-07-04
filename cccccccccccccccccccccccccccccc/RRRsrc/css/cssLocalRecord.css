@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.local-recording-container{
+    display: flex;
+    float: right;
+    padding: 0.05rem 0;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+}
+.local-recording-container .text{
+    display: block;
+    color: #fff;
+    font-size: 0.13rem;
+}
+.local-recording-container .text.notStart{
+    color: #4b7bff;
+}
+.local-recording-container .text.recording , .local-recording-container .text.recordPaused{
+    padding-left: 0.115rem;
+    position: relative;
+}
+.local-recording-container .text.recording{
+    color: #ff021d;
+}
+.local-recording-container .text.recording::before , .local-recording-container .text.recordPaused::before{
+    position: absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+    width: 0.1rem;
+    height:0.1rem;
+    content: '' ;
+    background:  no-repeat center center;
+    background-size: 0.1rem auto;
+}
+.local-recording-container .text.recording::before{
+    background-image: url("../img/call_layout/localRecord/icon_recording.png");
+}
+.local-recording-container .text.recordPaused::before{
+    background-image: url("../img/call_layout/localRecord/icon_pauserecording.png");
+}
+.local-recording-container .text.recordPaused{
+    color: #ffffff;
+}
+.local-recording-container .play-pause-record , .local-recording-container .start-stop-record{
+    width: 0.3rem;
+    height: 0.3rem;
+    display: block;
+    background: no-repeat center right;
+    background-size: 0.29rem auto;
+    color: #fff;
+    font-size: 0.13rem;
+}
+.local-recording-container .start-stop-record {
+    background-image: url("../img/call_layout/localRecord/icon_stoprecord.png");
+}
+.local-recording-container .start-stop-record.notStart{
+    background-image: url("../img/call_layout/localRecord/icon_startrecord.png");
+}
+.local-recording-container .play-pause-record {
+    background-image: url("../img/call_layout/localRecord/icon_pauserecord.png");
+}
+.local-recording-container .play-pause-record.recordPaused{
+    background-image: url("../img/call_layout/localRecord/icon_restorerecord.png");
+}

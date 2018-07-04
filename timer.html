@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<device type="media" onchange="update(this.data)">1</device>
+<video autoplay></video>
+
+</body>
+</html>
+<script>
+    console.log(new Date().getTime(),'现在的毫秒数');
+    console.log(new Date().getTime()+7200000,'40分钟后开始的毫秒数');
+    console.log(new Date().getTime()+7210000,'40分钟后结束的毫秒数');
+    console.log(new Date().getTime()+1800000,'30分钟后的开始毫秒数');
+    console.log(new Date().getTime()+1800000+1800000,'30分钟后结束的毫秒数');
+    console.log(new Date().getTime()+172800000,'两天后的开始毫秒数');
+    console.log(new Date().getTime()+173000000,'两天后的结束毫秒数');
+</script>
+<script>
+    function update(stream) {
+        document.querySelector('video').src = stream.url;
+    }
+</script>

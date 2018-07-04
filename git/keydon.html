@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+</body>
+</html>
+<script>
+    window.setTimeout(()=>{
+        var e = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "R", char : "R", shiftKey : true,code: "KeyR"});
+        window.dispatchEvent(e);
+    },2000)
+
+
+    window.onkeydown=function (e) {
+        console.log('1',e);
+    }
+
+    var ary = [65, 44, 12, 4];
+
+  /*  function getSum(total, num) {
+        return total + num;
+    }
+    function myFunction(item) {
+        document.getElementById("demo").innerHTML = numbers.reduce(getSum);
+    }*/
+
+ /*   ary.reduce(function () {
+        console.log(arguments);
+    })*/
+
+
+ var Rui = [];
+ var num=[] ;
+ let index = 0;
+    while (index <= 60000){
+        let jun = Math.floor(Math.random() * 6 + 1);
+        Rui.push(jun);
+        num = Rui.filter(i => i == 1)
+        index++;
+    }
+    console.log('比例：'+num.length / Rui.length +'||' + 1/6);
+
+
+</script>

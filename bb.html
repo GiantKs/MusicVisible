@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function getget() {
+        return new Promise(function (res,rej) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get','/1.js');
+            xhr.onreadystatechange=function() {
+                if (xhr.readyState==4 && xhr.status==200) {
+                    res(xhr.responseText)
+                }else{
+                    rej('sb')
+                }
+            }
+            xhr.send()
+        })
+    }
+    getget().then(function (data) {
+        console.log(data);
+    },function (e) {
+        console.log(e);
+    })
+</script>

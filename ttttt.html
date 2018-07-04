@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="margin:0 auto;height:600px;width:700px;">
+    <button id="btn">全屏</button>
+    <div id="content" style="margin:0 auto;height:500px;width:700px; background:#ccc;" >
+        <h1>全屏展示和退出全屏</h1>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    document.getElementById("btn").onclick=function(){
+        var elem = document.getElementById("content");
+        requestFullScreen(elem);
+        /*
+         注意这里的样式的设置表示全屏显示之后的样式，
+         退出全屏后样式还在，
+         若要回到原来样式，需在退出全屏里把样式还原回去
+         (见写法三)
+         */
+        elem.style.height = '800px';
+        elem.style.width = '1000px';
+    };
+    function requestFullScreen(element) {
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        if (!requestMethod) {
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F1133}");
+            }
+        }
+    }
+</script>

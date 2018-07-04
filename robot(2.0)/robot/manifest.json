@@ -1,0 +1,17 @@
+{
+  "name": "robot2",
+  "version": "1.0",
+  "manifest_version": 2,
+  "minimum_chrome_version": "23",
+  "app": {
+    "background": {
+      "scripts": ["js/background.js"]
+    }
+  },
+
+  "permissions": ["usb","hid"],
+  "optional_permissions": [ {"usbDevices": [{"vendorId": 1155, "productId": 24614}]}],
+  "externally_connectable": {
+    "matches": ["*://localhost/*"]
+  }
+}

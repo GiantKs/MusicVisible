@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var pc1, pc2, offer, answer;
+
+    pc1 = new webkitRTCPeerConnection(options);     // 创建实例P1
+    pc2 = new webkitRTCPeerConnection(options);     // 创建实例p2
+
+    pc1.onicecandidate = function(candidate) {      // 当有候选人连接
+        pc2.addIceCandidate(candidate);
+    };
+
+    pc2.onicecandidate = function(candidate) {
+        pc1.addIceCandidate(candidate);
+    };
+
+    pc1.createOffer(onOfferCreated, onError);
+
+    function onError(err) {
+        window.alert(err.message);
+    }
+
+    function onOfferCreated(description) {
+        offer = description;
+        pc1.setLocalDescription(offer, onPc1LocalDescriptionSet, onError);
+    }
+
+    function onPc1LocalDescriptionSet() {
+        // after this function returns, pc1 will start firing icecandidate events
+        pc2.setRemoteDescription(offer, onPc2RemoteDescriptionSet, onError);
+    }
+
+    function onPc2RemoteDescriptionSet() {
+        pc2.createAnswer(onAnswerCreated, onError);
+    }
+
+    function onAnswerCreated(description) {
+        answer = description;
+        pc2.setLocalDescription(answer, onPc2LocalDescriptionSet, onError);
+    }
+
+    function onPc2LocalDescriptionSet() {
+        // after this function returns, you'll start getting icecandidate events on pc2
+        pc1.setRemoteDescription(answer, onPc1RemoteDescriptionSet, onError);
+    }
+
+    function onPc1RemoteDescriptionSet() {
+        window.alert('Yay, we finished signaling offers and answers');
+    }
+</script>

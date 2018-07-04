@@ -1,0 +1,27 @@
+.h5-file-wrap,.student-disabled{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    z-index: 100;
+}
+.h5-file-wrap iframe{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    border: none;
+}
+.tk-filetype-h5document .background-canvas , .tk-filetype-h5document .custom-canvas-background{
+    display: none!important;
+}
+.tk-filetype-h5document .literally , .tk-filetype-h5document .lc-drawing{
+    background-color: transparent!important;
+}
+.student-disabled{
+    width: 100%;
+    height:100%;
+    display: none;
+}

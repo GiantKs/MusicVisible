@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/*@desc header start*/
+.header-wrap{
+    background-color: #202c4a;
+    min-height: 0.48rem;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+    position: relative;
+    z-index: 120;
+}
+
+.h-left-wrap{
+    width: 15.1rem;
+    width: calc(100% - 4.11rem);
+    flex: 1;
+}
+
+.h-logo-wrap{
+    width: 0.7823529411764706rem;
+    height: 0.3rem;
+    margin: 0.09rem 0.15rem  0.09rem 0.18rem ;
+    background: no-repeat center center;
+    background-size: 100% auto;
+}
+
+.h-right-wrap.role-teaching-assistant{
+    display: block;
+}
+.h-right-wrap{
+   /* width: 3.9rem;*/
+    line-height: 0.48rem;
+/*    min-width: 2.2rem;
+    min-width: calc(2rem + 75px);*/
+    display: flex;
+}
+.h-right-wrap.only-clock{
+    display: block;
+}
+.h-time-wrap{
+    color: #ffffff;
+    line-height: 0.48rem;
+    padding-left: 0.26rem;
+    margin:0 0.2rem 0 0.1rem;
+    font-family: "Aria" , "microsoft yahei";
+    font-size: 0.2rem;
+    position: relative;
+}
+.h-time-wrap .space{
+    display: inline-block;
+    padding: 0 0.05rem;
+}
+.h-time-wrap:before{
+    position: absolute;
+    left: 0;
+    width: 0.16rem;
+    height:0.16rem;
+    display: block;
+    top:50%;
+    margin-top: -0.08rem;
+    content: "";
+    background: url("../img/call_layout/top/icon_time.png") no-repeat center center;
+    background-size: 0.16rem 0.16rem;
+}
+.h-time-wrap.no-start , .h-time-wrap.ready-start , .h-time-wrap.start{
+    color:#fff ;
+}
+.h-time-wrap.immediately-end , .h-time-wrap.end{
+    color:#ff0000 ;
+}
+.h-time-wrap.ready-end{
+    color:#fcd000 ;
+}
+.h-btn-wrap{
+    flex: 1;
+/*    width: 60%;
+    width: calc(100% - 1.5rem);*/
+ /*   min-width: 2.12rem;
+    margin:0 0.1rem;*/
+}
+.h-btn-wrap button{
+    overflow: hidden;
+    outline:none;
+    border:none;
+    -webkit-border-radius:0.02rem;
+    -moz-border-radius:0.02rem;
+    border-radius:0.02rem;
+    color: #ffffff;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    background-color: #4468d0;
+    min-width: 2.12rem;
+    margin:0.04rem 0.1rem 0rem;
+}
+.h-btn-wrap button.h-room-end , .h-btn-wrap button.h-room-start.h-room-one-to-one-end , .h-btn-wrap button.h-room-start.h-room-raise{
+    background: #f03a0e;
+}
+.h-btn-wrap button.disabled{
+    opacity: 0.5;
+}

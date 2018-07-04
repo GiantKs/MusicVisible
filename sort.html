@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input type="file" class="fgb">
+
+
+<!-- <div class="fgb"></div>-->
+</body>
+</html>
+<script>
+
+    var fgb=document.getElementsByClassName('fgb')[0];
+    fgb.onchange=function (e) {
+        console.log(e.target.value,'e,target.value');
+        console.log(1);
+        console.log(e.target.files[0]);
+    };
+
+
+
+    var ary=[5,1,6];
+     console.log(ary);
+     fnTorting(ary);
+     console.log(ary);
+
+     function fnTorting(arr, pa) { //冒泡排序函数;
+        for (var j = arr.length; j > 0; j--) {
+            if (arr[j] < arr[j - 1]) {
+                pa = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = pa;
+            }
+        }
+    }
+    
+    big = function (vbig) {
+        this.a=vbig.a;
+        this.b=vbig.b;
+        this.c=vbig.c;
+    };
+
+     big.prototype.d=function (e) {
+         console.log(e);
+     };
+
+
+     function child () {
+         console.log(this.a);
+     }
+
+     console.log(child.call(big, {a: 1, b: 2, c: 3}));
+     console.log('---------------------------');
+     console.log(child,'child');
+     console.log('---------------------------');
+
+    var sm = new big({a:1,b:2,c:3});
+    console.log(sm);
+
+</script>

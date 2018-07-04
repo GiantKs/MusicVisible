@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #q{
+            width: 310px;
+            height: 310px;
+            background: red;
+        }
+        #a{
+            width: 300px;
+            height: 300px;
+            background: dodgerblue;
+        }
+        #ul{
+            width: 290px;
+            height: 290px;
+            overflow: auto;
+        }
+        #ul li{
+            height: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id='q'>
+    <div id='a'>
+        <ul id='ul'>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var a=document.querySelector('#a');
+   ul.onscroll=function () {
+       console.log(1);
+   }
+   a.onscroll=function () {
+       console.log(2);
+   }
+   q.onscroll=function () {
+       console.log(3);
+   }
+   ul.onclick=function () {
+       console.log('a');
+   }
+   a.onclick=function () {
+       console.log('b');
+   }
+</script>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*@desc header start*/
+.header-wrap{
+    background-color: #202c4a;
+    min-height: 0.48rem;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.h-left-wrap{
+    width: 15.1rem;
+    width: calc(100% - 4.11rem);
+    flex: 1;
+}
+
+.h-logo-wrap{
+    width: 0.7823529411764706rem;
+    height: 0.3rem;
+    margin: 0.09rem 0.15rem  0.09rem 0.18rem ;
+    background: no-repeat center center;
+    background-size: 100% auto;
+}

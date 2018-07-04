@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/*音频文件播放*/
+.audio-progress-outside{
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    height: 0.03rem;
+    top: auto;
+    bottom: 0.12rem;
+    position: absolute;
+    z-index: 99;
+    overflow: initial;
+    background-color: transparent;
+    /*overflow: hidden;*/
+}
+
+.tk-slide.tk-audio-volume-slider{
+    /*left: 0.4rem;*/
+    width: 1.2rem;
+    margin-top: 0.15rem;
+}
+div.lc-audio-container{
+    left: 50%;
+    height: 0.4rem;
+    margin-top: 0.09rem;
+    color: #fff;
+    margin-left: -2.512rem;
+}
+div.lc-audio-container.role-chairman{
+    margin-left: -3.0125rem;
+}
+.lc-audio-container button{
+    width: 0.3rem;
+    height: 0.3rem;
+    background:  no-repeat center center ;
+    background-size: 0.24rem auto;
+    margin: 0rem 0.1rem 0rem;
+}
+.lc-audio-container .play-pause-btn{
+    float: left;
+}
+
+.lc-audio-container button.play-pause-btn.play{
+    background-image: url(../img/call_layout/left/video/player/btn_play_normal.png) ;
+}
+.lc-audio-container button.play-pause-btn.pause{
+    background-image: url(../img/call_layout/left/video/player/btn_pause_normal.png) ;
+}
+.lc-audio-container  .audio-progress-container{
+    width: 2.93rem;
+    height: 0.3rem;
+    margin-right: 0.1rem
+}
+
+.lc-audio-container  .audio-info-vessel{
+    display: flex;
+}
+.lc-audio-container  .audio-info-vessel .audio-name{
+    flex: 1;
+}
+.lc-audio-container  .audio-info-vessel .playback-music-icon{
+    background: url(../img/call_layout/top/playback_mp3.png) no-repeat center center ;
+    display: none;
+    width: 0.3rem;
+    background-size: 100% auto;
+    height: 0.3rem;
+    margin-right: 0.1rem;
+}
+.audio-info-vessel .audio-time{
+    display: inline-block;
+    height: 0.2rem;
+    line-height: 0.2rem;
+    padding-left: 0.1rem;
+    vertical-align: middle;
+}
+
+.lc-audio-container #audio_volume_slide.audio-volume-bar-vessel{
+    width: 1rem;
+    margin-top: 0.1rem;
+}
+
+.lc-audio-container  .audio-progress-bar-vessel .curr-audio-progress , .lc-audio-container  .audio-volume-bar-vessel .curr-audio-volume{
+    background: #3278fe ;
+}
+.lc-audio-container button.audio-circulation.no{
+    background-image: url(../img/call_layout/left/video/player/icon_cycle_off.png);
+}
+.lc-audio-container button.audio-circulation.yes{
+    background-image: url(../img/call_layout/left/video/player/icon_cycle_on.png);
+}
+.lc-audio-container button.audio-close{
+    background-image: url(../img/call_layout/left/video/player/btn_closed_normal.png);
+    background-size: 0.3rem auto;
+}
+.lc-audio-container button.volume-btn.yes{
+    background-image: url(../img/call_layout/left/video/player/btn_volume_normal.png);
+}
+.lc-audio-container button.volume-btn.no{
+    background-image: url(../img/call_layout/left/video/player/btn_mute_normal.png);
+}
+#audio_volume_slide .ui-slider-handle , #audio_progress_slide .ui-slider-handle {
+    width: 0.08rem;
+    height: 0.08rem;
+    margin-top: -0.03rem;
+    margin-left: -0.08rem;
+    top: 50%;
+    border: none !important;
+    background: #4468d0 !important;
+    border-radius: 50%;
+    outline: none !important;
+}
+.tk-slide.tk-audio-ppt-volume-slider{
+    /*left: 0.4rem;*/
+    height: 1.3rem;
+    width:0.01rem;
+    margin-top: -1.5rem;
+    margin-left: 0.25rem;
+}
+.rc-slider-vertical
+{
+	width: 14px;
+    height: 1.2rem !important;
+    padding: 0 5px;
+    margin-top: -1.7rem;
+    margin-left: 0.15rem;
+    background-color: #232c48;
+    border-radius: 0 !important;
+}
+.rc-slider-rail {
+    background-color: #d1dee3;
+}

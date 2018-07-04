@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html><head>
+    <title>HTML5 code Reader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<style type="text/css">
+    html, body { height: 100%; width: 100%; text-align:center; }
+</style>
+<script src="jquery-1.9.1.js"></script>
+<script>
+    //这段代 主要是获取摄像头的视频流并显示在Video 签中
+    var canvas=null,context=null,video=null;
+    window.addEventListener("DOMContentLoaded", function ()
+    {
+        try{
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext("2d");
+            video = document.getElementById("video");
+
+            var videoObj = { "video": true,audio:false},
+                flag=true,
+                MediaErr = function (error)
+                {
+                    flag=false;
+                    if (error.PERMISSION_DENIED)
+                    {
+                        alert('用户拒绝了浏览器请求媒体的权限', '提示');
+                    } else if (error.NOT_SUPPORTED_ERROR) {
+                        alert('对不起，您的浏览器不支持拍照功能，请使用其他浏览器', '提示');
+                    } else if (error.MANDATORY_UNSATISFIED_ERROR) {
+                        alert('指定的媒体类型未接收到媒体流', '提示');
+                    } else {
+                        alert('系统未能获取到摄像头，请确保摄像头已正确安装。或尝试刷新页面，重试', '提示');
+                    }
+                };
+            //获取媒体的兼容代码，目前只支持（Firefox,Chrome,Opera）
+            if (navigator.getUserMedia)
+            {
+                //qq浏览器不支持
+                if (navigator.userAgent.indexOf('MQQBrowser') > -1) {
+                    alert('对不起，您的浏览器不支持拍照功能，请使用其他浏览器', '提示');
+                    return false;
+                }
+                navigator.getUserMedia(videoObj, function (stream) {
+                    video.src = stream;
+                    video.play();
+                }, MediaErr);
+            }
+            else if(navigator.webkitGetUserMedia)
+            {
+                navigator.webkitGetUserMedia(videoObj, function (stream)
+                {
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, MediaErr);
+            }
+            else if (navigator.mozGetUserMedia)
+            {
+                navigator.mozGetUserMedia(videoObj, function (stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                }, MediaErr);
+            }
+            else if (navigator.msGetUserMedia)
+            {
+                navigator.msGetUserMedia(videoObj, function (stream) {
+                    $(document).scrollTop($(window).height());
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                }, MediaErr);
+            }else{
+                alert('对不起，您的浏览器不支持拍照功能，请使用其他浏览器');
+                return false;
+            }
+            if(flag){
+                alert('为了获得更准确的测试结果，请尽量将二维码置于框中，然后进行拍摄、扫描。 请确保浏览器有权限使用摄像功能');
+            }
+            //这个是拍照按钮的事件，
+            $("#snap").click(function () {startPat();}).show();
+        }catch(e){
+            printHtml("浏览器不支持HTML5 CANVAS");
+        }
+    }, false);
+
+    //打印内容到页面
+    function printHtml(content){
+        $(window.document.body).append(content+"<br/>");
+    }
+    //开始拍照
+    function startPat(){
+        setTimeout(function(){//防止调用过快
+            if(context)
+            {
+                context.drawImage(video, 0, 0, 320, 320);
+                CatchCode();
+            }
+        },200);
+    }
+    //抓屏获取图像流，并上传到服务器
+    function CatchCode() {
+        if(canvas!=null)
+        {
+            //以下开始编 数据
+            var imgData = canvas.toDataURL();
+            //将图像转换为base64数据
+            var base64Data = imgData;//.substr(22); //在前端截取22位之后的字符串作为图像数据
+            //开始异步上
+            $.post("saveimg.php", { "img": base64Data },function (result)
+            {
+                printHtml("解析结果："+result.data);
+                if (result.status == "success" && result.data!="")
+                {
+                    printHtml("解析结果成功！");
+                }else{
+                    startPat();//如果没有解析出来则重新抓拍解析
+                }
+            },"json");
+        }
+    }
+</script>
+<body>
+
+<div id="support"></div>
+<div id="contentHolder">
+    <video id="video" width="320" height="320" autoplay>
+    </video>
+    <canvas style="display:none; background-color:#F00;" id="canvas" width="320" height="320">
+    </canvas> <br/>
+    <button id="snap" style="display:none; height:50px; width:120px;">开始扫描</button>
+</div>
+
+
+
+</body></html>
+
+
+<div>
+    Cache-Control指定请求和响应遵循的缓存机制。在请求消息或响应消息中设置Cache-Control并不会修改另一个消息处理过程中的缓存处理过程。请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、only-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。各个消息中的指令含义如下：
+    Public指示响应可被任何缓存区缓存。
+    Private指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户
+    http结构
+    http结构
+    的部分响应消息，此响应消息对于其他用户的请求无效。
+    no-cache指示请求或响应消息不能缓存
+    no-store用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存。
+    max-age指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应。
+    min-fresh指示客户机可以接收响应时间小于当前时间加上指定时间的响应。
+    max-stale指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。
+
+
+
+    一次HTTP操作称为一个事务，其工作过程可分为四步：
+    首先客户机与服务器需要建立连接。只要单击某个超级链接，HTTP的工作就开始了。
+    建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可能的内容。
+    服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。
+    客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客
+    http工作流程图
+    http工作流程图
+    户机与服务器断开连接。
+    如果在以上过程中的某一步出现错误，那么产生错误的信息将返回到客户端，由显示屏输出。对于用户来说，这些过程是由HTTP自己完成的，用户只要用鼠标点击，等待信息显示就可以了。
+    许多HTTP通讯是由一个用户代理初始化的并且包括一个申请在源服务器上资源的请求。最简单的情况可能是在用户代理和服务器之间通过一个单独的连接来完成。在Internet上，HTTP通讯通常发生在TCP/IP连接之上。缺省端口是TCP 80，但其它的端口也是可用的。但这并不预示着HTTP协议在Internet或其它网络的其它协议之上才能完成。HTTP只预示着一个可靠的传输。
+    这个过程就好像我们打电话订货一样，我们可以打电话给商家，告诉他我们需要什么规格的商品，然后商家再告诉我们什么商品有货，什么商品缺货。这些，我们是通过电话线用电话联系（HTTP是通过TCP/IP），当然我们也可以通过传真，只要商家那边也有传真。
+</div>

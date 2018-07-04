@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script type="text/javascript" src="grid.js"></script>
+    <script type="text/javascript" src="version.js"></script>
+    <script type="text/javascript" src="detector.js"></script>
+    <script type="text/javascript" src="formatinf.js"></script>
+    <script type="text/javascript" src="errorlevel.js"></script>
+    <script type="text/javascript" src="bitmat.js"></script>
+    <script type="text/javascript" src="datablock.js"></script>
+    <script type="text/javascript" src="bmparser.js"></script>
+    <script type="text/javascript" src="datamask.js"></script>
+    <script type="text/javascript" src="rsdecoder.js"></script>
+    <script type="text/javascript" src="gf256poly.js"></script>
+    <script type="text/javascript" src="gf256.js"></script>
+    <script type="text/javascript" src="decoder.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <script type="text/javascript" src="findpat.js"></script>
+    <script type="text/javascript" src="alignpat.js"></script>
+    <script type="text/javascript" src="databr.js"></script>
+
+</head>
+<body>
+<video id="video" autoplay=""style='width:100%;height:100%'></video>
+<canvas id="canvas" style='display:none' width="400" height="400"></canvas>
+
+<div id='pic_box'></div>
+<div id='text_box'></div>
+
+<script type="text/javascript">
+
+    function writeObj(obj){
+        var description = "";
+        for(var i in obj){
+            var property=obj[i];
+            description+=i+" = "+property+"\n";
+        }
+        alert(description);
+    }
+
+    //Uc前置摄像头扫描成功(因为后置摄像头不能对焦)
+    var exArray = []; //存储设备源ID
+    MediaStreamTrack.getSources(function (sourceInfos) {
+        for (var i = 0; i < sourceInfos.length; i++) {
+            var sourceInfo = sourceInfos[i];
+            //这里会遍历audio,video，所以要加以区分
+            if (sourceInfo.kind === 'video') {
+                exArray.push(sourceInfo.id);
+            }
+        }
+
+        var getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+        getUserMedia.call(navigator, {
+            'video': {
+                'optional': [{
+                    'sourceId': exArray[0] //0为前置摄像头，1为后置
+                }]
+            },
+        }, function(localMediaStream) {
+            var video = document.getElementById('video');
+            video.src = window.URL.createObjectURL(localMediaStream);
+            video.play();
+            //每秒用canvas绘制一副图后用二维码解析库解析
+            video.addEventListener("timeupdate", checkCode);
+        }, function(e) {
+            console.log('Reeeejected!', e);
+        });
+
+    });
+    count = 0;
+    function checkCode() {
+        canvas.getContext('2d').drawImage(video, 0, 0, 400, 400);
+        qrcode.decode(canvas.toDataURL("image/png"));
+        qrcode.callback = function (data) {
+            if (data == 'error decoding QR Code') {
+                document.getElementById('text_box').innerText = '第' + count + '次:' + data;
+                count++;
+            } else {
+                video.removeEventListener('timeupdate', checkCode);
+                alert(data);
+                //location.href = data;
+            }
+        }
+    }
+
+
+    //谷歌浏览器(电脑前置摄像头)扫描成功
+    var count = 0;
+    var video = document.getElementById('video');
+    var canvas = document.getElementById('canvas');
+    navigator.mediaDevices.getUserMedia({
+        video: true
+    })
+        .then(function(stream){
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+            //每秒用canvas绘制一副图后用二维码解析库解析
+            video.addEventListener("timeupdate", checkCode);
+        })
+        .catch(function(){
+
+        });
+
+    function checkCode(){
+        canvas.getContext('2d').drawImage(video, 0, 0, 400, 400);
+        qrcode.decode(canvas.toDataURL("image/png"));
+        qrcode.callback = function(data){
+            if(data == 'error decoding QR Code'){
+                document.getElementById('text_box').innerText = '第' + count + '次:' + data;
+                count ++;
+            }else{
+                video.removeEventListener('timeupdate', checkCode);
+                alert(data);
+                //location.href = data;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

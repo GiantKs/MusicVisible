@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<video src="" style="width: 100%;height: 100%"></video>
+<input type="file">
+
+
+<select>
+    <option value ="volvo">Volvo</option>
+    <option value ="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+</select>
+
+</body>
+</html>
+<script>
+
+             (function loadImg(){
+                 let input=document.querySelector('input');
+                 input.addEventListener('change',function (e) {
+                             var file  = e.target.files[0];
+                             var reader = new FileReader();
+                           reader.readAsDataURL(file);
+                           reader.onload = function (e) {
+                           console.log(e.target.result,888888);
+                     }
+                             }
+                 )
+             })();
+
+
+     var p = navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: { width: 1280, height: 720 }
+    });
+
+    p.then(function(mediaStream) {
+        console.log(mediaStream);
+        var video = document.querySelector('video');
+        video.src = window.URL.createObjectURL(mediaStream);
+        console.log(video.src);
+        video.onloadedmetadata = function(e) {
+            console.log(1);
+        };
+        video.play()
+    });
+
+    p.catch(function(err) { console.log(err.name); });
+
+
+</script>

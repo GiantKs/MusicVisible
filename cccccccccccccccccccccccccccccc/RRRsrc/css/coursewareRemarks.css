@@ -1,0 +1,69 @@
+.courseware-remarks-box{
+    width: 5.5rem;
+    height: 2.2rem;
+    position: absolute;
+    top:calc(100% - 2.7rem);
+    z-index: 110;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    padding:0 0.02rem 0.02rem 0.02rem;
+    background: linear-gradient(to right,#6C9EF2,#4D6CE8);
+    overflow: hidden;
+}
+.courseware-remarks-box .remarks-title{
+    width: 100%;
+    height: 0.32rem;
+    text-align: center;
+    line-height: 0.32rem;
+    color: #fff;
+    position: relative;
+    box-shadow: 0 0.01rem 0.5rem 0 #6C9EF2;
+}
+.courseware-remarks-box .remarks-title .remarks-close{
+    width: 0.12rem;
+    height: 0.12rem;
+    position: absolute;
+    right: 0.14rem;
+    top:0.1rem;
+    background: url("../img/call_layout/lc/icon_remarks_close.png") no-repeat center;
+    background-size: 100%;
+}
+.courseware-remarks-box .remarks-content{
+    width: 100%;
+    height: calc(100% - 0.32rem);
+    background-color: #E8EEFA;
+    overflow: auto;
+    padding: 0.1rem;
+}
+.courseware-remarks-box .remarks-content::-webkit-scrollbar-thumb{
+    background:#5D86ED url("../img/call_layout/lc/icon_scrollbar_content.png") no-repeat center center;
+    background-size: 0.06rem 0.18rem;
+    border-radius: 0.02rem;
+    position: relative;
+    box-shadow: 0 0 0.01rem 0 #5D86ED;
+    border-top: 0.01rem solid #6C9EF2;
+    border-bottom: 0.01rem solid #6C9EF2;
+}
+.courseware-remarks-box .remarks-content::-webkit-scrollbar-button:start{
+    background:url("../img/call_layout/lc/icon_scrollbar_start@3x.png") no-repeat center;
+    background-size:0.15rem auto;
+    height: 0.15rem;
+}
+.courseware-remarks-box .remarks-content::-webkit-scrollbar-button:end{
+    background:url("../img/call_layout/lc/icon_scrollbar_end@3x.png") no-repeat center;
+    background-size:0.15rem auto;
+    height: 0.15rem;
+}
+/*.courseware-remarks-box .remarks-content::-webkit-scrollbar-button:start:hover{
+    background:#4D6CE8 url("../img/call_layout/lc/icon_scrollbar_end.png") no-repeat center;
+    background-size:100% 100%;
+}
+.courseware-remarks-box .remarks-content::-webkit-scrollbar-button:end:hover{
+    background:#4D6CE8 url("../img/call_layout/lc/icon_scrollbar_start.png") no-repeat center;
+    background-size:100% 100%;
+}*/
+.courseware-remarks-box .remarks-content::-webkit-scrollbar{
+    width: 0.15rem;
+    border-radius: 0.02rem;
+    background-color: #D1DAF1;
+}

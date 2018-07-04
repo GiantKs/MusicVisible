@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #sb{
+            height: 66px;
+            background: green;
+            transition: all 0.26s;
+        }
+    </style>
+</head>
+<body>
+<input id="fileInput" type="file">
+<video id="video" src=''></video>
+<div id="sb"></div>
+<button id="qie">来吧come</button>
+</body>
+</html>
+
+<script> /* var AudioContext = window.AudioContext || window.webkitAudioContext; var audioCtx = new AudioContext();
+var oscillatorNode = audioCtx.createOscillator();
+var gainNode = audioCtx.createGain();
+var finish = audioCtx.destination;
+console.log(finish,gainNode,oscillatorNode);*/
+var exArray=[],bbq=true;
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)(); var oscillator = audioCtx.createOscillator(); var gainNode = audioCtx.createGain(); var script = audioCtx.createScriptProcessor(2048, 1, 1);
+navigator.mediaDevices.enumerateDevices().then(
+    function (sourceInfos) {
+        console.log(sourceInfos);
+        for (var i = 0; i != sourceInfos.length; ++i) {
+            var sourceInfo = sourceInfos[i];
+            //这里会遍历audio,video，所以要加以区分
+            if (sourceInfo.kind === 'videoinput') {
+                console.log(sourceInfo);
+                exArray.push(sourceInfo.deviceId);
+            }
+        }
+    }
+);
+console.log(exArray);
+var aa=exArray[1];
+qie.onclick=function () {
+    aa=exArray[0];
+if(bbq){
+    if (navigator.mediaDevices) {
+        console.log('getUserMedia supported.');
+        navigator.mediaDevices.getUserMedia (
+            {
+                audio: true,
+                video: {deviceId:{exact:'e37ecd9b4ea696b83a06466dd12bca95e10c0cb018a4ad35a83f078f6bd6d6f0'}}}
+        ) .then(function(stream) {
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            source = audioCtx.createMediaStreamSource(stream);
+            source.connect(script);
+            script.connect(audioCtx.destination);
+            var a=0,b=0,c=0,timer;
+
+            script.onaudioprocess = function (event) {
+
+                var input = event.inputBuffer.getChannelData(0);
+                input[0]<0?null:sb.style.width= input[0]*1100+'px'
+                /*for (i = 0; i < input.length; ++i) {
+                    sum += input[i] * input[i];
+                    if (Math.abs(input[i]) > 0.99) {
+                        clipcount += 1;
+                    }
+                }
+                a = Math.sqrt(sum / input.length);
+                b = 0.95 * b + 0.05 * a;
+                c = clipcount / input.length;*/
+            };
+
+            video.srcObject=stream;
+            video.play();
+        })
+    }
+    bbq=!bbq
+}else{
+    if (navigator.mediaDevices) {
+        console.log('getUserMedia supported.');
+        navigator.mediaDevices.getUserMedia (
+            {
+                audio: true,
+                video: true}
+        ) .then(function(stream) {
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            source = audioCtx.createMediaStreamSource(stream);
+            source.connect(script);
+            script.connect(audioCtx.destination);
+            var a=0,b=0,c=0,timer;
+
+            script.onaudioprocess = function (event) {
+                var input = event.inputBuffer.getChannelData(0);
+                input[0]<0?null:sb.style.width= input[0]*1100+'px';
+                /*for (i = 0; i < input.length; ++i) {
+                    sum += input[i] * input[i];
+                    if (Math.abs(input[i]) > 0.99) {
+                        clipcount += 1;
+                    }
+                }
+                a = Math.sqrt(sum / input.length);
+                b = 0.95 * b + 0.05 * a;
+                c = clipcount / input.length;*/
+            };
+
+            video.srcObject=stream;
+            video.play();
+        });
+        bbq=!bbq;
+    }
+}
+
+};
+
+
+
+
+
+
+
+
+if (navigator.mediaDevices) {
+    console.log('getUserMedia supported.');
+    navigator.mediaDevices.getUserMedia (
+        {
+            audio: true,
+            video: true}
+    ) .then(function(stream) {
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        source = audioCtx.createMediaStreamSource(stream);
+        source.connect(script);
+        script.connect(audioCtx.destination);
+        var a=0,b=0,c=0,timer;
+
+        script.onaudioprocess = function (event) {
+            console.log(event,2);
+            var input = event.inputBuffer.getChannelData(0);
+            input[0]<0?null:sb.style.width= input[0]*1100+'px';
+            /*for (i = 0; i < input.length; ++i) {
+                sum += input[i] * input[i];
+                if (Math.abs(input[i]) > 0.99) {
+                    clipcount += 1;
+                }
+            }
+            a = Math.sqrt(sum / input.length);
+            b = 0.95 * b + 0.05 * a;
+            c = clipcount / input.length;*/
+        };
+
+        video.srcObject=stream;
+        video.play();
+
+
+    })
+
+}
+
+
+
+
+
+
+
+
+</script>
+<script>
+     var a = document.getElementById('sb')
+     console.log(a,'aaaa');
+     /*如果你看到了一座很远的山，那么一定要看看这座远山的脚下有没有街灯霓虹，因为你不知道这远山的背后竟是如此的繁星点点浩瀚静倪，可能是因为太长时间都存在于林立高楼精致规矩与小心翼翼之间，又或者是你从来都没有过的肆意天真心神安...
+ */
+</script>
+<script>
+
+
+
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    console.log(aa);
+    /* function ajax(opt) {
+         opt = opt || {};
+         opt.method = opt.method.toUpperCase() || 'POST';
+         opt.url = opt.url || '';
+         opt.async = opt.async || true;
+         opt.data = opt.data || null;
+         opt.success = opt.success || function () {};
+         var xmlHttp = null;
+         if (XMLHttpRequest) {
+             xmlHttp = new XMLHttpRequest();
+         }
+         else {
+             xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+         }
+         var params = [];
+         for (var key in opt.data){
+             params.push(key + '=' + opt.data[key]);
+         }
+         var postData = params.join('&');
+         if (opt.method.toUpperCase() === 'POST') {
+             xmlHttp.open(opt.method, opt.url, opt.async);
+             xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+             xmlHttp.send(postData);
+         }
+         else if (opt.method.toUpperCase() === 'GET') {
+             xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+             xmlHttp.send(null);
+         }
+         xmlHttp.onreadystatechange = function () {
+             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                 opt.success(xmlHttp.responseText);
+             }
+         };
+     }
+     ajax({
+         method: 'POST',
+         url: 'http://testapi.xinxuewen.cn/Res/reslist?api=Res.reslist&app_key=218fbc52&verson=1.0&t=1521531497&sig=61c5c37464d15455db1835a35586d562&sv=0',
+         data:{
+             type:1,
+             usertoken:'MDAwMDAwMDAwMK6Fp6yEd3VjhHSOq32memyAd4Srfs56s4KdiKSNYtGrumO8jZiKaG8',
+             class_level:'A2',
+             page:1,
+             page_size:12
+         },
+         success:function (res) {
+             res=JSON.parse(res);
+             console.log(res);
+         }
+     });*/
+    let aa='q'
+</script>

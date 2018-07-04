@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    /*function ajax(opt) {
+        opt = opt || {};
+        opt.method = opt.method.toUpperCase() || 'POST';
+        opt.url = opt.url || '';
+        opt.async = opt.async || true;
+        opt.data = opt.data || null;
+        opt.success = opt.success || function () {};
+        opt.list = opt.list || function () {};
+        var xmlHttp = null;
+        if (XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        }
+        else {
+            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        var params = [];
+        for (var key in opt.data){
+            params.push(key + '=' + opt.data[key]);
+        }
+        var postData = params.join('&');
+        if (opt.method.toUpperCase() === 'POST') {
+            xmlHttp.open(opt.method, opt.url, opt.async);
+            xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+            xmlHttp.send(postData);
+        }
+        else if (opt.method.toUpperCase() === 'GET') {
+            xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+            xmlHttp.send(null);
+        }
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                opt.success(xmlHttp.responseText);
+            }else{
+                opt.list()
+            }
+        };
+    }
+    ajax(
+    {
+        method: 'POST',
+            url: 'http://testapi.xinxuewen.cn/Member/login?api=Member.login&app_key=218fbc52&verson=1.0&t=1521186758&sig=98e442c42b418baed219383eb39395bd&sv=0',
+        data: {
+           mobile:18322222222 ,
+            password:123456
+    },
+        success: function (response) {
+            response=JSON.parse(response);
+            console.log(response.data.roominfo.starttime,new Date(response.data.roominfo.starttime*1000).toLocaleString());
+        }
+    }
+    )
+
+    console.log(new Date(1522994400000).toLocaleString());*/
+/*    var  a=['1','2',3]
+    var  b=[1,2,]
+    document.write(a)
+    function compare(array,the) {
+        // if the other array is a falsy value, return
+        if (!array)
+            return false;
+
+        // compare lengths - can save a lot of time
+        if (the.length != array.length)
+            return false;
+
+        for (var i = 0, l = the.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (the[i] instanceof Array && array[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!(the[i]==(array[i])))
+                    return false;
+            }
+            else if (the[i] != array[i]) {
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;
+            }
+        }
+        return true;
+    }
+
+    console.log(compare(a, b));*/
+</script>
+<script>
+    const person = {
+        isHuman: false,
+        printIntroduction: function () {
+            console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+        }
+    };
+
+    const me = Object.create(person);
+    console.dir((me));
+    me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+    me.isHuman = true; // inherited properties can be overwritten
+
+    me.printIntroduction();
+</script>

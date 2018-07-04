@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*视频上的标注画板样式*/
+.video-drawing-board-box{
+    margin:auto;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.video-drawing-board{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    align-items: center;
+}
+.video-drawing-board-box .blackboard-tool{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height:auto;
+    background-color: #202c4a;
+    right: 0.01rem;
+}
+.video-drawing-board-box .blackboard-tool>li{
+    width: 0.5rem;
+    height: 0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    position: relative;
+}
+.video-drawing-board-box .blackboard-tool .blackboard-tool-option .tool-btn.pencil-icon{
+    margin-left: 0;
+}
+.video-drawing-board-box .blackboard-tool .blackboard-tool-option.active,.video-drawing-board-box .blackboard-tool .blackboard-tool-option .tool-btn.active{
+    background-color: #121a2c;
+}
+.video-drawing-board-box .blackboard-tool .blackboard-tool-option .blackboard-color-size-box{
+    top:0;
+    right: 100%;
+    bottom: auto;
+}
+.video-drawing-board-box .video-drawing-board .literally{
+    background-color: transparent;
+}

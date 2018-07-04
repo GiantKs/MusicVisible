@@ -1,0 +1,90 @@
+import React from 'react'
+import rename from 'TkConstant';
+import TkGlobal from 'TkGlobal';
+
+class Help extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state={
+        	src:require('../static/img/help_win_t_01.png'),
+        	defaultSrc:require('../static/img/help_win_t_01.png'),
+        	page:1,
+        	prefix:'help_win_t_0',
+        	totalNum:7,
+        	language:''
+        	
+        	
+        }
+    }
+    defaultPic(role,language){
+    	if(role){//如果是老师
+    		if(language=='chinese'){
+    			return require('../static/img/help_win_t_01.png');
+    		}else{
+    			return require('../static/img/en_help_win_t_01.png');
+    		}
+    	}else{//如果是学生
+    		if(language=='chinese'){
+    			return require('../static/img/help_win_s_01.png');
+    		}else{
+    			return require('../static/img/en_help_win_s_01.png');
+    		}
+    	}
+    }
+    picPrefix(role,language){
+    	if(role){//如果是老师
+    	
+    		if(language=='chinese'){
+    			return 'help_win_t_0';
+    		}else{
+    			return 'en_help_win_t_0';
+    		}
+    	}else{//如果是学生
+    		if(language=='chinese'){
+    			return 'help_win_s_0';
+    		}else{
+    			return 'en_help_win_s_0';
+    		}
+    	}
+    }
+    componentDidMount(){
+    	this.setState({
+    		prefix:this.picPrefix(rename.hasRole.roleChairman,TkGlobal.language.name),
+    		totalNum:rename.hasRole.roleChairman?7:4,
+    		defaultSrc:this.defaultPic(rename.hasRole.roleChairman,TkGlobal.language.name),
+    		src:this.defaultPic(rename.hasRole.roleChairman,TkGlobal.language.name)
+    		
+    	});
+    	
+    	
+    	
+    }
+    render() {
+        return (
+            <div id="help" className="tool-help-frame" onClick={this.changeImg.bind(this)} style={{display:this.props.show?'block':'none',height:'100%',position:'fixed'}}>
+            	<img src={this.state.src}/>
+            </div>
+        )
+    }
+    changeImg(e){
+    	
+    	if(this.state.page<this.state.totalNum){//切换图片
+    		this.setState({
+	    		src:require('../static/img/'+this.state.prefix+(this.state.page+1)+'.png'),
+	    		page:this.state.page+1
+	    		
+	    	})
+    	}
+    	else{//当到最后一张图片时，向父组件通信传递false，并把图片状态置为初始
+    	
+			this.props.toFather(false);
+			this.setState({
+				src:this.state.defaultSrc,
+	    		page:1
+			})
+    	}
+    	
+    }
+}
+
+module.exports = Help

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: red;
+            overflow: hidden;
+
+        }
+        .b{
+            position: absolute;
+            width: 600px;
+            height: 100px;
+            background: rgba(25, 255, 0, 0.3); transition: left 1s ease-in-out;
+        }
+        .c{
+            float: left;
+            width: 200px;
+            height: 100px;
+            background: yellow;
+        }.d{
+            float: left;
+            width: 200px;
+            height: 100px;
+            background: #6cff7a;
+        }.e{
+            float: left;
+            width: 200px;
+            height: 100px;
+            background: #182dff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="a">
+    <div id="b" class="b">
+        <div class="c"></div>
+        <div class="d"></div>
+        <div class="e"></div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+/*    window.addEventListener('message',function(e){
+        console.log('第一站');
+        window.setTimeout(()=>{
+            window.parent.postMessage({flag:true,data:'你是个坏小子'},'*')
+        },5000)
+    })*/
+var left=0;
+window.setInterval(()=>{
+    b.style.transition = 'all 1s';
+    b.style.left = -left+'%';
+    left+=100;
+    if(Math.abs(parseInt(b.style.left)) == 400){
+        left = 100;
+        b.style.transition = 'none';
+        b.style.left = 0 +'%'
+    }
+},2000)
+
+
+
+</script>
+<script>
+    var pc = new RTCPeerConnection();
+    console.log(pc);
+    pc.onaddstream = function(obj) {
+        var vid = document.createElement("video");
+        document.appendChild(vid);
+        vid.srcObject = obj.stream;
+    };
+
+    navigator.mediaDevices.getUserMedia({video: true}, function(stream) {
+        console.log(stream);
+        pc.onaddstream({stream: stream});
+        // Adding a local stream won't trigger the onaddstream callback
+        pc.addStream(stream);})
+
+</script>

@@ -1,0 +1,82 @@
+.alert-error-confrim{
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 999;
+	width: 100%;
+	height:100%;
+	background: rgba(0,0,0,0.5);
+}
+.alert-box{
+	position: absolute;
+	width: 5rem;
+	height: auto;
+	left: 50%;
+	top:-5rem;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	background-color: #202c4a;
+	opacity: 0;
+	transition: top 0.3s linear 0s  ;
+}
+.center{
+	top:50%;
+	opacity: 1;
+}
+.alert-title{
+	height: 0.45rem;
+	position: relative;
+	background-color: #4468d0;
+}
+.title-text{
+	height: 100%;
+	line-height: 0.45rem;
+	box-sizing: border-box;
+	padding-left: 0.2rem;
+}
+.title-close{
+	width: 0.45rem;
+	height: 0.45rem;
+	background: url("../img/call_layout/win_close.png") no-repeat center center;
+	background-size:0.13rem 0.13rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.alert-contant{
+	/*height: 2.04rem;*/
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.8rem 0.5rem;
+}
+.alert-isOk{
+	height: 0.75rem;
+	box-sizing: border-box;
+	padding: 0.2rem 0rem;
+	border-top:0.01rem solid #485880;
+}
+.alert-isOk button{
+	display: block;
+	height: 0.35rem;
+	line-height: 0.14rem;
+	border-radius: 0.02rem;
+	padding: 0rem 0.36rem;
+	background-color: #4468d0;
+	margin-right:0.25rem;
+	float: right;
+}
+.alert-isOk button.alert-cancel{
+	background-color: #ff0400;
+}
+
+/***************************** R_add_origin ***********************/
+
+.edit-node input,
+.edit-node textarea {
+	color: #000;
+}
+
+/***************************** R_add_terminus *********************/
+

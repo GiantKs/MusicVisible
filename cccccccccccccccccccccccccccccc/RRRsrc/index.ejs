@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px;" id="all_root"  data-appVersions="<%= htmlWebpackPlugin.options.appVersions %>"  data-packTime="<%= htmlWebpackPlugin.options.packTime %>" >
+<head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="UTF-8">
+    <meta name="author" content="talk,http://www.talk-cloud.com">
+    <!--强制让文档的宽度与设备的宽度为1：1 ， 并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <!--WebApp全屏模式隐藏地址栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--苹果强制全屏显示-->
+    <meta name="apple-touch-fullscreen"  content="yes"  />
+    <!--强制全屏显示-->
+    <meta name="full-screen" content="yes" />
+    <!--制定iphone中safari顶端的状态条的样式，（default：白色 ;  black:黑色，black-translucent：半透明）-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--告诉设备忽略将页面中的地址识别-->
+    <meta name="format-detection" content="address=no" />
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--如果安装了 Google Chrome Frame，则使用 GCF 来渲染页面，如果没有安装 GCF，则使用最高版本的 IE 内核进行渲染。-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <link href="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/literally/css/<%= htmlWebpackPlugin.options.lcName %>.css?versions=<%= htmlWebpackPlugin.options.lcVersions %>" rel="stylesheet" >
+</head>
+<body class="normal"  style="overflow: hidden; position: relative;" >
+<section id="tk_app"  class="add-position-absolute-top0-left0" style="width: 100%;height: 100%;" ></section>
+<div style="display: none;" id="tkLoadJs"></div>
+<script>
+    ;(function () {
+        window.GLOBAL = window.GLOBAL || {} ;
+        var sdkDevStr =  "<%= htmlWebpackPlugin.options.__SDKDEV__ %>" ;
+        var appVersions =  "<%= htmlWebpackPlugin.options.appVersions %>" ;
+        var appVersionsTime =  "<%= htmlWebpackPlugin.options.appVersionsTime %>" ;
+        var sdkVersions =  "<%= htmlWebpackPlugin.options.sdkVersions %>" ;
+        var sdkVersionsTime =  "<%= htmlWebpackPlugin.options.sdkVersionsTime %>" ;
+        window.__SDKDEV__  = ( sdkDevStr === 'true' );
+        window.__APPVERSIONS__  = appVersions ;
+        window.__APPVERSIONSTIME__  = appVersionsTime ;
+        window.__SDKVERSIONS__  = appVersions ;
+        window.__SDKVERSIONSTIME__  = appVersionsTime ;
+        window.GLOBAL.loadScript =  window.GLOBAL.loadScript || function (url, callback) {
+            if(!url){
+                return ;
+            }
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            if( typeof(callback) != "undefined"  && typeof callback === 'function' ){
+                if (script.readyState) {
+                    script.onreadystatechange = function () {
+                        if (script.readyState == "loaded" || script.readyState == "complete") {
+                            script.onreadystatechange = null;
+                            callback();
+                        }
+                    };
+                } else {
+                    script.onload = function () {
+                        callback();
+                    };
+                }
+            }
+            script.src = url;
+            var loadJs = document.getElementById('tkLoadJs') || document.body ;
+            loadJs.appendChild(script);
+        }
+        if(!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)){
+            var adpUrl = "<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/adp/<%= htmlWebpackPlugin.options.adpName %>.js?versions=<%= htmlWebpackPlugin.options.adpVersions %>" ;
+            window.GLOBAL.loadScript(adpUrl);
+        }
+    })();
+</script>
+<!--<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/cloudvPlayer.min.js"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/clappr-video360.min.js"></script>-->
+<!--<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/adp/<%= htmlWebpackPlugin.options.adpName %>.js?versions=<%= htmlWebpackPlugin.options.adpVersions %>"></script>-->
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/jq/<%= htmlWebpackPlugin.options.jqName %>.js"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>libs/js/tk/<%= htmlWebpackPlugin.options.sdkName %>.js?versions=<%= htmlWebpackPlugin.options.sdkVersions %>"></script>
+<script type="text/javascript"  charset="UTF-8" src="<%= htmlWebpackPlugin.options.sdkDirPreFix %>js/plugs/literally/js/<%= htmlWebpackPlugin.options.lcName %>.js?versions=<%= htmlWebpackPlugin.options.lcVersions %>"></script>
+
+<!--<style>
+    #testVideoContainer{
+        position: absolute;
+        width: 7rem;
+        height: 5rem;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999;
+        display: flex;
+        top:0;
+        left:0;
+    }
+</style>
+<div id="testVideoContainer"></div>-->
+</body>
+</html>

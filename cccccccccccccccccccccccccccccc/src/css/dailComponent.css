@@ -1,0 +1,61 @@
+.dial-teachComponent-bg {
+	width: 4rem;
+	height: 4rem;
+	background: rgba(0, 0, 0, 0);
+	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	/*top:1rem;*/
+	z-index: 555;
+}
+
+.dial-teachComponent-pointer-button {
+	width: 0.5rem;
+	height: 1rem;
+	position: absolute;
+	background: url("../img/call/dial_pointer_component.png") no-repeat center center;
+	background-size: 100% 100%;
+	z-index: 666;
+	top: 1.25rem;
+	cursor: pointer;
+	left: 1.75rem;
+}
+
+.dial-teachComponent-pointer-button:hover {
+	opacity: 1;
+}
+
+.dial-teachComponent-turntable {
+	width: 4rem;
+	height: 4rem;
+	position: absolute;
+	background-image: url("../img/call/dial_bg_component.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 2rem;
+	z-index: 5;
+	/*-webkit-transition:all 4s ease-in-out;  */
+}
+
+.dialCloseP {
+	width: 0.8rem;
+	height: 2rem;
+	background: url("../img/call/dial_close_balloon.png") no-repeat center center;
+	background-size: 100% 100%;
+	position: absolute;
+	right: -0.4rem;
+	top: -0.7rem;
+	font-size: 0.2rem;
+	cursor: pointer;
+}
+
+.dialCloseP:hover {
+	background: url("../img/call/dial_close_balloon_hover.png") no-repeat center center;
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+
+.dialText {
+	font-size: 0.3rem;
+	color: black;
+}
