@@ -200,19 +200,17 @@ function loadAudioElement(url) {
 }
 
 /* Let's load our file. */
-/*
-loadAudioElement('./aa.mp3').then(function(elem) {
-    /!* Instantiate the Sound class into our hoisted variable. *!/
+loadAudioElement('./BB.mp3').then(function(elem) {
+    /* Instantiate the Sound class into our hoisted variable. */
     audio = Object.create(Sound);
-    /!* Set the element of `audio` to our MediaElement. *!/
+    /* Set the element of `audio` to our MediaElement. */
     audio.element = elem;
-    /!* Immediately play the file. *!/
+    /* Immediately play the file. */
     audio.play();
 }, function(elem) {
-    /!* Let's throw an the error from the MediaElement if it fails. *!/
+    /* Let's throw an the error from the MediaElement if it fails. */
     throw elem.error;
 });
-*/
 
 
 

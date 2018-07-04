@@ -22,5 +22,7 @@ getget().then(function (data) {
 
 
 
+var o = {a:1,b:2}
+console.log(Object.entries(o));
 
 /*Object.entries()*/
